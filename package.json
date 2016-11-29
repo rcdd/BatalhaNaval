@@ -1,0 +1,22 @@
+{
+  "name": "batalha_naval",
+  "version": "1.0.0",
+  "description": "Batalha naval em nodejs e angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcdd/BatalhaNaval.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rcdd/BatalhaNaval/issues"
+  },
+  "homepage": "https://github.com/rcdd/BatalhaNaval#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

@@ -1,0 +1,859 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ret",
+				"return\tkeyword"
+			],
+			[
+				"Ob",
+				"Observable\talias"
+			],
+			[
+				"send",
+				"sendChatMessage\tmethod"
+			],
+			[
+				"player",
+				"players"
+			],
+			[
+				"pla",
+				"playersChannel\tproperty"
+			],
+			[
+				"j",
+				"jsonstr"
+			],
+			[
+				"json",
+				"jsonstr〔variable〕"
+			],
+			[
+				"est",
+				"estabcol"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"data",
+				"database〔variable〕"
+			],
+			[
+				"pa",
+				"player"
+			],
+			[
+				"pl",
+				"player"
+			],
+			[
+				"mon",
+				"mongoClient〔variable〕"
+			],
+			[
+				"lead",
+				"leaderboard\tproperty"
+			],
+			[
+				"res",
+				"responseHandler"
+			],
+			[
+				"url",
+				"urlBase〔variable〕"
+			],
+			[
+				"args",
+				"args_info"
+			],
+			[
+				"arg",
+				"args_info"
+			],
+			[
+				"func",
+				"function\tkeyword"
+			],
+			[
+				"http",
+				"Http\talias"
+			],
+			[
+				"cons",
+				"constructor\tkeyword"
+			],
+			[
+				"templ",
+				"templateUrl\tproperty"
+			],
+			[
+				"target",
+				"targetElement"
+			],
+			[
+				"value",
+				"valueCell〔variable〕"
+			],
+			[
+				"anima",
+				"animation"
+			],
+			[
+				"coun",
+				"countNrColumn〔variable〕"
+			],
+			[
+				"count",
+				"countNrLine"
+			],
+			[
+				"fil",
+				"filter〔function〕"
+			],
+			[
+				"colu",
+				"columnNr〔variable〕"
+			],
+			[
+				"quad",
+				"quadLine〔variable〕"
+			],
+			[
+				"li",
+				"lineNr"
+			],
+			[
+				"to",
+				"toggleClass〔function〕"
+			],
+			[
+				"timer",
+				"timerGame"
+			],
+			[
+				"clear",
+				"clearInterval〔function〕"
+			],
+			[
+				"start",
+				"startTimer"
+			],
+			[
+				"tim",
+				"timerInterval"
+			],
+			[
+				"ini",
+				"initial"
+			],
+			[
+				"has",
+				"hasClass〔function〕"
+			],
+			[
+				"inp",
+				"inputObj〔variable〕"
+			],
+			[
+				"va",
+				"valueInput"
+			],
+			[
+				"p",
+				"push〔function〕"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"cli",
+				"clone〔function〕"
+			],
+			[
+				"t",
+				"text"
+			],
+			[
+				"med",
+				"mediaPanel"
+			],
+			[
+				"panel",
+				"panelBody"
+			],
+			[
+				"sea",
+				"searchText"
+			],
+			[
+				"se",
+				"searchText"
+			],
+			[
+				"resu",
+				"resultPanel"
+			],
+			[
+				"search",
+				"searchButton"
+			],
+			[
+				"r",
+				"resultPanel"
+			],
+			[
+				"slide",
+				"slide_img\t(slideshow.js)"
+			],
+			[
+				"valida",
+				"validateGrade"
+			],
+			[
+				"add",
+				"addEventListener"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"vali",
+				"validateName"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"text",
+				"textContent"
+			],
+			[
+				"console",
+				"console.log()"
+			],
+			[
+				"funti",
+				"function without name"
+			],
+			[
+				"fucntion",
+				"function without name"
+			],
+			[
+				"mouse",
+				"mouseenter"
+			],
+			[
+				"cl",
+				"clicking\t(js-showhide.html)"
+			],
+			[
+				"file",
+				"fileInfo"
+			],
+			[
+				"emauel",
+				"emanuellopes"
+			],
+			[
+				"php",
+				"phpinfo"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"pr",
+				"preventDefault"
+			],
+			[
+				"fiche",
+				"ficheiro2"
+			],
+			[
+				"hea",
+				"headers"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "batalhanaval.sublime-project",
+			"settings":
+			{
+				"buffer_size": 193,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/SASS Build/SASS - Compressed.sublime-build",
+					""
+				],
+				[
+					"Packages/SASS Build/SASS.sublime-build",
+					""
+				],
+				[
+					"Packages/Compass/Compass.sublime-build",
+					""
+				],
+				[
+					"Packages/User/scss.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/SASS Build/SASS - Compressed.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "packa",
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"syn c",
+				"Set Syntax: C"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			],
+			[
+				"syntx ty",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"vmen",
+				"View: Toggle Menu"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"packages",
+				"Package Control: List Packages"
+			],
+			[
+				"stc",
+				"Set Syntax: C"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"ls",
+			"print 'assa'",
+			"print ola",
+			"print \"ola\";",
+			"print \"ola\"",
+			"ls",
+			"pwd",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/batalha naval",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/batalha naval/angular"
+	],
+	"file_history":
+	[
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/batalha naval/teste.js",
+		"/home/emanuelx/Algoritmo-Colocacao/tabuleiro.ts",
+		"/home/emanuelx/Sites/index.php",
+		"/etc/httpd/conf/httpd.conf",
+		"/home/emanuelx/aui/sharedfuncs",
+		"/home/emanuelx/aui/lilo",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/05_mongo/mongo2.players.js",
+		"/sys/class/scsi_host/host0/link_power_management_policy",
+		"/etc/environment",
+		"/etc/sysctl.conf",
+		"/etc/hosts",
+		"/home/emanuelx/Transferências/Yout-1.0.0-pt-br-linux-x64/resources/app/main.js",
+		"/etc/default/grub",
+		"/home/emanuelx/teste.txt",
+		"/home/emanuelx/manjaro-cinnamon-16.10.2-stable-x86_64.iso.md5",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/oi.txt",
+		"/home/emanuelx/ola.txt",
+		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/User/Terminal.sublime-settings",
+		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/Terminality/README.md",
+		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/JSHint Gutter/JSHint.sublime-settings",
+		"/home/emanuelx/admin-panel-finder-master/link.txt",
+		"/home/emanuelx/admin-panel-finder-master/admin_panel_finder.py",
+		"/home/emanuelx/docker-tutorial/Dockerfile",
+		"/usr/share/sqlmap/tamper/cmt_test.py",
+		"/etc/X11/xorg.conf.d/20-intel.conf",
+		"/home/emanuelx/teste_cm.txt",
+		"/home/emanuelx/Dropbox/SAD_SHARED/respostasAsQuestoesBD.sql",
+		"/home/emanuelx/Transferências/snx_install.sh",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.websockets.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/chat.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/notifications/notification.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/auth.service.ts",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/notifications/websocket.service.ts",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.players.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/notifications/websocket.service.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.security.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.authentication.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.games.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-skeleton/websocket-app/package.json",
+		"/home/emanuelx/.drirc",
+		"/home/emanuelx/.sqlmap/output/www.cm-tabuaco.pt/log",
+		"/home/emanuelx/cmt_test.py",
+		"/home/emanuelx/.sqlmap/output/www.cm-tabuaco.pt/target.txt",
+		"/home/emanuelx/.glassfish-4.1.1/glassfish/domains/domain1/config/domain.xml",
+		"/home/emanuelx/Transferências/domain.xml",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_package_pck_extract.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/querys_pagina6.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/respostasAsQuestoesBD.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/PARA ENVIAR/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_external_tables.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/PARA ENVIAR/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_data_tables.sql",
+		"/home/emanuelx/dotfiles/etc/modprobe.d/asus_wifi.conf",
+		"/home/emanuelx/dotfiles/etc/modprobe.d/ath9k.conf",
+		"/home/emanuelx/systemd.txt",
+		"/tmp/.fr-teAA3P/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_data_tables.sql",
+		"/tmp/.fr-5sffL6/respostasAsQuestoesBD.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CREATE_package_pck_extract.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_data_tables.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/Projeto1_emanuel.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_external_tables.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CREATE_data_tables.sql",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/SAD/Projeto/Fontes de Dados-20161021/Dicionario_Dados_BDMAT.txt",
+		"/tmp/.fr-fyGa45/Ativador Office 2013 [Wesley Ferreira]/Informações Extras.vbs",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/Fontes de Dados-20161021/Dicionario_Dados_BDMAT.txt",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extras/log/CREATE_tables.sql",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3/mongo2.players.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex2/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex2/mongo2.players.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongoDB_ex1/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB_teste/mongo1.js",
+		"/usr/share/applications/sublime_text.desktop",
+		"/usr/share/applications/robomongo.desktop",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB_teste/index.js",
+		"/etc/mongodb.conf",
+		"/usr/share/applications/sqldeveloper.desktop",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB/package.json",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB_teste/package.json",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/PCK_EXTRACT.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CREATE_external_tables.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CREATE_package_pck_extract_ooooo.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/sad_dw_cnaes_full_removal.sql",
+		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/purchase.js",
+		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/uglify-purchase.js",
+		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/vysor-main.js",
+		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/uglifyjs.js",
+		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/modal.js",
+		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/common/buy.js",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/querys.txt",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CLEAN_ALL_tables.sql",
+		"/home/emanuelx/Dropbox/DAD_SHARED/PERGUNTAS_ANEXO1_MASTER.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/LOGIN.TXT",
+		"/home/emanuelx/Dropbox/TAES_SHARED/URLS",
+		"/home/emanuelx/Documentos/PhpStorm/Install-Linux-tar.txt",
+		"/home/emanuelx/.i3/config",
+		"/home/emanuelx/dotfiles/home/emanuelx/.dmrc",
+		"/home/emanuelx/dotfiles/home/emanuelx/.Xresources",
+		"/home/emanuelx/MPAndroidChart/MPChartLib/pom.xml",
+		"/home/emanuelx/MPAndroidChart/MPChartLib/build.gradle",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/CREATE_external_tables.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/DROP_tables.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/CLEAN_ALL_tables.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/EXEC.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/CREATE_data_tables.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/log/CREATE_tables.sql",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/SAD/Ficha 2 - Processo de ETL-20160930/Materiais/etl^2_para_aulas_2.7/sad_install_dw_vendas.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/log/EXEC.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/sad_install_dw_cnaes.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extras/log/EXEC.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extras/error_codes/CREATE_package_pck_error_codes.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/log/CREATE_package_pck_log.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/sad_dw_vendas_full_removal.sql",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node3/index.js",
+		"/home/emanuelx/teste.html",
+		"/home/emanuelx/Transferências/querys.txt",
+		"/home/emanuelx/Dropbox/DAD_SHARED/2016-17-EI-DAD-PRJ1/game/js/main.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node3/angular-2/app/leaderboard/leaderboard.module.ts",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node3/angular-2/app/leaderboard/leaderboard.component.ts",
+		"/home/emanuelx/teste.xml",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/SAD/Ficha 2 - Processo de ETL-20160930/Materiais/etl^2_para_aulas_2.7/scripts_transform/INSERT_data.sql",
+		"/opt/sqldeveloper/sqldeveloper.sh",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node3/angular-2/app/leaderboard/leaderboard.service.ts",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node2/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node/index.js"
+	],
+	"find":
+	{
+		"height": 57.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			"/home/emanuelx/thinkspace",
+			"/home/emanuelx/blog",
+			"/home/emanuelx/Documents/snapchat/AdvancedApkTool/4-Done/casper",
+			"/home/emanuelx/Documents/snapchat/AdvancedApkTool/4-Done/snapchat"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"5",
+			"ERROR",
+			"arch linux",
+			"you must",
+			"cms",
+			",",
+			"regime",
+			"grau",
+			"coloca",
+			".nror",
+			"prefer",
+			"preferv",
+			"vaga_f1",
+			"preg",
+			"numcand",
+			"alunos",
+			"estados_das",
+			"tipos_estados",
+			"escola",
+			"9119",
+			"table_extract_non_incremental",
+			"@",
+			"t_data_cnaes_fase",
+			"V",
+			"VARCHAR2",
+			"V",
+			"table_extract",
+			")",
+			"R",
+			")",
+			")\n",
+			",\n",
+			"INTEGER",
+			"),\n",
+			"cmdline_parser",
+			"PATh",
+			"::",
+			":",
+			"fudohfdo",
+			"::",
+			"hfudohfdo",
+			"DHT",
+			":: ",
+			"Solar",
+			"linux",
+			":: ",
+			"16325e8e-a4dd-4df1-8fa8-7ca9bd8c4d27",
+			"resume",
+			";",
+			"this",
+			"\"",
+			"l",
+			"L",
+			"l",
+			"value",
+			"this",
+			"each",
+			"this",
+			"\n\"",
+			"tab",
+			"arrow",
+			"\"",
+			">",
+			">>",
+			">> ",
+			" >>",
+			"ECHO",
+			"=';\n",
+			".lead",
+			"lead",
+			"lastIndex",
+			"nanorc",
+			"java",
+			"time",
+			"intro.html",
+			"intro",
+			"user",
+			"uninstall",
+			"post-link",
+			"Postvghs",
+			"posts",
+			"#menu-toggle",
+			"http",
+			"indent",
+			"su",
+			"/bin/",
+			"/bin",
+			"ali",
+			"version",
+			"/system/bin/su",
+			"/sbin/su",
+			"test-keys",
+			"/system/app/Superuser.apk",
+			"Super",
+			"root",
+			"SuperUser",
+			"apk"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"table_extract",
+			"T_DATA_CNAES_FASE",
+			"line",
+			"searchText",
+			"nanorc\\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "batalhanaval.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 193,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								193,
+								193
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 56.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 98.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 110.0
+	},
+	"pinned_build_system": "",
+	"project": "batalhanaval.sublime-project",
+	"replace":
+	{
+		"height": 98.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"game/css/main.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"AboutCommand"
+			]
+		],
+		"width": 872.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 284.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
