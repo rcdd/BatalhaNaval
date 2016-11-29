@@ -1,0 +1,29 @@
+{
+  "name": "batalha_naval",
+  "version": "1.0.0",
+  "description": "Projeto realizado no ambito da UC de DAD, elaborado por Emanuel Lopes, Ruben Domingues e Ruben Pereira. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcdd/BatalhaNaval.git"
+  },
+  "keywords": [
+    "batalha",
+    "naval",
+    "jogo",
+    "projeto",
+    "dad",
+    "estg",
+    "ipl",
+    "ei"
+  ],
+  "author": "Emanuel Lopes, Ruben Domingues e Ruben Pereira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rcdd/BatalhaNaval/issues"
+  },
+  "homepage": "https://github.com/rcdd/BatalhaNaval#readme"
+}
