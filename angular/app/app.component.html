@@ -1,6 +1,12 @@
 <div class="container">
-<h1>DAD - PROJECT 1</h1>
-<h2>REST SUDOKU</h2>
-<dad-board></dad-board>
-<dad-controls></dad-controls>
-<dad-authors></dad-authors>
+<h1>DAD - Websockets</h1>
+<div>
+    <label>Username</label>
+    <input type="text" [(ngModel)]="username">
+    <label>Password</label>
+    <input type="text" [(ngModel)]="password">
+    <button (click)="loginClick()">Login</button>
+</div>
+<chat-control></chat-control>
+<hr>
+<notification-panel></notification-panel>
