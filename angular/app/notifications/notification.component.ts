@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
-import {WebSocketService } from './websocket.service';
+import { WebSocketService } from './websocket.service';
 
 @Component({
     moduleId: module.id,
     selector: 'notification-panel',
     templateUrl: 'notification.component.html'
 })
+
 export class NotificationComponent implements OnInit {
     playersChannel: string[] = [];
     chatChannel: string[] = [];
 
-    constructor(private websocketService: WebSocketService){
+    constructor(private websocketService: WebSocketService) {
     }
 
     ngOnInit() {
@@ -20,16 +21,16 @@ export class NotificationComponent implements OnInit {
         this.websocketService.getPlayersMessages().subscribe(
             m => {
                 console.log(m);
-                this.playersChannel.push(m)
-            })
+                this.playersChannel.push(m);
+            });
         this.websocketService.getChatMessages().subscribe(
             m => {
                 console.log(m);
 
-                let show = '['+m.user.name+'] '+m.message
+                let show = ';)[' + m.user.name + '] ' + m.message;
 
-                this.chatChannel.push(show)
-            })
+                this.chatChannel.push(show);
+            });
     }
 
 }

@@ -5,8 +5,9 @@ import { HttpModule } from '@angular/http';
 import { NotificationComponent }  from './notification.component';
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule ],
+  imports:      [ BrowserModule,  HttpModule ],
   declarations: [ NotificationComponent ],
-  exports:      [ NotificationComponent]
+  exports:      [ NotificationComponent ]
 })
+
 export class NotificationModule { }

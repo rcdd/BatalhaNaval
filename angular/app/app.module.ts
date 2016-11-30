@@ -7,7 +7,7 @@ import { NotificationModule } from './notifications/notifications.module';
 import {ChatComponent} from './chat.component';
 import { WebSocketService } from './notifications/websocket.service';
 
-import { AuthService } from './auth.service'; 
+import { AuthService } from './auth.service';
 
 @NgModule({
   imports:      [ BrowserModule, NotificationModule, FormsModule ],

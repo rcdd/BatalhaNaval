@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+// import { Http, Response } from '@angular/http';
 
 import {Observable} from 'rxjs/Observable';
 
@@ -19,8 +19,8 @@ export class WebSocketService {
     }
 
     getPlayersMessages(): Observable<any> {
-        return new Observable((observer:any) => {
-            this.socket.on('players', (data:any) => {
+        return new Observable((observer: any) => {
+            this.socket.on('players', (data: any) => {
                 observer.next(data);
             });
             return () => this.socket.disconnect();
@@ -29,8 +29,8 @@ export class WebSocketService {
 
     getChatMessages(): Observable<any> {
         // TODO: study the getPlayersMessages to implement this method
-        return new Observable((observer:any) => {
-            this.socket.on('chat', (data:any) => {
+        return new Observable((observer: any) => {
+            this.socket.on('chat', (data: any) => {
                 observer.next(data);
             });
             return () => this.socket.disconnect();

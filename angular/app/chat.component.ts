@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {WebSocketService } from './notifications/websocket.service';
 
-import { AuthService} from './auth.service'
+import { AuthService } from './auth.service';
 
 @Component({
     moduleId: module.id,
@@ -19,7 +19,7 @@ export class ChatComponent {
         let json = {
             user: this.authService.user,
             message: this.message
-        }
+        };
 
         this.websocketService.sendChatMessage(json);
         this.message = '';

@@ -20,7 +20,7 @@ var AuthService = (function () {
             username: username,
             password: password
         };
-        return this.http.post('http://localhost:8080/api/v1/login', data)
+        return this.http.post("http://" + window.location.hostname + ":8080/api/v1/login", data)
             .map(function (results) { return results; });
     };
     AuthService = __decorate([

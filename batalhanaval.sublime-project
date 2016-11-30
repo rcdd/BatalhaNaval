@@ -2,9 +2,27 @@
 	"folders":
 	[
 		{
-			"path": ".",
-			"folder_exclude_patterns": ["node_modules", "e2e", ".hg", "CVS"],
-			"file_exclude_patterns": ["angular/*.js", "LICENSE", "*.md", "Dockerfile"]
+			"file_exclude_patterns":
+			[
+				"angular/*.js",
+				"LICENSE",
+				"*.md",
+				"Dockerfile"
+			],
+			"folder_exclude_patterns":
+			[
+				"node_modules",
+				"e2e",
+				".hg",
+				"CVS"
+			],
+			"path": "."
+		},
+		{
+			"path": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app"
+		},
+		{
+			"path": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/mongo/mongoDB_ex1"
 		}
 	]
 }

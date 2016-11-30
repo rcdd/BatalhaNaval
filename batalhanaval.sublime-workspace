@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"sc",
+				"scssDir"
+			],
+			[
+				"ts",
+				"tsDir"
+			],
+			[
 				"ret",
 				"return\tkeyword"
 			],
@@ -300,10 +308,39 @@
 	"buffers":
 	[
 		{
-			"file": "batalhanaval.sublime-project",
+			"file": "angular/app/notifications/notifications.module.ts",
 			"settings":
 			{
-				"buffer_size": 193,
+				"buffer_size": 403,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "angular/app/notifications/notification.component.ts",
+			"settings":
+			{
+				"buffer_size": 1009,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import { Component } from '@angular/core';\n\n@Component({\n    moduleId: module.id,\n    selector: 'my-app',\n    templateUrl: 'app.component.html'\n})\nexport class AppComponent {\n    username: string;\n    password: string;\n}\n",
+			"file": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.ts",
+			"file_size": 219,
+			"file_write_time": 131244814703451370,
+			"settings":
+			{
+				"buffer_size": 221,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 2003,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -341,15 +378,11 @@
 	"command_palette":
 	{
 		"height": 354.0,
-		"last_filter": "packa",
+		"last_filter": "insta",
 		"selected_items":
 		[
 			[
-				"packa",
-				"Package Control: Upgrade/Overwrite All Packages"
-			],
-			[
-				"install",
+				"insta",
 				"Package Control: Install Package"
 			],
 			[
@@ -357,7 +390,11 @@
 				"Package Control: Remove Package"
 			],
 			[
-				"insta",
+				"packa",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"install",
 				"Package Control: Install Package"
 			],
 			[
@@ -417,7 +454,7 @@
 				"Set Syntax: C"
 			]
 		],
-		"width": 575.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -445,11 +482,42 @@
 	},
 	"expanded_folders":
 	[
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/batalha naval",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/batalha naval/angular"
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app"
 	],
 	"file_history":
 	[
+		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.module.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/chat.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/websocket.service.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/auth.service.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/auth.service.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/notification.component.ts",
+		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/Trimmer/Default (Linux).sublime-keymap",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/metodologia usada",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/package.json",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/scss/styles.scss",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/Gruntfile.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3/mongo2.database.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3/mongo2.players.js",
+		"/home/emanuelx/teste.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3/mongo2.games.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/auth.service.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/batalhanaval.sublime-project",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/node3/angular-2/app/leaderboard/leaderboard-player.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.websockets.js",
+		"/home/emanuelx/Dropbox/Aplicativos/Heroku/README.txt",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/node3/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/node2/angular/index.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/node2/index.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/batalha naval/teste.js",
 		"/home/emanuelx/Algoritmo-Colocacao/tabuleiro.ts",
 		"/home/emanuelx/Sites/index.php",
@@ -547,37 +615,7 @@
 		"/home/emanuelx/Dropbox/DAD_SHARED/PERGUNTAS_ANEXO1_MASTER.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/LOGIN.TXT",
 		"/home/emanuelx/Dropbox/TAES_SHARED/URLS",
-		"/home/emanuelx/Documentos/PhpStorm/Install-Linux-tar.txt",
-		"/home/emanuelx/.i3/config",
-		"/home/emanuelx/dotfiles/home/emanuelx/.dmrc",
-		"/home/emanuelx/dotfiles/home/emanuelx/.Xresources",
-		"/home/emanuelx/MPAndroidChart/MPChartLib/pom.xml",
-		"/home/emanuelx/MPAndroidChart/MPChartLib/build.gradle",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/CREATE_external_tables.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/DROP_tables.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/CLEAN_ALL_tables.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/EXEC.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/scripts_extract/CREATE_data_tables.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/log/CREATE_tables.sql",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/SAD/Ficha 2 - Processo de ETL-20160930/Materiais/etl^2_para_aulas_2.7/sad_install_dw_vendas.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/log/EXEC.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/sad_install_dw_cnaes.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extras/log/EXEC.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extras/error_codes/CREATE_package_pck_error_codes.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/log/CREATE_package_pck_log.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/sad_dw_vendas_full_removal.sql",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node3/index.js",
-		"/home/emanuelx/teste.html",
-		"/home/emanuelx/Transferências/querys.txt",
-		"/home/emanuelx/Dropbox/DAD_SHARED/2016-17-EI-DAD-PRJ1/game/js/main.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node3/angular-2/app/leaderboard/leaderboard.module.ts",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node3/angular-2/app/leaderboard/leaderboard.component.ts",
-		"/home/emanuelx/teste.xml",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/SAD/Ficha 2 - Processo de ETL-20160930/Materiais/etl^2_para_aulas_2.7/scripts_transform/INSERT_data.sql",
-		"/opt/sqldeveloper/sqldeveloper.sh",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node3/angular-2/app/leaderboard/leaderboard.service.ts",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node2/index.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/node/index.js"
+		"/home/emanuelx/Documentos/PhpStorm/Install-Linux-tar.txt"
 	],
 	"find":
 	{
@@ -588,6 +626,7 @@
 		"height": 96.0,
 		"where_history":
 		[
+			"<project>",
 			"/home/emanuelx/thinkspace",
 			"/home/emanuelx/blog",
 			"/home/emanuelx/Documents/snapchat/AdvancedApkTool/4-Done/casper",
@@ -599,6 +638,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"torized",
 			"5",
 			"ERROR",
 			"arch linux",
@@ -718,34 +758,129 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "batalhanaval.sublime-project",
+					"file": "angular/app/notifications/notifications.module.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 193,
+						"buffer_size": 403,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								193,
-								193
+								403,
+								403
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "angular/app/notifications/notification.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1009,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								232,
+								232
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 221,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								218,
+								218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "gulpfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1893,
+								1893
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1200.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

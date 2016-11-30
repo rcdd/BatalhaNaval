@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service'; 
+import { AuthService } from './auth.service';
 
 @Component({
     moduleId: module.id,
@@ -8,16 +8,14 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
 
-    username:string
-    password:string
+    username: string;
+    password: string;
 
-    constructor(private authService: AuthService){}
+    constructor(private authService: AuthService) {}
 
-    loginClick(){
+    loginClick() {
         this.authService.login(this.username, this.password)
         .subscribe(results => console.log(results));
 
     }
-
-
- }
+}
