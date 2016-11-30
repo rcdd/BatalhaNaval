@@ -55,7 +55,7 @@ scssDir = "angular/app/scss/**/*.scss";
     .pipe(tsProject());
     return tsResult.js
     .pipe(sourcemaps.write(".", {sourceRoot: '/angular/app'}))
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("angular/app"));
 });
 
 /**
