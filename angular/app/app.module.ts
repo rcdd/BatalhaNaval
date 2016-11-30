@@ -6,11 +6,11 @@ import { AppComponent }  from './app.component';
 import { NotificationModule } from './notifications/notifications.module';
 import {ChatComponent} from './chat.component';
 import { WebSocketService } from './notifications/websocket.service';
-
+import { BoardPanelModule } from './board/board.module';
 import { AuthService } from './auth.service'; 
 
 @NgModule({
-  imports:      [ BrowserModule, NotificationModule, FormsModule ],
+  imports:      [ BrowserModule, NotificationModule, FormsModule, BoardPanelModule ],
   declarations: [ AppComponent, ChatComponent ],
   providers:    [ WebSocketService, AuthService ],
   bootstrap:    [ AppComponent ]

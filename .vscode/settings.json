@@ -4,6 +4,7 @@
         "**/.git": true,
         "**/.DS_Store": true,
         "**/angular/*.js": true,
+        "**/angular/*.map": true,
         "**/*.js.map": true
     }
 }
