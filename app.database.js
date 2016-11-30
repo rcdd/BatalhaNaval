@@ -1,5 +1,4 @@
 const MongoClient = require('mongodb').MongoClient;
-
 const db = module.exports = {};
 
 db.connect = function(url, callback) {

@@ -15,13 +15,14 @@ var app_component_1 = require('./app.component');
 var notifications_module_1 = require('./notifications/notifications.module');
 var chat_component_1 = require('./chat.component');
 var websocket_service_1 = require('./notifications/websocket.service');
+var board_module_1 = require('./board/board.module');
 var auth_service_1 = require('./auth.service');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, notifications_module_1.NotificationModule, forms_1.FormsModule],
+            imports: [platform_browser_1.BrowserModule, notifications_module_1.NotificationModule, forms_1.FormsModule, board_module_1.BoardPanelModule],
             declarations: [app_component_1.AppComponent, chat_component_1.ChatComponent],
             providers: [websocket_service_1.WebSocketService, auth_service_1.AuthService],
             bootstrap: [app_component_1.AppComponent]
