@@ -1,15 +1,18 @@
-<div>
-    <label>Teste</label>
-    <div class="row" *ngFor="let line of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
-        <span>teste linha</span>
-         <div *ngFor="let column of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
-            <div class="col-md-1">
-                <!-- <span>teste linha</span> -->
-                 <input type="text" [(ngModel)]="cells[line-1][column-1].value">
-                <!--<span>{{cells[line][column]}}</span> -->
-                <!-- <input type="text" [(ngModel)]="cells[line-1][column-1]"> -->
-            </div>
-        </div> 
+<div id="board">
+    <div class="row board-row">
+        <div class="col-xs-1 board-cell info-board">
+            <i class="fa fa-ship" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-1 board-cell info-board" *ngFor="let columns of todasColunas()">
+            {{columns}}
+        </div>
     </div>
-    {{cells[0][0].value}}
+    <div class="row board-row" *ngFor="let line of todasLinhas(); let i = index">
+        <div class="col-xs-1 board-cell info-board">
+            {{line}}
+        </div>
+        <div class="col-xs-1 board-cell" *ngFor="let column of todasColunas(); let j=index">
+            {{cells[i][j].value}}
+        </div>
+    </div>
 </div>
