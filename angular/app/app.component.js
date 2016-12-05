@@ -9,23 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var http_1 = require('@angular/http');
-var forms_1 = require('@angular/forms');
-var board_component_1 = require('./board.component');
-var BoardPanelModule = (function () {
-    function BoardPanelModule() {
+var auth_service_1 = require('./auth.service');
+var AppComponent = (function () {
+    function AppComponent(authService) {
+        this.authService = authService;
     }
-    BoardPanelModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-            declarations: [board_component_1.BoardPanel],
-            exports: [board_component_1.BoardPanel]
+    AppComponent.prototype.loginClick = function () {
+        this.authService.login(this.username, this.password)
+            .subscribe(function (results) { return console.log(results); });
+    };
+    AppComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'my-app',
+            templateUrl: 'app.component.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], BoardPanelModule);
-    return BoardPanelModule;
+        __metadata('design:paramtypes', [auth_service_1.AuthService])
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.BoardPanelModule = BoardPanelModule;
+exports.AppComponent = AppComponent;
 
-//# sourceMappingURL=board.module.js.map
+//# sourceMappingURL=app.component.js.map

@@ -12,10 +12,10 @@ describe('AppComponent', function () {
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach(async(() => {
-   TestBed.configureTestingModule({
-      declarations: [ AppComponent ]
-    })
-    .compileComponents();
+      TestBed.configureTestingModule({
+          declarations: [AppComponent]
+      })
+          .compileComponents();
   }));
 
   beforeEach(() => {

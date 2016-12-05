@@ -9,23 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
-var forms_1 = require('@angular/forms');
-var board_component_1 = require('./board.component');
-var BoardPanelModule = (function () {
-    function BoardPanelModule() {
+require('rxjs/add/operator/map');
+var AuthService = (function () {
+    function AuthService(http) {
+        this.http = http;
     }
-    BoardPanelModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-            declarations: [board_component_1.BoardPanel],
-            exports: [board_component_1.BoardPanel]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], BoardPanelModule);
-    return BoardPanelModule;
+    AuthService.prototype.login = function (username, password) {
+        var _this = this;
+        var data = {
+            username: username,
+            password: password
+        };
+        return this.http.post("http://" + window.location.hostname + ":8080/api/v1/login", data)
+            .map(function (results) {
+            _this.user = results.json();
+            return results.json();
+        });
+    };
+    AuthService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], AuthService);
+    return AuthService;
 }());
-exports.BoardPanelModule = BoardPanelModule;
+exports.AuthService = AuthService;
 
-//# sourceMappingURL=board.module.js.map
+//# sourceMappingURL=auth.service.js.map

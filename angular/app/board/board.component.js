@@ -9,10 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var cell_1 = require('./cell');
 var BoardPanel = (function () {
     function BoardPanel() {
+        // cells = [];
+        for (var i = 0; i < 10; i++) {
+            cells[i] = [];
+            for (var j = 0; j < 10; j++) {
+                cells[i][j] = new cell_1.Cell();
+            }
+        }
     }
-    BoardPanel.prototype.ngOnInit = function () {
+    // ------------------------------------------------------------------------------------------------
+    // Métodos estátios auxiliares
+    // ------------------------------------------------------------------------------------------------
+    BoardPanel.prototype.todasLinhas = function () {
+        return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+    };
+    BoardPanel.prototype.todasColunas = function () {
+        return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     };
     BoardPanel = __decorate([
         core_1.Component({
@@ -25,4 +40,5 @@ var BoardPanel = (function () {
     return BoardPanel;
 }());
 exports.BoardPanel = BoardPanel;
+
 //# sourceMappingURL=board.component.js.map

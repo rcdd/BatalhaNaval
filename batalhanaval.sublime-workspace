@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"On",
+				"OnInit\talias"
+			],
+			[
+				"imp",
+				"implements\tkeyword"
+			],
+			[
 				"sc",
 				"scssDir"
 			],
@@ -308,39 +316,36 @@
 	"buffers":
 	[
 		{
-			"file": "angular/app/notifications/notifications.module.ts",
+			"file": "angular/app/board/board.module.ts",
 			"settings":
 			{
-				"buffer_size": 403,
+				"buffer_size": 418,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "angular/app/notifications/notification.component.ts",
+			"file": "angular/app/board/board.component.ts",
 			"settings":
 			{
-				"buffer_size": 1009,
+				"buffer_size": 924,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "import { Component } from '@angular/core';\n\n@Component({\n    moduleId: module.id,\n    selector: 'my-app',\n    templateUrl: 'app.component.html'\n})\nexport class AppComponent {\n    username: string;\n    password: string;\n}\n",
-			"file": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.ts",
-			"file_size": 219,
-			"file_write_time": 131244814703451370,
+			"file": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/angular-quickstart/app/hero.ts",
 			"settings":
 			{
-				"buffer_size": 221,
+				"buffer_size": 55,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "gulpfile.js",
+			"file": "angular/app/board/board.component.html",
 			"settings":
 			{
-				"buffer_size": 2003,
+				"buffer_size": 350,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -378,7 +383,7 @@
 	"command_palette":
 	{
 		"height": 354.0,
-		"last_filter": "insta",
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -482,22 +487,56 @@
 	},
 	"expanded_folders":
 	[
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app"
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app",
+		"/home/emanuelx/resolucao.v3 (2 servidores)/angular",
+		"/home/emanuelx/resolucao.v3 (2 servidores)/angular/app",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/quickstart/app",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/angular-quickstart",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/angular-quickstart/app"
 	],
 	"file_history":
 	[
-		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/cell.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/cell.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/cell.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.module.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/angular-quickstart/app/heroes.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/index.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.module.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/main.ts",
+		"/home/emanuelx/ng-bootstrap/gulpfile.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/systemjs.config.js",
+		"/etc/modprobe.d/asus_wifi.conf",
+		"/etc/modules-load.d/modules.conf",
+		"/home/emanuelx/dotfiles/etc/modprobe.d/asus_wifi.conf",
+		"/etc/modprobe.d/asus_nb_wmi.conf",
+		"/home/emanuelx/pck_extrack.txt",
+		"/home/emanuelx/pck_transformation.txt",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.spec.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/notifications.module.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.ts",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/LOGIN.TXT",
+		"/home/emanuelx/resolucao.v3 (2 servidores)/angular/systemjs.config.extras.js",
+		"/home/emanuelx/resolucao.v3 (2 servidores)/angular/systemjs.config.js",
+		"/run/media/emanuelx/Chicken Invaders/READ FIRST.txt",
+		"/home/emanuelx/ChickenInvadersROTYEasterdemoInstaller363/launcher/launcher",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/notification.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/.gitignore",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/auth.service.js.map",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/gulpfile.js",
+		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/chat.component.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/websocket.service.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/auth.service.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/auth.service.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/notification.component.ts",
 		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/Trimmer/Default (Linux).sublime-keymap",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/index.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/metodologia usada",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/package.json",
@@ -572,7 +611,6 @@
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/respostasAsQuestoesBD.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/PARA ENVIAR/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_external_tables.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/PARA ENVIAR/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_data_tables.sql",
-		"/home/emanuelx/dotfiles/etc/modprobe.d/asus_wifi.conf",
 		"/home/emanuelx/dotfiles/etc/modprobe.d/ath9k.conf",
 		"/home/emanuelx/systemd.txt",
 		"/tmp/.fr-teAA3P/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_data_tables.sql",
@@ -588,34 +626,7 @@
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extras/log/CREATE_tables.sql",
 		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3/index.js",
 		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3/mongo2.players.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex2/index.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex2/mongo2.players.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongoDB_ex1/index.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB_teste/mongo1.js",
-		"/usr/share/applications/sublime_text.desktop",
-		"/usr/share/applications/robomongo.desktop",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB_teste/index.js",
-		"/etc/mongodb.conf",
-		"/usr/share/applications/sqldeveloper.desktop",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB/index.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB/package.json",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongoDB_teste/package.json",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/PCK_EXTRACT.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CREATE_external_tables.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CREATE_package_pck_extract_ooooo.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/sad_dw_cnaes_full_removal.sql",
-		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/purchase.js",
-		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/uglify-purchase.js",
-		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/vysor-main.js",
-		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/uglifyjs.js",
-		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/modal.js",
-		"/home/emanuelx/.config/google-chrome/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.6.5_0/common/buy.js",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/querys.txt",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CLEAN_ALL_tables.sql",
-		"/home/emanuelx/Dropbox/DAD_SHARED/PERGUNTAS_ANEXO1_MASTER.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/LOGIN.TXT",
-		"/home/emanuelx/Dropbox/TAES_SHARED/URLS",
-		"/home/emanuelx/Documentos/PhpStorm/Install-Linux-tar.txt"
+		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex2/index.js"
 	],
 	"find":
 	{
@@ -626,6 +637,7 @@
 		"height": 96.0,
 		"where_history":
 		[
+			"/home/emanuelx",
 			"<project>",
 			"/home/emanuelx/thinkspace",
 			"/home/emanuelx/blog",
@@ -638,6 +650,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"vendor.js",
 			"torized",
 			"5",
 			"ERROR",
@@ -758,24 +771,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "angular/app/notifications/notifications.module.ts",
+					"file": "angular/app/board/board.module.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 403,
+						"buffer_size": 418,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								403,
-								403
+								292,
+								292
 							]
 						],
 						"settings":
@@ -793,55 +806,53 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "angular/app/notifications/notification.component.ts",
+					"file": "angular/app/board/board.component.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1009,
+						"buffer_size": 924,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								232,
-								232
+								414,
+								414
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
 							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.ts",
-					"semi_transient": false,
+					"file": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/angular-quickstart/app/hero.ts",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 221,
+						"buffer_size": 55,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								218,
-								218
+								0,
+								0
 							]
 						],
 						"settings":
@@ -858,32 +869,37 @@
 				},
 				{
 					"buffer": 3,
-					"file": "gulpfile.js",
+					"file": "angular/app/board/board.component.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2003,
+						"buffer_size": 350,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1893,
-								1893
+								278,
+								278
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 1200.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
