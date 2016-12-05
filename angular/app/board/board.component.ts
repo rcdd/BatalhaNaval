@@ -8,20 +8,18 @@ import { Cell } from './cell';
 })
 
 export class BoardPanel {
-    public cells: Cell[][];
+    private cells: Cell[][];
 
-    for(let i:number = 0; i< 10; i++) {
-        this.cells[i] = [];
-        for (let j: number = 0; j < 10; j++) {
-            this.cells[i][j] = new Cell();
+    constructor() {
+        this.cells = [];
+
+        for (let i = 0; i < 10; i++) {
+            this.cells[i] = [];
+            for (let j = 0; j < 10; j++) {
+                this.cells[i][j] = new Cell(String(i + j));
+            }
         }
     }
-
-    /*constructor() {
-        // cells = [];
-
-
-    }*/
 
     // ------------------------------------------------------------------------------------------------
     // Métodos estátios auxiliares

@@ -1,5 +1,7 @@
 export class Cell {
-    column: Number;
-    line: Number;
-    value: Number;
+    value: string;
+
+    constructor(value: string) {
+        this.value = value;
+    }
 }

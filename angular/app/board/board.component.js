@@ -12,11 +12,11 @@ var core_1 = require('@angular/core');
 var cell_1 = require('./cell');
 var BoardPanel = (function () {
     function BoardPanel() {
-        // cells = [];
+        this.cells = [];
         for (var i = 0; i < 10; i++) {
-            cells[i] = [];
+            this.cells[i] = [];
             for (var j = 0; j < 10; j++) {
-                cells[i][j] = new cell_1.Cell();
+                this.cells[i][j] = new cell_1.Cell(String(i + j));
             }
         }
     }
