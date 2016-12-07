@@ -1,6 +1,7 @@
-const mongodb = require('mongodb');
-const database = require('./app.database');
 const util = require('util');
+const mongodb = require('mongodb');
+const sha1 = require('sha1');
+const database = require('./app.database');
 
 const players = module.exports = {};
 let settings = {};
@@ -63,6 +64,7 @@ function updatePlayer(request, response, next) {
 
 function createPlayer(request, response, next) {
     const player = request.body;
+    player.passwordHash = sha1(player.passwordHash);
     if (player === undefined) {
         response.send(400, 'No player data');
         return next();
@@ -115,7 +117,7 @@ players.init = function(server, options) {
     server.get(settings.prefix + 'players', settings.security.authorize, getPlayers);
     server.get(settings.prefix + 'players/:id', settings.security.authorize, getPlayer);
     server.put(settings.prefix + 'players/:id', settings.security.authorize, updatePlayer);
-    server.post(settings.prefix + 'players', settings.security.authorize, createPlayer);
+    server.post(settings.prefix + 'players', createPlayer);
     server.del(settings.prefix + 'players/:id', settings.security.authorize, deletePlayer);
     console.log("Players routes registered");
 };

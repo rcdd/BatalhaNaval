@@ -1,13 +1,9 @@
-<div class="container">
-<h1>DAD - Websockets 123</h1>
-<div>
-    <label>Username</label>
-    <input type="text" [(ngModel)]="username">
-    <label>Password</label>
-    <input type="text" [(ngModel)]="password">
-    <button (click)="loginClick()">Login</button>
-</div>
-<chat-control></chat-control>
-<hr>
-<notification-panel></notification-panel>
-<board-panel></board-panel>
+    <div class="container">
+        <div class="row row-centered">
+            <div class="col-md-2 col-md-offset-5">DAD - Battleship</div>
+        </div>
+        <div class="col-sm-offset-2">
+            <alert></alert>
+            <router-outlet></router-outlet>
+        </div>
+    </div>

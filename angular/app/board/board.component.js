@@ -9,36 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var cell_1 = require('./cell');
-var BoardPanel = (function () {
-    function BoardPanel() {
-        this.cells = [];
-        for (var i = 0; i < 10; i++) {
-            this.cells[i] = [];
-            for (var j = 0; j < 10; j++) {
-                this.cells[i][j] = new cell_1.Cell(String(i + j));
-            }
-        }
+var board_1 = require('./board');
+var ship_1 = require('./ship');
+var ship_2 = require('./ship');
+var BoardComponent = (function () {
+    function BoardComponent() {
+        this.board = new board_1.Board();
+        this.board.adicionaNavio(ship_1.ShipType.Cruzador, ship_2.Orientation.Roda90, 'B', 5);
+        this.board.adicionaNavio(ship_1.ShipType.Submarino, ship_2.Orientation.Normal, 'F', 8);
+        this.board.adicionaNavio(ship_1.ShipType.PortaAvioes, ship_2.Orientation.Normal, 'G', 5);
     }
-    // ------------------------------------------------------------------------------------------------
-    // Métodos estátios auxiliares
-    // ------------------------------------------------------------------------------------------------
-    BoardPanel.prototype.todasLinhas = function () {
-        return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-    };
-    BoardPanel.prototype.todasColunas = function () {
-        return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    };
-    BoardPanel = __decorate([
+    BoardComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'board-panel',
+            selector: 'board',
             templateUrl: 'board.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], BoardPanel);
-    return BoardPanel;
+    ], BoardComponent);
+    return BoardComponent;
 }());
-exports.BoardPanel = BoardPanel;
+exports.BoardComponent = BoardComponent;
 
 //# sourceMappingURL=board.component.js.map

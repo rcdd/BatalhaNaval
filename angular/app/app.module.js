@@ -12,20 +12,49 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
+var app_routing_1 = require('./app.routing');
+var http_1 = require('@angular/http');
 var notifications_module_1 = require('./notifications/notifications.module');
-var chat_component_1 = require('./chat.component');
+var index_1 = require('./chat/index');
 var websocket_service_1 = require('./notifications/websocket.service');
 var board_module_1 = require('./board/board.module');
-var auth_service_1 = require('./auth.service');
+var index_2 = require('./_services/index');
+var index_3 = require('./_alert/index');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
+var index_4 = require('./_guard/index');
+var index_5 = require('./login/index');
+var index_6 = require('./register/index');
+var index_7 = require('./home/index');
+var common_1 = require('@angular/common');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [ng_bootstrap_1.NgbModule.forRoot(), platform_browser_1.BrowserModule, notifications_module_1.NotificationModule, forms_1.FormsModule, board_module_1.BoardPanelModule],
-            declarations: [app_component_1.AppComponent, chat_component_1.ChatComponent],
-            providers: [websocket_service_1.WebSocketService, auth_service_1.AuthService],
+            imports: [
+                ng_bootstrap_1.NgbModule.forRoot(),
+                platform_browser_1.BrowserModule,
+                notifications_module_1.NotificationModule,
+                forms_1.FormsModule,
+                board_module_1.BoardComponentModule,
+                http_1.HttpModule,
+                app_routing_1.routing
+            ],
+            declarations: [
+                app_component_1.AppComponent,
+                index_1.ChatComponent,
+                index_5.LoginComponent,
+                index_6.RegisterComponent,
+                index_3.AlertComponent,
+                index_7.HomeComponent
+            ],
+            providers: [
+                websocket_service_1.WebSocketService,
+                index_4.AuthGuard,
+                index_2.AuthService,
+                index_2.AlertService,
+                { provide: common_1.APP_BASE_HREF, useValue: '/' }
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

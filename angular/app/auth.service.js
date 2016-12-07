@@ -24,8 +24,13 @@ var AuthService = (function () {
         return this.http.post("http://" + window.location.hostname + ":8080/api/v1/login", data)
             .map(function (results) {
             _this.user = results.json();
+            localStorage.setItem('currentUser', JSON.stringify(_this.user));
             return results.json();
         });
+    };
+    AuthService.prototype.logout = function () {
+        // remove user from local storage to log user out
+        localStorage.removeItem('currentUser');
     };
     AuthService = __decorate([
         core_1.Injectable(), 

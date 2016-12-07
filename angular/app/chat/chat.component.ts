@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {WebSocketService } from './notifications/websocket.service';
+import {WebSocketService } from '../notifications/websocket.service';
 
-import { AuthService } from './auth.service';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'chat-control',
+    selector: 'chat',
     templateUrl: 'chat.component.html'
 })
 export class ChatComponent {
@@ -13,10 +13,11 @@ export class ChatComponent {
 
     constructor(private websocketService: WebSocketService,
                 private authService: AuthService) {}
+
     send(): void {
         // TODO: sends a chat messsage
-
         let json = {
+            date: new Date(),
             user: this.authService.user,
             message: this.message
         };

@@ -15,6 +15,7 @@ export class AuthService {
             password: password
         };
         return this.http.post(`http://${window.location.hostname}:8080/api/v1/login`, data)
-        .map((results) => { return results; } );
+        .map((results) => {
+            return results; } );
     }
 }

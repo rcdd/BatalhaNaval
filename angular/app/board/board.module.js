@@ -13,19 +13,19 @@ var platform_browser_1 = require('@angular/platform-browser');
 var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
 var board_component_1 = require('./board.component');
-var BoardPanelModule = (function () {
-    function BoardPanelModule() {
+var BoardComponentModule = (function () {
+    function BoardComponentModule() {
     }
-    BoardPanelModule = __decorate([
+    BoardComponentModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule],
-            declarations: [board_component_1.BoardPanel],
-            exports: [board_component_1.BoardPanel]
+            declarations: [board_component_1.BoardComponent],
+            exports: [board_component_1.BoardComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], BoardPanelModule);
-    return BoardPanelModule;
+    ], BoardComponentModule);
+    return BoardComponentModule;
 }());
-exports.BoardPanelModule = BoardPanelModule;
+exports.BoardComponentModule = BoardComponentModule;
 
 //# sourceMappingURL=board.module.js.map

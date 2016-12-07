@@ -20,14 +20,14 @@ export class NotificationComponent implements OnInit {
         // Every time a message is served just push it to the proper channel
         this.websocketService.getPlayersMessages().subscribe(
             m => {
-                console.log(m);
+                // console.log(m);
                 this.playersChannel.push(m);
             });
         this.websocketService.getChatMessages().subscribe(
             m => {
-                console.log(m);
+                // console.log(m);
 
-                let show = ';)[' + m.user.name + '] ' + m.message;
+                let show = m.date + ': [' + m.user.name + '] ' + m.message;
 
                 this.chatChannel.push(show);
             });

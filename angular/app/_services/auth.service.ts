@@ -16,7 +16,25 @@ export class AuthService {
             username: username,
             password: password
         };
-        return this.http.post(`http://${window.location.hostname}:8080/api/v1/login`, data)
+        return this.http.post(`/api/v1/login`, data)
+        .map( (results) => {
+            this.user = results.json();
+            // console.log(this.user);
+            return results.json();
+        });
+    }
+
+    create(data: any): Observable<any> {
+        
+        return this.http.post(`/api/v1/players`, data)
+        .map( (results) => {
+            this.user = results.json();
+            return results.json();
+        });
+    }
+
+    logout() {
+        return this.http.post(`/api/v1/logout`, '')
         .map( (results) => {
             this.user = results.json();
             return results.json();

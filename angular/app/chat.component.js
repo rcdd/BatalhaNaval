@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var websocket_service_1 = require('./notifications/websocket.service');
-var auth_service_1 = require('./auth.service');
+var auth_service_1 = require('./_services/auth.service');
 var ChatComponent = (function () {
     function ChatComponent(websocketService, authService) {
         this.websocketService = websocketService;

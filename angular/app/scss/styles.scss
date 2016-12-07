@@ -1,29 +1,56 @@
+$water: #6282ff;
+$waterHover: #4279ff;
+$ship: blue;
+
 #board{
+    height: 100%;
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
-    display: inline-table;
+    display: inline-block;
 }
 
 .board-cell{
     text-align: center;
-    border-left: 1px solid black;
-    border-top: 1px solid black;
-    /*padding: 10px;*/
-    padding: 0.3em;
-    max-width: 50px;
-    max-height: 50px;
+    padding: 0px;
+    max-width: 30px;
     line-height: 1.5em;
+}
+.board-row .board-cell:first-child{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .board-row .board-cell:last-child{
   border-right: 1px solid black;
 }
 
+.board-row:first-child .board-cell{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
 .board-row:last-child .board-cell{
   border-bottom: 1px solid black;
 }
 
 .info-board{
     background-color: rgba(187, 187, 187, 0.44);
+}
+
+.water-board{
+    background-color:$water;
+    color: $water;
+    &:hover{
+        background-color:$waterHover;
+        color:$waterHover;
+    }
+}
+
+.ship-board{
+    background-color:$ship;
+    color: $ship;
+    &:hover{
+        background-color:$waterHover;
+        color:$waterHover;
+    }
 }

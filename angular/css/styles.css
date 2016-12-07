@@ -1,24 +1,43 @@
 #board {
+  height: 100%;
   width: 100%;
   text-align: center;
   margin-bottom: 10px;
-  display: inline-table; }
+  display: inline-block; }
 
 .board-cell {
   text-align: center;
-  border-left: 1px solid black;
-  border-top: 1px solid black;
-  /*padding: 10px;*/
-  padding: 0.3em;
-  max-width: 50px;
-  max-height: 50px;
+  padding: 0px;
+  max-width: 30px;
   line-height: 1.5em; }
+
+.board-row .board-cell:first-child {
+  border-left: 1px solid black;
+  border-right: 1px solid black; }
 
 .board-row .board-cell:last-child {
   border-right: 1px solid black; }
+
+.board-row:first-child .board-cell {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black; }
 
 .board-row:last-child .board-cell {
   border-bottom: 1px solid black; }
 
 .info-board {
   background-color: rgba(187, 187, 187, 0.44); }
+
+.water-board {
+  background-color: #6282ff;
+  color: #6282ff; }
+  .water-board:hover {
+    background-color: #4279ff;
+    color: #4279ff; }
+
+.ship-board {
+  background-color: blue;
+  color: blue; }
+  .ship-board:hover {
+    background-color: #4279ff;
+    color: #4279ff; }
