@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { WebSocketService } from './websocket.service';
+import { WebSocketService } from '../_services/websocket.service';
 
 @Component({
     moduleId: module.id,
@@ -28,6 +28,15 @@ export class NotificationComponent implements OnInit {
                 // console.log(m);
 
                 let show = m.date + ': [' + m.user.name + '] ' + m.message;
+
+                this.chatChannel.push(show);
+            });
+
+        this.websocketService.getShootMessages().subscribe(
+            m => {
+                 console.log('getShootMessages function: ' + m);
+
+                let show = '[' + m.user.name + '] shoot at position ' + m.position;
 
                 this.chatChannel.push(show);
             });

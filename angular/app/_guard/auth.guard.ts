@@ -9,7 +9,7 @@ export class AuthGuard implements CanActivate {
 
     canActivate() {
         if (this.authService.user) {
-            //console.log('LocalStorage:' + this.authService.user);
+            // console.log('LocalStorage:' + this.authService.user);
             // logged in so return true
             return true;
         }

@@ -5,15 +5,15 @@ import { AppComponent }  from './app.component';
 import { routing }        from './app.routing';
 import { HttpModule } from '@angular/http';
 
-import { NotificationModule } from './notifications/notifications.module';
 import { ChatComponent } from './chat/index';
-import { WebSocketService } from './notifications/websocket.service';
-import { BoardComponentModule } from './board/board.module';
+import { WebSocketService } from './_services/websocket.service';
 import { AlertService, AuthService } from './_services/index';
 
 import { AlertComponent } from './_alert/index';
-
+import { GameComponent } from './game/index';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BoardComponentModule } from './board/board.module';
+import { NotificationModule } from './notifications/notifications.module';
 
 import { AuthGuard } from './_guard/index';
 import { LoginComponent } from './login/index';
@@ -34,6 +34,7 @@ import { APP_BASE_HREF } from '@angular/common';
   declarations: [ 
     AppComponent, 
     ChatComponent,
+    GameComponent,
     LoginComponent,
     RegisterComponent,
     AlertComponent,

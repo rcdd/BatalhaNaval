@@ -14,17 +14,18 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var app_routing_1 = require('./app.routing');
 var http_1 = require('@angular/http');
-var notifications_module_1 = require('./notifications/notifications.module');
 var index_1 = require('./chat/index');
-var websocket_service_1 = require('./notifications/websocket.service');
-var board_module_1 = require('./board/board.module');
+var websocket_service_1 = require('./_services/websocket.service');
 var index_2 = require('./_services/index');
 var index_3 = require('./_alert/index');
+var index_4 = require('./game/index');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
-var index_4 = require('./_guard/index');
-var index_5 = require('./login/index');
-var index_6 = require('./register/index');
-var index_7 = require('./home/index');
+var board_module_1 = require('./board/board.module');
+var notifications_module_1 = require('./notifications/notifications.module');
+var index_5 = require('./_guard/index');
+var index_6 = require('./login/index');
+var index_7 = require('./register/index');
+var index_8 = require('./home/index');
 var common_1 = require('@angular/common');
 var AppModule = (function () {
     function AppModule() {
@@ -43,14 +44,15 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 index_1.ChatComponent,
-                index_5.LoginComponent,
-                index_6.RegisterComponent,
+                index_4.GameComponent,
+                index_6.LoginComponent,
+                index_7.RegisterComponent,
                 index_3.AlertComponent,
-                index_7.HomeComponent
+                index_8.HomeComponent
             ],
             providers: [
                 websocket_service_1.WebSocketService,
-                index_4.AuthGuard,
+                index_5.AuthGuard,
                 index_2.AuthService,
                 index_2.AlertService,
                 { provide: common_1.APP_BASE_HREF, useValue: '/' }

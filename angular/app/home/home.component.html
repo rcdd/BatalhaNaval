@@ -1,14 +1,14 @@
 <div class="container">
     <div class="row row-centered">Hi there, {{currentUser.name}}!</div>
-    
+
     <p><a [routerLink]="['/login']">Logout</a></p>
     <div class='row'>
         <notification-panel></notification-panel>
     </div>
     <div class='row'>
-        <board></board>
+        <p><a [routerLink]="['/game']">Game</a></p>
     </div>
-
+    <br />
     <div class='row'>
         <chat></chat>
     </div>

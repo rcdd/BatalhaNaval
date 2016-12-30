@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {WebSocketService } from '../notifications/websocket.service';
+import {WebSocketService } from '../_services/websocket.service';
 
 import { AuthService } from '../_services/auth.service';
 
