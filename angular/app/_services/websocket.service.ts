@@ -7,9 +7,10 @@ import * as io from 'socket.io-client';
 
 @Injectable()
 export class WebSocketService {
-    socket: any;
+    socket: SocketIOClient.Socket;
     constructor() {
         if (!this.socket) {
+            // this.socket = io(`http://localhost:${window.location.port}`);
             this.socket = io(`http://${window.location.hostname}:${window.location.port}`);
         }
     }
@@ -29,9 +30,11 @@ export class WebSocketService {
         this.socket.emit('board', boards);
     }
 
-    getBoard(): Observable<any> {
-        return new Observable((observer: any) => {
+    getBoard(): Observable<any[]> {
+        return new Observable<any>((observer: any) => {
             this.socket.on('board', (data: any) => {
+                console.log('coiso');
+                console.dir(data);
                 observer.next(data);
             });
             return () => this.socket.disconnect();

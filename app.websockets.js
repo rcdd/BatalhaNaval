@@ -3,15 +3,6 @@ const ws = module.exports = {};
 
 let wsServer = null;
 
-let board = [];
-for (let i = 0; i < 100; i++) {
-    board.push(0);
-}
-let boards = [];
-boards.push(board.slice(0));
-boards.push(board.slice(0));
-boards.push(board.slice(0));
-
 ws.init = (server) => {
     wsServer = io.listen(server);
     wsServer.sockets.on('connection', function (client) {
@@ -24,9 +15,10 @@ ws.init = (server) => {
             wsServer.emit('chat', data);
         });
 
-
-
-        client.emit('board', boards);
+        client.on('board', data => {
+            console.log('Board ' + data);
+            wsServer.sockets.emit('board', data);
+        });
     });
 };
 
