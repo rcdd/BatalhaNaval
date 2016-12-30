@@ -8,37 +8,70 @@ import * as io from 'socket.io-client';
 @Injectable()
 export class WebSocketService {
     socket: SocketIOClient.Socket;
+    boards: any[] = [];
     constructor() {
         if (!this.socket) {
-            // this.socket = io(`http://localhost:${window.location.port}`);
             this.socket = io(`http://${window.location.hostname}:${window.location.port}`);
         }
     }
 
-    sendChatMessage(message: any) {
-        this.socket.emit('chat', message);
+
+
+    sendShoot(board: any, index: number) {
+        this.boards[index] = board;
+        console.log('Send Shoot:');
+        console.dir(this.boards);
+        this.socket.emit('board', this.boards);
     }
 
-    sendShoot(data: any) {
-        console.log('sendShoot function');
-        this.socket.emit('shoot', data);
+    getShootMessages(): Observable<any> {
+
+        console.log('getShootMessages function');
+        return new Observable((observer: any) => {
+            this.socket.on('shoot', (data: any) => {
+                this.boards = data;
+                observer.next(data);
+            });
+            return () => this.socket.disconnect();
+        });
     }
 
     sendBoard(boards: any) {
-        console.log('emit boards @ ' + boards);
+        console.log('send board:');
         console.dir(boards);
-        this.socket.emit('board', boards);
+        this.boards = boards;
+        this.socket.emit('board', this.boards);
     }
 
     getBoard(): Observable<any[]> {
         return new Observable<any>((observer: any) => {
             this.socket.on('board', (data: any) => {
-                console.log('coiso');
+                console.log('get board:');
                 console.dir(data);
+                this.boards = data;
                 observer.next(data);
             });
             return () => this.socket.disconnect();
         });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    sendChatMessage(message: any) {
+        this.socket.emit('chat', message);
     }
 
     getPlayersMessages(): Observable<any> {
@@ -60,18 +93,5 @@ export class WebSocketService {
         });
     }
 
-    getShootMessages(): Observable<any> {
 
-        console.log('getShootMessages function');
-        return new Observable((observer: any) => {
-            this.socket.on('shoot', (data: any) => {
-                observer.next(data);
-            });
-            return () => this.socket.disconnect();
-        });
-    }
-
-    sendClick(board: any) {
-        this.socket.emit('click', board);
-    }
 }

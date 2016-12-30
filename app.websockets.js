@@ -19,6 +19,12 @@ ws.init = (server) => {
             console.log('Board ' + data);
             wsServer.sockets.emit('board', data);
         });
+
+        client.on('shoot', data => {
+            console.log('shoot ' + data);
+            this.boards = data;
+            wsServer.sockets.emit('board', data);
+        });
     });
 };
 

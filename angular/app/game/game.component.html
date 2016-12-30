@@ -1,10 +1,5 @@
 <h2>Game</h2>
 
 <div *ngIf="boards">
-  <board *ngFor="let board of boards; let i = index " >
-    <!-- o div seguinte foi o que fiz para teste -->
-    <div *ngFor="let cells of board.cells; let i = index " >
-          {{cells.type}}
-    </div>
-  </board>
+  <board *ngFor="let board of boards; let i = index" [index]="i" [board]="board" ></board>
 </div>

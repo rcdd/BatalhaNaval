@@ -11,27 +11,20 @@ import { Board } from '../board/index';
 })
 export class GameComponent implements OnInit {
 
-  boards: any[];
+  boards: any[] = [];
 
-  constructor(private websocketsService: WebSocketService) { 
-
+  constructor(private websocketsService: WebSocketService) {
   }
 
   ngOnInit() {
+    this.websocketsService.getBoard().subscribe(data => {
+      this.boards = data;
+    });
     console.log('Init boards');
-        let boards: any = [];
-        boards.push(new Board());
-        boards.push(new Board());
-        boards.push(new Board());
-        boards.push(new Board());
+    this.boards.push(new Board());
+    this.boards.push(new Board());
 
+    this.websocketsService.sendBoard(this.boards);
 
-        this.websocketsService.sendBoard(boards);
-
-     this.websocketsService.getBoard().subscribe(data => this.boards = data);
-     console.log('receive: ');
-     console.dir(this.boards);
-     // this.websocketsService.sendBoard(this.boards);
-
-   }
+  }
 }

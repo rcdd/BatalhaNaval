@@ -20,24 +20,15 @@ var BoardComponent = (function () {
     }
     BoardComponent.prototype.ngOnInit = function () {
     };
-    BoardComponent.prototype.clickHandler = function (event, index, cell) {
-        var data = this.board.slice(0);
-        data[index]++;
-        this.websocketsService.sendClick({ board: data, index: this.index });
+    BoardComponent.prototype.Shoot = function (position) {
+        var data = this.board;
+        data.cells[position].type = 1;
+        this.websocketsService.sendShoot(data, this.index);
     };
-    BoardComponent.prototype.getClassForCell = function (index) {
-        var value = this.board[index];
-        if (value === 0) {
-            return '';
-        }
-        if (value < 5) {
-            return 'cell1';
-        }
-        return 'cell2';
-    };
+    ;
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Array)
+        __metadata('design:type', Object)
     ], BoardComponent.prototype, "board", void 0);
     __decorate([
         core_1.Input(), 
