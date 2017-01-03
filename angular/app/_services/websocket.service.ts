@@ -8,13 +8,13 @@ import * as io from 'socket.io-client';
 @Injectable()
 export class WebSocketService {
     socket: SocketIOClient.Socket;
-    boards: any[] = [];
+    boards: any = [];
+
     constructor() {
         if (!this.socket) {
             this.socket = io(`http://${window.location.hostname}:${window.location.port}`);
         }
     }
-
 
 
     sendShoot(board: any, index: number) {
@@ -36,15 +36,16 @@ export class WebSocketService {
         });
     }
 
-    sendBoard(boards: any) {
-        console.log('send board:');
-        console.dir(boards);
-        this.boards = boards;
-        this.socket.emit('board', this.boards);
-    }
+    /*  sendBoard(boards: any) {
+          console.log('send board:');
+          console.dir(boards);
+          this.boards = boards;
+          this.socket.emit('board', this.boards);
+  }*/
 
-    getBoard(): Observable<any[]> {
-        return new Observable<any>((observer: any) => {
+  // ESCUTA O CANAL 'BOARD' ATÉ OBTER DADOS
+    getBoard(): Observable<any> {
+        return new Observable((observer: any) => {
             this.socket.on('board', (data: any) => {
                 console.log('get board:');
                 console.dir(data);
@@ -54,12 +55,6 @@ export class WebSocketService {
             return () => this.socket.disconnect();
         });
     }
-
-
-
-
-
-
 
 
 

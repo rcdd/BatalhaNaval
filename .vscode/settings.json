@@ -8,5 +8,6 @@
         "**/angular/*.map": true,
         "**/*.js.map": true
     },
-    "xo.enable": true
+    "xo.enable": true,
+    "typescript.tsdk": "./node_modules/typescript/lib"
 }
