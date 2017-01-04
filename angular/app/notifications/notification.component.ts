@@ -32,6 +32,7 @@ export class NotificationComponent implements OnInit {
                 this.chatChannel.push(show);
             });
 
+
         /*this.websocketService.getShootMessages().subscribe(
             m => {
                  console.log('getShootMessages function: ' + m);

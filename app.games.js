@@ -24,10 +24,22 @@ function returnGame(id, response, next) {
         .catch(err => handleError(err, response, next));
 }
 
-
 function getGames(request, response, next) {
 	database.db.collection('games')
-		.find()
+        .find()
+		.toArray()
+		.then(games => {
+			response.json(games || []);
+			next();
+		})
+        .catch(err => handleError(err, response, next));
+
+}
+
+function getGamesWaiting(request, response, next) {
+    console.log('Get games playing');
+	database.db.collection('games')
+        .find({state: 'waiting'})
 		.toArray()
 		.then(games => {
 			response.json(games || []);
@@ -95,6 +107,7 @@ function deleteGame(request, response, next) {
 // Routes for the games
 games.init = (server, options) => {
     settings = options;
+    server.get(settings.prefix + 'games/waiting', settings.security.authorize, getGamesWaiting);
     server.get(settings.prefix + 'games', settings.security.authorize, getGames);
     server.get(settings.prefix + 'games/:id', settings.security.authorize, getGame);
     server.put(settings.prefix + 'games/:id', settings.security.authorize, updateGame);

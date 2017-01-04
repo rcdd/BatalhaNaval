@@ -1,17 +1,17 @@
 const passport = require('passport');
-const database = require('./app.database');
 const LocalStrategy = require('passport-local').Strategy;
 const BearerStrategy = require('passport-http-bearer').Strategy;
 const sha1 = require('sha1');
+const database = require('./app.database');
 
 let security = module.exports = {};
 security.passport = passport;
 
-security.initMiddleware = function(server) {
+security.initMiddleware = function (server) {
     server.use(passport.initialize());
 };
 
-passport.use(new LocalStrategy(function(username, password, done) {
+passport.use(new LocalStrategy(function (username, password, done) {
     database.db.collection('players').findOne({
         username: username
     }).then(player => {
@@ -25,18 +25,18 @@ passport.use(new LocalStrategy(function(username, password, done) {
                 message: 'Incorrect credentials.'
             });
         }
-        player.token = sha1(player.username+ Date.now());
+        player.token = sha1(player.username + Date.now());
         database.db.collection('players')
-            .updateOne({_id: player._id}, {$set: {token: player.token}})
+            .updateOne({ _id: player._id }, { $set: { token: player.token } })
             .then(r => r.modifiedCount !== 1 ? done(null, false) : done(null, player))
             .catch(err => done(err));
     }).catch(err => done(err));
 }));
 
-passport.use(new BearerStrategy(function(token, done) {
+passport.use(new BearerStrategy(function (token, done) {
     database.db.collection('players')
-        .findOne({token: token})
-        .then((user) => user ? done(null, user, {scope:'all'}) : done(null, false))
+        .findOne({ token: token })
+        .then((user) => user ? done(null, user, { scope: 'all' }) : done(null, false))
         .catch(err => done(err));
 }));
 

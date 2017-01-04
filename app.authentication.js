@@ -13,7 +13,7 @@ function logout(request, response, next) {
 }
 
 authentication.init = function(server, options) {
-    server.post(options.prefix + 'login', options.security.passport.authenticate('local', {'session':false}), login);
+    server.post(options.prefix + 'login', options.security.passport.authenticate('local', {session: false}), login);
     server.post(options.prefix + 'logout', options.security.authorize, logout);
     console.log("Authentication routes registered");
 };

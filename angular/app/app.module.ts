@@ -18,6 +18,7 @@ import { NotificationModule } from './notifications/notifications.module';
 import { AuthGuard } from './_guard/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
+import { TopTenComponent } from './topten/index';
 import { HomeComponent } from './home/index';
 import { APP_BASE_HREF } from '@angular/common';
 
@@ -38,6 +39,7 @@ import { APP_BASE_HREF } from '@angular/common';
     LoginComponent,
     RegisterComponent,
     AlertComponent,
+    TopTenComponent,
     HomeComponent
   ],
   providers:    [ 

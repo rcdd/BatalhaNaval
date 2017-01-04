@@ -13,18 +13,21 @@ export class WebSocketService {
     constructor() {
         if (!this.socket) {
             this.socket = io(`http://${window.location.hostname}:${window.location.port}`);
+            this.socket.on('newGame', function (data: any) {
+                console.log('webSocket: constructor. Data:');
+                console.dir(data);
+                this.boards = data;
+            });
         }
     }
 
 
     sendShoot(board: any, index: number) {
         this.boards[index] = board;
-        console.log('Send Shoot:');
-        console.dir(this.boards);
-        this.socket.emit('board', this.boards);
+        this.socket.emit('shoot', this.boards);
     }
 
-    getShootMessages(): Observable<any> {
+    /*getShootMessages(): Observable<any> {
 
         console.log('getShootMessages function');
         return new Observable((observer: any) => {
@@ -34,20 +37,26 @@ export class WebSocketService {
             });
             return () => this.socket.disconnect();
         });
+    } */
+
+    newGame(): any {
+        console.log('webSocket: newGame. Data:');
+        console.dir(this.boards);
+        return this.boards;
     }
 
-    /*  sendBoard(boards: any) {
-          console.log('send board:');
-          console.dir(boards);
-          this.boards = boards;
-          this.socket.emit('board', this.boards);
-  }*/
+    sendBoard(boards: any) {
+        console.log('websocket: send board:');
+        console.dir(boards);
+        this.boards = boards;
+        this.socket.emit('board', this.boards);
+    }
 
-  // ESCUTA O CANAL 'BOARD' ATÉ OBTER DADOS
+    // ESCUTA O CANAL 'BOARD' ATÉ OBTER DADOS
     getBoard(): Observable<any> {
         return new Observable((observer: any) => {
             this.socket.on('board', (data: any) => {
-                console.log('get board:');
+                console.log('websocket: get board:');
                 console.dir(data);
                 this.boards = data;
                 observer.next(data);
@@ -55,6 +64,7 @@ export class WebSocketService {
             return () => this.socket.disconnect();
         });
     }
+
 
 
 

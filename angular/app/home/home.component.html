@@ -1,15 +1,33 @@
 <div class="container">
-    <div class="row row-centered">Hi there, {{currentUser.name}}!</div>
-
-    <p><a [routerLink]="['/login']">Logout</a></p>
     <div class='row'>
-        <notification-panel></notification-panel>
+        <div class='col-md-1'>
+            <strong>Menu:</strong>
+        </div>
+        <div class='col-md-1'>
+            <a [routerLink]="['/home']">Home</a>
+        </div>
+        <div class='col-md-1'>
+            <a [routerLink]="['/game']">Game</a>
+        </div>
+        <div class='col-md-1'>
+            <a [routerLink]="['/login']">Logout</a>
+        </div>
     </div>
+    <br />
+    <div class="row">Hi there, {{currentUser.name}}!</div>
+    
     <div class='row'>
-        <p><a [routerLink]="['/game']">Game</a></p>
+        <div class='col-md-8'>
+            <notification-panel></notification-panel>
+        </div>
+        <div class='col-md-4'>
+            <topTen></topTen>
+        </div>
     </div>
     <br />
     <div class='row'>
-        <chat></chat>
+        <div class='col-md-10'>
+            <chat></chat>
+        </div>
     </div>
 </div>

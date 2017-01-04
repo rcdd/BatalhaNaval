@@ -104,7 +104,7 @@ function getTop10(request, response, next) {
             response.json(players || []);
             // TODO: notify all players that the top 10 was accessed
             // Use: settings.websocket.notifyAll
-             settings.websocket.notifyAll('players', Date.now() + " Somebody accessed top 10");
+             //settings.websocket.notifyAll('players', Date.now() + " Somebody accessed top 10");
             next();
         })
         .catch(err => handleError(err, response, next));

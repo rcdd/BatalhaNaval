@@ -25,7 +25,8 @@ var notifications_module_1 = require('./notifications/notifications.module');
 var index_5 = require('./_guard/index');
 var index_6 = require('./login/index');
 var index_7 = require('./register/index');
-var index_8 = require('./home/index');
+var index_8 = require('./topten/index');
+var index_9 = require('./home/index');
 var common_1 = require('@angular/common');
 var AppModule = (function () {
     function AppModule() {
@@ -48,7 +49,8 @@ var AppModule = (function () {
                 index_6.LoginComponent,
                 index_7.RegisterComponent,
                 index_3.AlertComponent,
-                index_8.HomeComponent
+                index_8.TopTenComponent,
+                index_9.HomeComponent
             ],
             providers: [
                 websocket_service_1.WebSocketService,

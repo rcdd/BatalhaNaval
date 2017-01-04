@@ -19,6 +19,7 @@ export class RegisterComponent {
 
     register() {
         this.loading = true;
+        this.model['totalVictories'] = 0;
         this.authService.create(this.model)
             .subscribe(
                 data => {

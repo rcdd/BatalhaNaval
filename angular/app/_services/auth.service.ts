@@ -34,6 +34,7 @@ export class AuthService {
     }
 
     logout() {
+        this.user = '';
         return this.http.post(`/api/v1/logout`, '')
         .map( (results) => {
             this.user = results.json();
