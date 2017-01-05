@@ -47,9 +47,18 @@ scssDir = "angular/app/scss/**/*.scss";
 });
 
 /**
- * Compile tsScripts from angular folder
+ * Compile tsScripts from angular folder with lint
  */
  gulp.task("compile", ["tslint"], () => {
+    let tsResult = gulp.src(tsDir)
+    .pipe(sourcemaps.init())
+    .pipe(tsProject());
+    return tsResult.js
+    .pipe(sourcemaps.write(".", {sourceRoot: '/angular/app'}))
+    .pipe(gulp.dest("angular/app"));
+});
+
+ gulp.task("compile2", () => {
     let tsResult = gulp.src(tsDir)
     .pipe(sourcemaps.init())
     .pipe(tsProject());

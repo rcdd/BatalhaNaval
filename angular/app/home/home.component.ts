@@ -12,6 +12,6 @@ export class HomeComponent {
     currentUser: string;
 
     constructor(private authService: AuthService, private websocketsService: WebSocketService) {
-        this.currentUser = this.authService.user;      
+        this.currentUser = this.authService.user;
     }
 }

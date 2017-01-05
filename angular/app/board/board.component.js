@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var board_1 = require('./board');
-var ship_1 = require('./ship');
-var websocket_service_1 = require('../_services/websocket.service');
+var core_1 = require("@angular/core");
+var board_1 = require("./board");
+var ship_1 = require("./ship");
+var websocket_service_1 = require("../_services/websocket.service");
 var BoardComponent = (function () {
     function BoardComponent(websocketsService) {
         this.websocketsService = websocketsService;
@@ -30,28 +30,28 @@ var BoardComponent = (function () {
         this.newBoard.adicionaNavio(ship_1.ShipType.Cruzador, ship_1.Orientation.Normal, lineAsString, column);
     };
     ;
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], BoardComponent.prototype, "board", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Number)
-    ], BoardComponent.prototype, "index", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', board_1.Board)
-    ], BoardComponent.prototype, "newBoard", void 0);
-    BoardComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'board',
-            templateUrl: 'board.component.html'
-        }), 
-        __metadata('design:paramtypes', [websocket_service_1.WebSocketService])
-    ], BoardComponent);
     return BoardComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], BoardComponent.prototype, "board", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Number)
+], BoardComponent.prototype, "index", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", board_1.Board)
+], BoardComponent.prototype, "newBoard", void 0);
+BoardComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'board',
+        templateUrl: 'board.component.html'
+    }),
+    __metadata("design:paramtypes", [websocket_service_1.WebSocketService])
+], BoardComponent);
 exports.BoardComponent = BoardComponent;
 
 //# sourceMappingURL=board.component.js.map

@@ -47,3 +47,6 @@
   .ship-board:hover {
     background-color: #4279ff;
     color: #4279ff; }
+
+.error {
+  color: red; }
