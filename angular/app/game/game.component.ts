@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WebSocketService } from '../_services/websocket.service';
 import { AuthService, AlertService } from '../_services/index';
 import { Board } from '../board/index';
+import { ShipType, Orientation } from '../board/ship';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/Rx';
 
@@ -17,6 +18,12 @@ export class GameComponent implements OnInit {
 
   boards: any = [];
   newBoard: any = [];
+  selectedShip: any;
+  selectedShipSelector: any;
+  listShip: any = [];
+  selectedOrientation: any;
+  listOrientation: any = [];
+
   form: any = {};
   listGames: any = '';
   newGameDash: boolean = false;
@@ -27,7 +34,6 @@ export class GameComponent implements OnInit {
 
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Authorization', 'Bearer ' + this.authService.user.token);
-
     this.updateGameList();
 
   }
@@ -93,9 +99,28 @@ export class GameComponent implements OnInit {
   newGameDashForm() {
     this.newGameDash = true;
     this.newBoard = new Board();
-    console.dir(this.newBoard);
+    this.listShip = [];
+    this.listOrientation = [];
+    this.listShip.push({ name: 'PortaAvioes', value: ShipType.PortaAvioes, id: 0 });
+    this.listShip.push({ name: 'Couracado', value: ShipType.Couracado, id: 1 });
+    this.listShip.push({ name: 'Cruzador', value: ShipType.Cruzador, id: 2 });
+    this.listShip.push({ name: 'Cruzador', value: ShipType.Cruzador, id: 3 });
+    this.listShip.push({ name: 'ContraTorpedeiro', value: ShipType.ContraTorpedeiro, id: 4 });
+    this.listShip.push({ name: 'ContraTorpedeiro', value: ShipType.ContraTorpedeiro, id: 5 });
+    this.listShip.push({ name: 'ContraTorpedeiro', value: ShipType.ContraTorpedeiro, id: 6 });
+    this.listShip.push({ name: 'Submarino', value: ShipType.Submarino, id: 7 });
+    this.listShip.push({ name: 'Submarino', value: ShipType.Submarino, id: 8 });
+    this.listShip.push({ name: 'Submarino', value: ShipType.Submarino, id: 8 });
+    this.listShip.push({ name: 'Submarino', value: ShipType.Submarino, id: 10 });
+    this.listOrientation.push({ name: 'Normal', value: Orientation.Normal });
+    this.listOrientation.push({ name: 'Roda90', value: Orientation.Roda90 });
+    this.listOrientation.push({ name: 'Roda180', value: Orientation.Roda180 });
+    this.listOrientation.push({ name: 'Roda270', value: Orientation.Roda270 });
 
+  }
 
+  onSelectedChange() {
+    this.selectedShip = this.listShip[this.selectedShipSelector];
   }
 
   newGame() {

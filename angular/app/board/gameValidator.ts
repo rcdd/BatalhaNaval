@@ -17,7 +17,7 @@ export class GameValidator {
     }
 
     public static checkOrientation(type: ShipType, orientation: Orientation): boolean {
-        switch (type) {
+        switch (+type) {
             case ShipType.PortaAvioes: 
                 return true;
             case ShipType.Couracado:   
@@ -27,6 +27,7 @@ export class GameValidator {
             case ShipType.Submarino: 
                 return (orientation === Orientation.Normal);            
         }
+        alert('asdfdgsf');
     }
 
     public static checkLimits(type: ShipType, orientation: Orientation, Position: Position): boolean {

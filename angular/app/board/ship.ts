@@ -36,7 +36,7 @@ export class Ship {
         if (!GameValidator.checkLimits(tipo, orientation, this.position)) {
             throw new Error('O tipo de navio "' + tipo + '" na posição (' + line + column + ') e orientação "' + orientation + '" não cabe nos limites do tabuleiro');
         }
-        this.shipType = tipo;
+        this.shipType = +tipo;
         this.orientation = orientation;
         this.cells = [];
         this.posBusy = this.calculaPosicoesOcupadas();

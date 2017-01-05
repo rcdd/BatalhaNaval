@@ -10,11 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var board_1 = require('./board');
-var ship_1 = require('./ship');
 var websocket_service_1 = require('../_services/websocket.service');
 var BoardComponent = (function () {
     function BoardComponent(websocketsService) {
         this.websocketsService = websocketsService;
+        this.listShip = [];
     }
     BoardComponent.prototype.ngOnInit = function () {
     };
@@ -27,7 +27,10 @@ var BoardComponent = (function () {
     BoardComponent.prototype.click = function (line, column) {
         console.log('click, linha: ' + (line / 10) + ', column: ' + (column + 1));
         var lineAsString = String.fromCharCode(65 + (line / 10));
-        this.newBoard.adicionaNavio(ship_1.ShipType.Cruzador, ship_1.Orientation.Normal, lineAsString, column);
+        console.log('coiso: ');
+        console.dir(this.selectedShip.value);
+        this.newBoard.adicionaNavio(this.selectedShip.value, +this.selectedOrientation, lineAsString, column + 1);
+        this.listShip[this.selectedShip.id] = '';
     };
     ;
     __decorate([
@@ -42,6 +45,18 @@ var BoardComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', board_1.Board)
     ], BoardComponent.prototype, "newBoard", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], BoardComponent.prototype, "selectedShip", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], BoardComponent.prototype, "selectedOrientation", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], BoardComponent.prototype, "listShip", void 0);
     BoardComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

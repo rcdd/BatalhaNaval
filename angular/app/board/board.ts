@@ -1,5 +1,5 @@
 import { Ship } from './ship';
-import { ShipType } from './ship';
+// import { ShipType } from './ship';
 import { Orientation } from './ship';
 import { Cell } from './cell';
 import { Position } from './position';
@@ -35,11 +35,11 @@ export class Board {
         return this.cells[pos.lineIndex() * 10 + pos.columnIndex()];
     }
 
-    public adicionaNavio(type: ShipType, orientation: Orientation, line: string, column: number): Ship {
+    public adicionaNavio(type: any, orientation: Orientation, line: string, column: number): Ship {
         try {
             let ship: Ship = new Ship(type, orientation, line, column);
             if (Position.conflito(ship.posBusy, this.positionBusy)) {
-                throw new Error('O ship "' + type + '" na posição (' + line + column + ') e orientação "' + orientation + '" está em sobreposição ou encostado a um ship já existente');
+                throw new Error('O ship "' + type + '" na posição (' + line + column + ') com orientação "' + orientation + '" está em sobreposição ou encostado a um ship já existente');
             }
             ship.posBusy.forEach(p => {
                 ship.addCelula(this.getCelula(p.line, p.column));
@@ -49,7 +49,7 @@ export class Board {
             return ship;
         } catch (e) {
             // Alterar para fazer tratamento de erros
-            throw e;
+            alert(e);
         }
     }
 

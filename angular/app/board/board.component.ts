@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Board } from './board';
-import { ShipType, Orientation } from './ship';
-
 import { WebSocketService } from '../_services/websocket.service';
 
 @Component({
@@ -17,6 +15,12 @@ export class BoardComponent implements OnInit {
     index: number;
     @Input()
     newBoard: Board;
+    @Input()
+    selectedShip: any;
+    @Input()
+    selectedOrientation: any;
+    @Input()
+    listShip: any = [];
 
     constructor(private websocketsService: WebSocketService) {
     }
@@ -33,6 +37,9 @@ export class BoardComponent implements OnInit {
     click(line: number, column: number) {
         console.log('click, linha: ' + (line / 10) + ', column: ' + (column + 1));
         let lineAsString: string = String.fromCharCode(65 + (line / 10));
-        this.newBoard.adicionaNavio(ShipType.Cruzador, Orientation.Normal, lineAsString, column);
+        console.log('coiso: ');
+        console.dir(this.selectedShip.value);
+        this.newBoard.adicionaNavio(this.selectedShip.value, +this.selectedOrientation, lineAsString, column + 1);
+        this.listShip[this.selectedShip.id] = '';
     };
 }
