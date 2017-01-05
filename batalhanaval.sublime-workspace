@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"pass",
+				"passwordNotEqual\tproperty"
+			],
+			[
+				"getC",
+				"getCells\twindow.Board"
+			],
+			[
+				"con",
+				"constructor\twindow.Posicao"
+			],
+			[
 				"font-s",
 				"font-size"
 			],
@@ -324,20 +336,19 @@
 	"buffers":
 	[
 		{
-			"file": "angular/app/board/board.component.html",
+			"file": "app.players.js",
 			"settings":
 			{
-				"buffer_size": 648,
+				"buffer_size": 4350,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "angular/app/app.component.html",
+			"file": "angular/app/register/register.component.ts",
 			"settings":
 			{
-				"buffer_size": 371,
-				"encoding": "UTF-8",
+				"buffer_size": 1355,
 				"line_ending": "Unix"
 			}
 		}
@@ -450,7 +461,7 @@
 				"Set Syntax: C"
 			]
 		],
-		"width": 575.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -481,25 +492,102 @@
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board",
-		"/home/emanuelx/Dropbox/DAD_SHARED/2016-17-EI-DAD-PRJ1/game",
-		"/home/emanuelx/Dropbox/DAD_SHARED/2016-17-EI-DAD-PRJ1/game/css"
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_alert",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/home",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/login",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/register",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/scss"
 	],
 	"file_history":
 	[
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/register/register.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_guard/auth.guard.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_services/auth.service.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/register/register.component.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/scss/styles.scss",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/login/login.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/login/login.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.authentication.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/gulpfile.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/home/home.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/home/home.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_alert/alert.component.ts",
+		"/home/emanuelx/Transferências/DIMTIME.csv",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/DIMTIME.csv",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/BD_AULA.sql",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/ficha2.txt",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/ficha_transformacao_erros.sql",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/Projeto/readDataFiles.sql",
+		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/User/Terminal.sublime-settings",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/t_dim_time.csv",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/Fontes de Dados-20161021/cnaes_2015_1fase.csv",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_external_tables.sql",
+		"/home/emanuelx/upload_de_ficheiros_csv.sql",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/Projeto/Fontes de Dados-20161021/cnaes_2015_1fase.csv",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/time.csv",
+		"/home/emanuelx/Transferências/TIME.CSV",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_package_pck_extract.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_SegundaParte/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_package_pck_extract.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_package_pck_extract.sql",
+		"/home/emanuelx/.themes/OSX-Arc-Shadow/cinnamon/cinnamon.css",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CREATE_package_pck_extract.sql",
+		"/home/emanuelx/teste.txt",
+		"/home/emanuelx/pck_transformation.txt",
+		"/home/emanuelx/pck_extrack.txt",
+		"/home/emanuelx/ola.txt",
+		"/home/emanuelx/Transferências/ServletFileUploadDownloadExample/ServletFileUploadDownloadExample/src/com/journaldev/servlet/UploadDownloadFileServlet.java",
+		"/home/emanuelx/Transferências/ServletFileUploadDownloadExample/ServletFileUploadDownloadExample/src/com/journaldev/servlet/FileLocationContextListener.java",
+		"/home/emanuelx/Transferências/ServletFileUploadDownloadExample/ServletFileUploadDownloadExample/WebContent/index.html",
+		"/home/emanuelx/Transferências/ServletFileUploadDownloadExample/ServletFileUploadDownloadExample/WebContent/WEB-INF/web.xml",
+		"/home/emanuelx/Transferências/ServletFileUploadDownloadExample/ServletFileUploadDownloadExample/WebContent/META-INF/MANIFEST.MF",
+		"/home/emanuelx/Transferências/file.txt",
+		"/home/emanuelx/.cache/.fr-AUBMid/ServletFileUploadDownloadExample/WebContent/WEB-INF/web.xml",
+		"/home/emanuelx/.cache/.fr-FWeH3T/ServletFileUploadDownloadExample/src/com/journaldev/servlet/FileLocationContextListener.java",
+		"/home/emanuelx/.cache/.fr-oJAhqE/bootstrap-3.3.7-dist/css/bootstrap.min.css",
+		"/home/emanuelx/AndroidStudioProjects/phonespeakProject/app/src/main/AndroidManifest.xml",
+		"/home/emanuelx/javaEE_urls.txt",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/game/game.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.games.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.websockets.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_services/websocket.service.ts",
+		"/home/emanuelx/Transferências/resolucao.v5 (extra_exercise)/angular/npm-debug.log",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.websockets.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/game/game.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.security.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/DAE/projeto_final_finalissimo/EnterpriseApplicationHealthManager/EnterpriseApplicationHealthManager-war/web/WEB-INF/web.xml",
+		"/home/emanuelx/UsernameValidator.java",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/DAE/projeto_final_finalissimo/EnterpriseApplicationHealthManager/EnterpriseApplicationHealthManager-ejb/src/java/entities/UserGroup.java",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/DAE/Projeto final/EnterpriseApplicationHealthManager/EnterpriseApplicationHealthManager-ejb/setup/glassfish-resources.xml",
+		"/run/media/emanuelx/B9BA-77FE/workaround.vbs",
+		"/home/emanuelx/Dropbox/TAES_SHARED/URLS.txt",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/DAE/Projeto final/EnterpriseApplicationHealthManager/nbproject/project.properties",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/Projeto/LOGIN.TXT",
+		"/home/emanuelx/teste.java",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/Board.ts",
+		"/home/emanuelx/Robotium_log.txt",
+		"/home/emanuelx/Dropbox/TAES_SHARED/URLS",
+		"/home/emanuelx/Algoritmo-Colocacao/main.ts",
+		"/boot/grub/grub.cfg",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/elements/ship.component.ts",
+		"/etc/modules-load.d/modules.conf",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/cell.ts",
+		"/home/emanuelx/Algoritmo-Colocacao/tabuleiro.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/elements/Posicao.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.module.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/auth.service.ts",
+		"/home/emanuelx/Algoritmo-Colocacao/celula.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/index.html",
 		"/home/emanuelx/.cache/.fr-zWxVQk/font-awesome-4.7.0/HELP-US-OUT.txt",
 		"/media/Users/emanu/Dropbox/SHARED_SI/smartH2O/SmartH2O_Alarm/SmartH20_Alarm.cs",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/cell.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/cell.component.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/gulpfile.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.spec.js",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.module.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/angular-quickstart/app/hero.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/cell.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/angular-quickstart/app/hero.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/batalhanaval.sublime-project",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/angular-quickstart/app/heroes.component.ts",
@@ -508,13 +596,9 @@
 		"/home/emanuelx/ng-bootstrap/gulpfile.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/systemjs.config.js",
 		"/etc/modprobe.d/asus_wifi.conf",
-		"/etc/modules-load.d/modules.conf",
 		"/home/emanuelx/dotfiles/etc/modprobe.d/asus_wifi.conf",
 		"/etc/modprobe.d/asus_nb_wmi.conf",
-		"/home/emanuelx/pck_extrack.txt",
-		"/home/emanuelx/pck_transformation.txt",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.spec.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/index.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/notifications.module.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.ts",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/LOGIN.TXT",
@@ -530,10 +614,8 @@
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/chat.component.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/websocket.service.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/notifications/auth.service.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/auth.service.ts",
 		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/Trimmer/Default (Linux).sublime-keymap",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/metodologia usada",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/package.json",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/Gruntfile.js",
@@ -544,77 +626,8 @@
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3/mongo2.games.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/auth.service.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/node3/angular-2/app/leaderboard/leaderboard-player.js",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.websockets.js",
 		"/home/emanuelx/Dropbox/Aplicativos/Heroku/README.txt",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.js",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/node3/index.js",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/node2/angular/index.html",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/node2/index.js",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/batalha naval/teste.js",
-		"/home/emanuelx/Algoritmo-Colocacao/tabuleiro.ts",
-		"/home/emanuelx/Sites/index.php",
-		"/etc/httpd/conf/httpd.conf",
-		"/home/emanuelx/aui/sharedfuncs",
-		"/home/emanuelx/aui/lilo",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/05_mongo/mongo2.players.js",
-		"/sys/class/scsi_host/host0/link_power_management_policy",
-		"/etc/environment",
-		"/etc/sysctl.conf",
-		"/etc/hosts",
-		"/home/emanuelx/Transferências/Yout-1.0.0-pt-br-linux-x64/resources/app/main.js",
-		"/etc/default/grub",
-		"/home/emanuelx/teste.txt",
-		"/home/emanuelx/manjaro-cinnamon-16.10.2-stable-x86_64.iso.md5",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/oi.txt",
-		"/home/emanuelx/ola.txt",
-		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
-		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/User/Terminal.sublime-settings",
-		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/Terminality/README.md",
-		"/home/emanuelx/MEOCloud/sublime-text-3/Packages/JSHint Gutter/JSHint.sublime-settings",
-		"/home/emanuelx/admin-panel-finder-master/link.txt",
-		"/home/emanuelx/admin-panel-finder-master/admin_panel_finder.py",
-		"/home/emanuelx/docker-tutorial/Dockerfile",
-		"/usr/share/sqlmap/tamper/cmt_test.py",
-		"/etc/X11/xorg.conf.d/20-intel.conf",
-		"/home/emanuelx/teste_cm.txt",
-		"/home/emanuelx/Dropbox/SAD_SHARED/respostasAsQuestoesBD.sql",
-		"/home/emanuelx/Transferências/snx_install.sh",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.websockets.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/chat.component.ts",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/notifications/notification.component.ts",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.html",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/auth.service.ts",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/app.component.ts",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/notifications/websocket.service.ts",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.players.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/angular/app/notifications/websocket.service.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.security.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.authentication.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.games.js",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/Desenvolvimento de aplicações distribuidas/websocket-skeleton/websocket-app/package.json",
-		"/home/emanuelx/.drirc",
-		"/home/emanuelx/.sqlmap/output/www.cm-tabuaco.pt/log",
-		"/home/emanuelx/cmt_test.py",
-		"/home/emanuelx/.sqlmap/output/www.cm-tabuaco.pt/target.txt",
-		"/home/emanuelx/.glassfish-4.1.1/glassfish/domains/domain1/config/domain.xml",
-		"/home/emanuelx/Transferências/domain.xml",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_package_pck_extract.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/querys_pagina6.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/respostasAsQuestoesBD.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/PARA ENVIAR/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_external_tables.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/PARA ENVIAR/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_data_tables.sql",
-		"/home/emanuelx/dotfiles/etc/modprobe.d/ath9k.conf",
-		"/home/emanuelx/systemd.txt",
-		"/tmp/.fr-teAA3P/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_data_tables.sql",
-		"/tmp/.fr-5sffL6/respostasAsQuestoesBD.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CREATE_package_pck_extract.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_data_tables.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/Projeto1_emanuel.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_external_tables.sql",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/SCRIPTS_SQL_FINAL/scripts_extract/CREATE_data_tables.sql",
-		"/home/emanuelx/MEOCloud/Escola/3º ano/SAD/Projeto/Fontes de Dados-20161021/Dicionario_Dados_BDMAT.txt",
-		"/tmp/.fr-fyGa45/Ativador Office 2013 [Wesley Ferreira]/Informações Extras.vbs"
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.js"
 	],
 	"find":
 	{
@@ -625,6 +638,7 @@
 		"height": 96.0,
 		"where_history":
 		[
+			"<project>",
 			"/home/emanuelx",
 			"<project>",
 			"/home/emanuelx/thinkspace",
@@ -638,6 +652,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"help-block",
+			",",
+			"any[]",
+			"Observable<any[]>",
 			"vendor.js",
 			"torized",
 			"5",
@@ -744,6 +762,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"error",
+			";",
 			"table_extract",
 			"T_DATA_CNAES_FASE",
 			"line",
@@ -764,37 +784,30 @@
 			[
 				{
 					"buffer": 0,
-					"file": "angular/app/board/board.component.html",
+					"file": "app.players.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 648,
+						"buffer_size": 4350,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								580,
-								580
+								2056,
+								2056
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": true,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"word_wrap": false
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 990.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -802,28 +815,30 @@
 				},
 				{
 					"buffer": 1,
-					"file": "angular/app/app.component.html",
-					"semi_transient": false,
+					"file": "angular/app/register/register.component.ts",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 371,
+						"buffer_size": 1355,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								356,
-								356
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,

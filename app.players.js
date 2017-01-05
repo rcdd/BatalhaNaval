@@ -1,3 +1,5 @@
+/* jshint node: true */
+'use strict';
 const util = require('util');
 const mongodb = require('mongodb');
 const sha1 = require('sha1');
@@ -64,7 +66,26 @@ function updatePlayer(request, response, next) {
 
 function createPlayer(request, response, next) {
     const player = request.body;
+    //let regex ='\[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+
+    console.log(player);
     player.passwordHash = sha1(player.passwordHash);
+    player.passwordHashConfirmation = sha1(player.passwordHashConfirmation);
+
+    if(player.passwordHash.length<3){
+        console.log("error lengthh");
+        return next();
+    }
+
+    if(player.passwordHash !== player.passwordHashConfirmation){
+        console.log("error passwordHash");
+        return next();
+    }
+    /*if(!regex.test(player.email)){
+        console.log("error email");
+       // return next();
+    }*/
+
     if (player === undefined) {
         response.send(400, 'No player data');
         return next();
