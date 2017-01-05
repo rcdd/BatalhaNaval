@@ -9,10 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-// import { Board } from './board';
-// import { ShipType } from './ship';
-// import { Orientation } from './ship';
-// import { AuthService } from '../_services/auth.service';
+var board_1 = require('./board');
+var ship_1 = require('./ship');
 var websocket_service_1 = require('../_services/websocket.service');
 var BoardComponent = (function () {
     function BoardComponent(websocketsService) {
@@ -26,6 +24,12 @@ var BoardComponent = (function () {
         this.websocketsService.sendShoot(data, this.index);
     };
     ;
+    BoardComponent.prototype.click = function (line, column) {
+        console.log('click, linha: ' + (line / 10) + ', column: ' + (column + 1));
+        var lineAsString = String.fromCharCode(65 + (line / 10));
+        this.newBoard.adicionaNavio(ship_1.ShipType.Cruzador, ship_1.Orientation.Normal, lineAsString, column);
+    };
+    ;
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
@@ -34,6 +38,10 @@ var BoardComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', Number)
     ], BoardComponent.prototype, "index", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', board_1.Board)
+    ], BoardComponent.prototype, "newBoard", void 0);
     BoardComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

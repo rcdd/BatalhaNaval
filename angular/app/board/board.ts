@@ -1,8 +1,8 @@
-import {Ship} from './ship';
-import {ShipType} from './ship';
-import {Orientation} from './ship';
-import {Cell} from './cell';
-import {Position} from './position';
+import { Ship } from './ship';
+import { ShipType } from './ship';
+import { Orientation } from './ship';
+import { Cell } from './cell';
+import { Position } from './position';
 
 export class Board {
     ships: Ship[];
@@ -18,7 +18,7 @@ export class Board {
         return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     }
 
-    constructor () {
+    constructor() {
         this.cells = [];
         this.positionBusy = [];
         this.ships = [];

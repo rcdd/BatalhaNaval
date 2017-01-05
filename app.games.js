@@ -37,7 +37,6 @@ function getGames(request, response, next) {
 }
 
 function getGamesWaiting(request, response, next) {
-    console.log('Get games playing');
 	database.db.collection('games')
         .find({state: 'waiting'})
 		.toArray()

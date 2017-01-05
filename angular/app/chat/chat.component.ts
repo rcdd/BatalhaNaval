@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {WebSocketService } from '../_services/websocket.service';
+import { Component, OnInit } from '@angular/core';
+import { WebSocketService } from '../_services/websocket.service';
 
 import { AuthService } from '../_services/auth.service';
 
@@ -8,11 +8,25 @@ import { AuthService } from '../_services/auth.service';
     selector: 'chat',
     templateUrl: 'chat.component.html'
 })
-export class ChatComponent {
+export class ChatComponent implements OnInit {
     message: string;
+    chatChannel: string[] = [];
 
     constructor(private websocketService: WebSocketService,
-                private authService: AuthService) {}
+        private authService: AuthService) { }
+
+    ngOnInit() {
+        // TODO: subscribe each type of event on websocketService
+        // Every time a message is served 
+        this.websocketService.getChatMessages().subscribe(
+            m => {
+                // console.log(m);
+
+                let show = m.date + ': [' + m.user.name + '] ' + m.message;
+
+                this.chatChannel.push(show);
+            });
+    }
 
     send(): void {
         // TODO: sends a chat messsage
@@ -25,4 +39,5 @@ export class ChatComponent {
         this.websocketService.sendChatMessage(json);
         this.message = '';
     }
+
 }

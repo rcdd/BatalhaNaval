@@ -1,3 +1,6 @@
+<h2>Chat history</h2>
+<p *ngFor="let m of chatChannel">{{m}}</p>
+<br />
 <form #messageForm="ngForm">
     <input name="message" placeholder="Type a message" size="30" required [(ngModel)]="message">
     <button class="btn btn-primary" [disabled]="!messageForm.form.valid" (click)="send()">Send</button>

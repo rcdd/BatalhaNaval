@@ -66,15 +66,6 @@ export class WebSocketService {
     }
 
 
-
-
-
-
-
-
-
-
-
     sendChatMessage(message: any) {
         this.socket.emit('chat', message);
     }
@@ -97,6 +88,7 @@ export class WebSocketService {
             return () => this.socket.disconnect();
         });
     }
+    
 
 
 }

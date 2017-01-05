@@ -10,37 +10,16 @@ import { WebSocketService } from '../_services/websocket.service';
 
 export class NotificationComponent implements OnInit {
     playersChannel: string[] = [];
-    chatChannel: string[] = [];
 
     constructor(private websocketService: WebSocketService) {
     }
 
     ngOnInit() {
-        // TODO: subscribe each type of event on websocketService
-        // Every time a message is served just push it to the proper channel
         this.websocketService.getPlayersMessages().subscribe(
             m => {
                 // console.log(m);
                 this.playersChannel.push(m);
             });
-        this.websocketService.getChatMessages().subscribe(
-            m => {
-                // console.log(m);
-
-                let show = m.date + ': [' + m.user.name + '] ' + m.message;
-
-                this.chatChannel.push(show);
-            });
-
-
-        /*this.websocketService.getShootMessages().subscribe(
-            m => {
-                 console.log('getShootMessages function: ' + m);
-
-                let show = '[' + m.user.name + '] shoot at position ' + m.position;
-
-                this.chatChannel.push(show);
-            });*/
     }
 
 }

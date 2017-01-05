@@ -1,19 +1,40 @@
- <div *ngIf="board" id="board">
+<div *ngIf="board" id="board">
     <div class="row board-row">
         <div class="col-xs-1 board-cell info-board">
-                <i class="fa fa-ship" aria-hidden="true"></i>
-            </div>
-            <div class="col-xs-1 board-cell info-board" *ngFor="let columns of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
-                {{columns}}
-            </div>
+            <i class="fa fa-ship" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-1 board-cell info-board" *ngFor="let columns of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            {{columns}}
+        </div>
     </div>
-        <div class="row board-row" *ngFor="let i of [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]">
-            <div class="col-xs-1 board-cell info-board" >
+    <div class="row board-row" *ngFor="let i of [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]">
+        <div class="col-xs-1 board-cell info-board">
             {{board.cells[i].position.line}}
+        </div>
+        <div class="col-xs-1 board-cell " *ngFor="let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" (click)="Shoot(i+j)">
+            <div [ngClass]="{'ship-board': board.cells[i+j].type == 1, 'water-board' : board.cells[i+j].type == 0}">
             </div>
-            <div class="col-xs-1 board-cell " *ngFor="let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" (click)="Shoot(i+j)">
-                <div [ngClass]="{'ship-board': board.cells[i+j].type == 1, 'water-board' : board.cells[i+j].type == 0}" >
-                </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="newBoard" id="newBoard">
+    new board
+    <div class="row board-row">
+        <div class="col-xs-1 board-cell info-board">
+            <i class="fa fa-ship" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-1 board-cell info-board" *ngFor="let columns of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            {{columns}}
+        </div>
+    </div>
+    <div class="row board-row" *ngFor="let i of [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]">
+        <div class="col-xs-1 board-cell info-board">
+            {{newBoard.cells[i].position.line}}
+        </div>
+        <div class="col-xs-1 board-cell " *ngFor="let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" (click)="click(i,j)">
+            <div [ngClass]="{'ship-board': newBoard.cells[i+j].type == 1, 'water-board' : newBoard.cells[i+j].type == 0}">
             </div>
-        </div> 
+        </div>
+    </div>
 </div>
