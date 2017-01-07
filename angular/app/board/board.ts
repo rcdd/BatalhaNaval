@@ -3,6 +3,7 @@ import { Ship } from './ship';
 import { Orientation } from './ship';
 import { Cell } from './cell';
 import { Position } from './position';
+// import { AlertService } from '../_services/index';
 
 export class Board {
     ships: Ship[];
@@ -19,6 +20,7 @@ export class Board {
     }
 
     constructor() {
+
         this.cells = [];
         this.positionBusy = [];
         this.ships = [];
@@ -48,7 +50,6 @@ export class Board {
             this.ships.push(ship);
             return ship;
         } catch (e) {
-            // Alterar para fazer tratamento de erros
             alert(e);
         }
     }

@@ -27,7 +27,7 @@ export class GameValidator {
             case ShipType.Submarino: 
                 return (orientation === Orientation.Normal);            
         }
-        alert('asdfdgsf');
+        alert('Please, insert correct ship');
     }
 
     public static checkLimits(type: ShipType, orientation: Orientation, Position: Position): boolean {
