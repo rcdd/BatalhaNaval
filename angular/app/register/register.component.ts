@@ -10,7 +10,10 @@ import { AlertService, AuthService } from '../_services/index';
 
 export class RegisterComponent {
     model: any = {};
+
     loading = false;
+    passwordMin3Chars = false;
+    passwordNotEqual = false;
 
     constructor(
         private router: Router,
@@ -18,9 +21,17 @@ export class RegisterComponent {
         private alertService: AlertService) { }
 
     register() {
-        this.loading = true;
-        this.model['totalVictories'] = 0;
-        this.authService.create(this.model)
+        this.passwordMin3Chars = false;
+        this.passwordNotEqual = false;
+        if (this.model.passwordHash.length < 3) {
+            this.passwordMin3Chars = true;
+            return;
+        }else if (this.model.passwordHashConfirmation !== this.model.passwordHash) {
+            this.passwordNotEqual = true;
+        }else {
+            this.loading = true;
+            this.model['totalVictories'] = 0;
+            this.authService.create(this.model)
             .subscribe(
                 data => {
                     this.alertService.success('Registration successful', true);
@@ -30,5 +41,6 @@ export class RegisterComponent {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+        }
     }
 }
