@@ -33,6 +33,7 @@ export class ListGamesComponent implements OnInit {
     ngOnInit() {
         // TODO: subscribe each type of event on websocketService
         // Every time a message is served 
+        console.log('subscribe to updateList');
         this.websocketsService.getListAlert().subscribe(
             m => {
                 console.log('new update by socket');
@@ -98,6 +99,7 @@ export class ListGamesComponent implements OnInit {
                         // JOIN GAME => TODO
                         this.alertService.success('You join in game #: ' + game.id);
                         this.updateGameList();
+                        this.websocketsService.sendLists();
 
                     }, error => {
                         this.alertService.error('error assign to game!');

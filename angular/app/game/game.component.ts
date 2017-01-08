@@ -89,6 +89,7 @@ export class GameComponent implements OnInit {
         .subscribe(data => {
           this.alertService.success('Your game # is: ' + body.id);
           this.newGameDash = false;
+          this.websocketsService.sendLists();
           this._router.navigate(['home']);
         }, error => {
           this.alertService.error('unauthorized!');
