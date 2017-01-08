@@ -56,7 +56,7 @@
   </div>
 
 
-  <div *ngIf="idGame" class="row">
+    <div *ngIf="typeSubmit=='join'" class="row">
     <div class="col-md-2">
       <strong>Join game:</strong>
     </div>
@@ -108,5 +108,5 @@
 
 <!-- GAME -->
 <div *ngIf="boards">
-  <board *ngFor="let board of boards; let i = index" [index]="i" [board]="board"></board>
+  <board *ngFor="let board of boards; let i = index" [index]="board.owner" [board]="board" [idGame]="idGame" [listBoardsInGame]="listBoardsInGame" [listBoardsToShoot]="boards" ></board>
 </div>

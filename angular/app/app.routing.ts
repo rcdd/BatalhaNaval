@@ -14,7 +14,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'game', component: GameComponent, canActivate: [AuthGuard]  },
-    { path: 'game/:id', component: GameComponent, canActivate: [AuthGuard]  },
+    { path: 'game/:type/:id', component: GameComponent, canActivate: [AuthGuard]  },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

@@ -12,7 +12,7 @@ export class BoardComponent implements OnInit {
     @Input()
     board: any;
     @Input()
-    index: number;
+    index: any;
     @Input()
     newBoard: Board;
     @Input()
@@ -23,6 +23,12 @@ export class BoardComponent implements OnInit {
     listShip: any = [];
     @Input()
     selectedShipSelector: any;
+    @Input()
+    idGame: any;
+    @Input()
+    listBoardsInGame: any;
+    @Input()
+    listBoardsToShoot: any;
 
     constructor(private websocketsService: WebSocketService, private alertService: AlertService) {
 
@@ -32,9 +38,10 @@ export class BoardComponent implements OnInit {
     }
 
     Shoot(position: number) {
-        let data = this.board;
-        data.cells[position].type = 1;
-        this.websocketsService.sendShoot(data, this.index);
+        console.log(this.index);
+        console.log('BOARD Component SHOOT');
+        console.dir(this.listBoardsInGame);
+        this.websocketsService.sendShoot(position, this.board, this.index, this.idGame, this.listBoardsInGame, this.listBoardsToShoot);
     };
 
     click(line: number, column: number) {
@@ -55,10 +62,9 @@ export class BoardComponent implements OnInit {
                         }
                         i++;
                     });
-
                     this.selectedShip = this.listShip[this.selectedShipSelector];
                 }
-            } 
+            }
         } else {
             this.alertService.error('Please, select a ship!');
         }

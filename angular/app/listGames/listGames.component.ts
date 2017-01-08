@@ -44,11 +44,11 @@ export class ListGamesComponent implements OnInit {
     }
 
     updateGameList() {
-        this.listGamesCreated = [''];
-        this.listGamesWaiting = [''];
-        this.listGamesFull = [''];
-        this.listGamesPlaying = [''];
-        this.listGamesWaitingInGame = [''];
+        this.listGamesCreated.length = 0;
+        this.listGamesWaiting.length = 0;
+        this.listGamesFull.length = 0;
+        this.listGamesPlaying.length = 0;
+        this.listGamesWaitingInGame.length = 0;
 
         this.http.get(URL_GAME, {
             headers: this.headers
@@ -81,6 +81,14 @@ export class ListGamesComponent implements OnInit {
 
 
     joinGame(id: number) {
-        this._router.navigate(['/game/' + id]);
+        this._router.navigate(['/game/join/' + id]);
+    }
+
+    startGame(id: number) {
+        this._router.navigate(['/game/start/' + id]);
+    }
+
+    playGame(id: number) {
+        this._router.navigate(['/game/play/' + id]);
     }
 }

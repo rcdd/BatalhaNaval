@@ -13,50 +13,30 @@ export class WebSocketService {
     constructor() {
         if (!this.socket) {
             this.socket = io(`http://${window.location.hostname}:${window.location.port}`);
-            this.socket.on('newGame', function (data: any) {
-                console.log('webSocket: constructor. Data:');
-                console.dir(data);
-                this.boards = data;
-            });
         }
     }
 
+    sendShoot(position: any, board: any, owner: number, idGame: any, listBoardInGame: any, listBoardsToShoot: any) {
+        // this.boards[index] = board;
+        console.log(idGame);
 
-    sendShoot(board: any, index: number) {
-        this.boards[index] = board;
-        this.socket.emit('shoot', this.boards);
+        let json = {
+            position: position,
+            board: board,
+            owner: owner,
+            listBoardInGame: listBoardInGame,
+            listBoardsToShoot: listBoardsToShoot
+        };
+        console.log('SEND TO SERVER SHOOT:');
+        console.dir(json);
+        this.socket.emit(idGame, json);
     }
 
-    /*getShootMessages(): Observable<any> {
-
-        console.log('getShootMessages function');
+    // ESCUTA O CANAL 'IDGAME' ATÉ OBTER SHOOT'S
+    getShoot(idGame: any): Observable<any> {
         return new Observable((observer: any) => {
-            this.socket.on('shoot', (data: any) => {
-                this.boards = data;
-                observer.next(data);
-            });
-            return () => this.socket.disconnect();
-        });
-    } */
-
-    newGame(): any {
-        console.log('webSocket: newGame. Data:');
-        console.dir(this.boards);
-        return this.boards;
-    }
-
-    sendBoard(id: any, boards: any) {
-        console.log('websocket: send board:');
-        console.dir(boards);
-        this.boards = boards;
-        this.socket.emit(id, this.boards);
-    }
-
-    // ESCUTA O CANAL 'BOARD' ATÉ OBTER DADOS
-    getBoard(): Observable<any> {
-        return new Observable((observer: any) => {
-            this.socket.on('board', (data: any) => {
-                console.log('websocket: get board:');
+            this.socket.on(idGame, (data: any) => {
+                console.log('websocket: get shoot:');
                 console.dir(data);
                 this.boards = data;
                 observer.next(data);
@@ -64,7 +44,6 @@ export class WebSocketService {
             return () => this.socket.disconnect();
         });
     }
-
 
     sendChatMessage(message: any) {
         this.socket.emit('chat', message);
@@ -98,6 +77,26 @@ export class WebSocketService {
     getListAlert(): Observable<any> {
         return new Observable((observer: any) => {
             this.socket.on('lists', (data: any) => {
+                observer.next(data);
+            });
+            return () => this.socket.disconnect();
+        });
+    }
+
+    sendGame(channel: any, boards: any) {
+        this.socket.emit(channel, boards);
+        console.log('websocket send game');
+    }
+
+    createGame(channel: any, boards: any) {
+        this.socket.emit('startGame', { channel: channel, boards: boards });
+    }
+
+    getBoardsGame(channel: any): Observable<any> {
+        // TODO: study the getPlayersMessages to implement this method
+        console.log('set channel listen:' + channel);
+        return new Observable((observer: any) => {
+            this.socket.on(channel, (data: any) => {
                 observer.next(data);
             });
             return () => this.socket.disconnect();

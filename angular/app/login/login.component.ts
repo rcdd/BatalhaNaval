@@ -30,26 +30,26 @@ export class LoginComponent implements OnInit {
     login() {
         this.loading = true;
         this.authService.login(this.model.username, this.model.password)
-        .subscribe(data => {
-            this.router.navigate(['/board']);
-        },
-        error => {
-            this.alertService.error('Incorrect Login. Please try again.');
-            this.loading = false;
-        });
+            .subscribe(data => {
+                this.router.navigate(['/board']);
+            },
+            error => {
+                this.alertService.error('Incorrect Login. Please try again.');
+                this.loading = false;
+            });
 
     }
 
     loginFacebook() {
         this.loading = true;
         this.authService.loginFacebook()
-        .subscribe(data => {
-            this.router.navigate(['/board']);
-        },
-        error => {
-            this.alertService.error('Incorrect Login. Please try again.');
-            this.loading = false;
-        });
+            .subscribe(data => {
+                this.router.navigate(['/board']);
+            },
+            error => {
+                this.alertService.error('Incorrect Login. Please try again.');
+                this.loading = false;
+            });
 
     }
 
