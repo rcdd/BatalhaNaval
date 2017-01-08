@@ -7,6 +7,7 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 const sha1 = require('sha1');
 const database = require('./app.database');
 
+
 const salt ="e3r_.jsya@54";
 
 let security = module.exports = {};
