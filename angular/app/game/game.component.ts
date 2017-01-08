@@ -24,6 +24,7 @@ export class GameComponent implements OnInit {
   selectedOrientation: any;
   listOrientation: any = [];
   idGame: any;
+  typeSubmit: any;
   private sub: any;
 
   newGameDash: boolean = false;
@@ -39,9 +40,21 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       this.idGame = params['id']; 
-       console.log(this.idGame);
-       this.joinGameDashForm();
+      this.idGame = params['id'];
+      this.typeSubmit = params['type'];
+      console.log(this.idGame);
+      if (this.typeSubmit === 'join') {
+        this.joinGameDashForm();
+      } else if (this.typeSubmit === 'start') {
+        this.start();
+      }
+      this.websocketsService.getShoot(this.idGame).subscribe((data) => {
+        console.dir(data);
+       /* if (data.owner === this.authService.user._id) {
+          let celltype: any = this.boards[0].cells[data.position].type;
+          console.log(celltype);
+        }*/
+      });
 
     });
   }
@@ -104,9 +117,10 @@ export class GameComponent implements OnInit {
     if (this.listShip.length === 0) {
       this.alertService.subject.next();
 
+      this.newBoard.owner = this.authService.user._id;
       let body = {
         id: Math.floor(Math.random() * 99999) + 1,
-        players: [{player: this.authService.user, board: this.newBoard}],
+        players: [{ player: this.authService.user, board: this.newBoard }],
         creator: this.authService.user._id,
         state: 'created'
       };
@@ -132,48 +146,96 @@ export class GameComponent implements OnInit {
   }
 
   joinGame() {
-        let game: any = [];
-        // GETING GAME
-        let endpoint = URL_GAME + '/' + this.idGame;
-        this.http.get(endpoint, {
-            headers: this.headers
-        }).map(res => res.json()).subscribe(data => {
-            game = data;
+    let game: any = [];
+    // GETING GAME
+    let endpoint = URL_GAME + '/' + this.idGame;
+    this.http.get(endpoint, {
+      headers: this.headers
+    }).map(res => res.json()).subscribe(data => {
+      game = data;
 
-            // CHECK CONFIGURATION
-            game.players.push({'player': this.authService.user, 'board': this.newBoard});
+      // CHECK CONFIGURATION
+      this.newBoard.owner = this.authService.user._id;
+      game.players.push({ 'player': this.authService.user, 'board': this.newBoard });
 
-            if (game.state === 'created') {
-                game.state = 'waiting';
-            }
-            if (game.state === 'waiting' && game.players.length === MAX_PLAYERS) {
-                game.state = 'full';
-            }
-            if (game.state === 'waiting' && game.players.length !== MAX_PLAYERS) {
-                
-            }
-             if (game.players.length < MAX_PLAYERS) {
-                // UPDATE GAME
-                this.http.put(endpoint, game, {
-                    headers: this.headers
-                })
-                    .subscribe(ok => {
-                        // JOIN GAME => TODO
-                        this.alertService.success('You join in game #: ' + game.id, true);
-                        this.websocketsService.sendLists();
-                        this._router.navigate(['/home']);
-                    }, error => {
-                        this.alertService.error('error assign to game!');
-                        console.log(JSON.stringify(error.json()));
-                    });
+      if (game.state === 'created') {
+        game.state = 'waiting';
+      }
+      if (game.state === 'waiting' && game.players.length === MAX_PLAYERS) {
+        game.state = 'full';
+      }
+      if (game.state === 'waiting' && game.players.length !== MAX_PLAYERS) {
 
-            } else {
-                this.alertService.error('Game is Full!');
-            }
-        }, error => {
-            this.alertService.error('error getting game!');
+      }
+      if (game.players.length < MAX_PLAYERS) {
+        // UPDATE GAME
+        this.http.put(endpoint, game, {
+          headers: this.headers
+        })
+          .subscribe(ok => {
+            // JOIN GAME => TODO
+            this.alertService.success('You join in game #: ' + game.id, true);
+            this.websocketsService.sendLists();
+            this.websocketsService.getBoardsGame(game._id).subscribe(
+              m => {
+                console.log('a receber boards');
+                console.dir(m);
+              });
+            this._router.navigate(['/home']);
+          }, error => {
+            this.alertService.error('error assign to game!');
             console.log(JSON.stringify(error.json()));
+          });
+
+      } else {
+        this.alertService.error('Game is Full!');
+      }
+    }, error => {
+      this.alertService.error('error getting game!');
+      console.log(JSON.stringify(error.json()));
+    });
+    this.websocketsService.sendLists();
+  }
+
+  start() {
+    let game: any = [];
+    let listBoardsInGame: any = [];
+    let endpoint = URL_GAME + '/' + this.idGame;
+    this.http.get(endpoint, {
+      headers: this.headers
+    }).map(res => res.json()).subscribe(data => {
+      game = data;
+      game.players.forEach((players: any) => {
+        listBoardsInGame.push(players.board);
+      });
+
+      game.state = 'playing';
+      this.http.put(endpoint, game, {
+        headers: this.headers
+      })
+        .subscribe(ok => {
+          // JOIN GAME => TODO
+          this.websocketsService.sendLists();
+          this.websocketsService.createGame(game._id, listBoardsInGame);
+          let boards: any = [];
+          boards.push(listBoardsInGame[0]);
+
+          for (let i: any = 1; i < listBoardsInGame.length; i++) {
+            let bd: any = [];
+            bd = new Board();
+            bd.owner = listBoardsInGame[i].owner;
+            boards.push(bd);
+            console.dir(bd);
+          }
+          this.boards = boards;
+        }, error => {
+          this.alertService.error('error assign to game!');
+          console.log(JSON.stringify(error.json()));
         });
-      this.websocketsService.sendLists();
-    }
+    });
+  }
+
+  getShoot(id: any) {
+    console.dir(' GAME COMPONENT: ' + id);
+  }
 }

@@ -81,6 +81,10 @@ export class ListGamesComponent implements OnInit {
 
 
     joinGame(id: number) {
-        this._router.navigate(['/game/' + id]);
+        this._router.navigate(['/game/join/' + id]);
+    }
+
+    startGame(id: number) {
+        this._router.navigate(['/game/start/' + id]);
     }
 }

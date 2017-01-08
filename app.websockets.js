@@ -30,9 +30,27 @@ ws.init = (server) => {
         });
 
         client.on('shoot', data => {
-            console.log('appSocket: shoot ' + data);
+            console.log('appSocket: shoot ');
+            console.dir(data);
             boards = data;
             wsServer.sockets.emit('board', data);
+        });
+
+            /*position: position,
+            board: board,
+            owner: owner,
+            listBoardInGame: listBoardInGame
+            listBoardsToShoot: listBoardsToShoot*/
+
+        client.on('startGame', data => {
+            console.log('appSocket: createGame ');
+            console.dir(data);
+            client.on(data.channel, allData => {
+                console.dir(allData);
+                wsServer.sockets.emit(data.channel, allData);
+            });
+            
+            wsServer.emit(data.channel, data.boards);
         });
     });
 };
