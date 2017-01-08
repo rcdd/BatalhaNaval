@@ -7,7 +7,7 @@ import { Http, Headers } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/Rx';
 
-const URL_GAME = 'http://localhost:8080/api/v1/games';
+const URL_GAME = '/api/v1/games';
 const MAX_PLAYERS = 4;
 
 @Component({

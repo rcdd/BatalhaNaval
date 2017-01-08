@@ -4,7 +4,7 @@ import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router';
 import { WebSocketService } from '../_services/websocket.service';
 
-const URL_GAME = 'http://localhost:8080/api/v1/games';
+const URL_GAME = '/api/v1/games';
 
 @Component({
     moduleId: module.id,
@@ -17,7 +17,10 @@ export class ListGamesComponent implements OnInit {
     listGames: any = '';
     listGamesCreated: any = [];
     listGamesWaiting: any = [];
+    listGamesWaitingInGame: any = [];
+    listGamesPlaying: any = [];
     listGamesFull: any = [];
+
     headers = new Headers();
 
     constructor(private authService: AuthService, private websocketsService: WebSocketService,
@@ -41,9 +44,11 @@ export class ListGamesComponent implements OnInit {
     }
 
     updateGameList() {
-        this.listGamesCreated = [];
-        this.listGamesWaiting = [];
-        this.listGamesFull = [];
+        this.listGamesCreated = [''];
+        this.listGamesWaiting = [''];
+        this.listGamesFull = [''];
+        this.listGamesPlaying = [''];
+        this.listGamesWaitingInGame = [''];
 
         this.http.get(URL_GAME, {
             headers: this.headers
@@ -54,10 +59,18 @@ export class ListGamesComponent implements OnInit {
                     if (game.state === 'created') {
                         this.listGamesCreated.push(game);
                     } else if (game.state === 'waiting') {
-                        this.listGamesWaiting.push(game);
+                        if ((game.creator !== this.authService.user._id) && game.players.indexOf(this.authService.user)) {
+                            this.listGamesWaitingInGame.push(game);
+                        } else {
+                            this.listGamesWaiting.push(game);
+                        }
+
+                    } else if (game.state === 'playing') {
+                        if (game.players.indexOf(this.authService.user)) {
+                            this.listGamesPlaying.push(game);
+                        }
                     } else if (game.state === 'full') {
                         if (game.players.indexOf(this.authService.user)) {
-
                             this.listGamesFull.push(game);
                         }
                     }
