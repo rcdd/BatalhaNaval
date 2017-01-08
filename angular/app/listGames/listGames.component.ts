@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService, AlertService } from '../_services/index';
 import { Http, Headers } from '@angular/http';
 
@@ -12,7 +12,7 @@ const URL_GAME = 'http://localhost:8080/api/v1/games';
     templateUrl: 'listGames.component.html'
 })
 
-export class ListGamesComponent {
+export class ListGamesComponent implements OnInit {
     currentUser: string;
     listGames: any = '';
     listGamesCreated: any = [];
@@ -26,6 +26,18 @@ export class ListGamesComponent {
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Authorization', 'Bearer ' + this.authService.user.token);
         this.updateGameList();
+    }
+
+
+    ngOnInit() {
+        // TODO: subscribe each type of event on websocketService
+        // Every time a message is served 
+        console.log('subscribe to updateList');
+        this.websocketsService.getListAlert().subscribe(
+            m => {
+                console.log('new update by socket');
+                this.updateGameList();
+            });
     }
 
     updateGameList() {
@@ -56,6 +68,51 @@ export class ListGamesComponent {
 
 
     joinGame(id: number) {
-        this._router.navigate(['game/' + id]);
+        let game: any = [];
+
+        // GETING GAME
+        let endpoint = URL_GAME + '/' + id;
+        this.http.get(endpoint, {
+            headers: this.headers
+        }).map(res => res.json()).subscribe(data => {
+            game = data;
+
+            // CHECK CONFIGURATION
+            game.players.push(this.authService.user);
+
+            if (game.state === 'created') {
+                game.state = 'waiting';
+            }
+            if (game.state === 'waiting' && game.players.length === MAX_PLAYERS) {
+                game.state = 'full';
+            }
+            if (game.state === 'waiting' && game.players.length !== MAX_PLAYERS) {
+
+            }
+            if (game.players.length < MAX_PLAYERS) {
+                // UPDATE GAME
+                this.http.put(endpoint, game, {
+                    headers: this.headers
+                })
+                    .subscribe(ok => {
+                        // JOIN GAME => TODO
+                        this.alertService.success('You join in game #: ' + game.id);
+                        this.updateGameList();
+                        this.websocketsService.sendLists();
+
+                    }, error => {
+                        this.alertService.error('error assign to game!');
+                        console.log(JSON.stringify(error.json()));
+                    });
+
+            } else {
+                this.alertService.error('Game is Full!');
+            }
+        }, error => {
+            this.alertService.error('error getting game!');
+            console.log(JSON.stringify(error.json()));
+        });
+
+        this.updateGameList();
     }
 }

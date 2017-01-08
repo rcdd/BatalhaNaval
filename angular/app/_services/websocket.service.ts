@@ -90,5 +90,18 @@ export class WebSocketService {
     }
 
 
+    sendLists() {
+        console.log('websocket: send Lists');
+        this.socket.emit('lists');
+    }
+
+    getListAlert(): Observable<any> {
+        return new Observable((observer: any) => {
+            this.socket.on('lists', (data: any) => {
+                observer.next(data);
+            });
+            return () => this.socket.disconnect();
+        });
+    }
 
 }
