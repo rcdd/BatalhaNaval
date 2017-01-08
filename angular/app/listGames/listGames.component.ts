@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService, AlertService } from '../_services/index';
 import { Http, Headers } from '@angular/http';
-
+import { Router } from '@angular/router';
 import { WebSocketService } from '../_services/websocket.service';
 
 const URL_GAME = 'http://localhost:8080/api/v1/games';
@@ -21,7 +21,7 @@ export class ListGamesComponent implements OnInit {
     headers = new Headers();
 
     constructor(private authService: AuthService, private websocketsService: WebSocketService,
-        private alertService: AlertService, private http: Http) {
+        private alertService: AlertService, private http: Http, private _router: Router) {
         this.currentUser = this.authService.user;
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('Authorization', 'Bearer ' + this.authService.user.token);
@@ -68,51 +68,6 @@ export class ListGamesComponent implements OnInit {
 
 
     joinGame(id: number) {
-        let game: any = [];
-
-        // GETING GAME
-        let endpoint = URL_GAME + '/' + id;
-        this.http.get(endpoint, {
-            headers: this.headers
-        }).map(res => res.json()).subscribe(data => {
-            game = data;
-
-            // CHECK CONFIGURATION
-            game.players.push(this.authService.user);
-
-            if (game.state === 'created') {
-                game.state = 'waiting';
-            }
-            if (game.state === 'waiting' && game.players.length === MAX_PLAYERS) {
-                game.state = 'full';
-            }
-            if (game.state === 'waiting' && game.players.length !== MAX_PLAYERS) {
-
-            }
-            if (game.players.length < MAX_PLAYERS) {
-                // UPDATE GAME
-                this.http.put(endpoint, game, {
-                    headers: this.headers
-                })
-                    .subscribe(ok => {
-                        // JOIN GAME => TODO
-                        this.alertService.success('You join in game #: ' + game.id);
-                        this.updateGameList();
-                        this.websocketsService.sendLists();
-
-                    }, error => {
-                        this.alertService.error('error assign to game!');
-                        console.log(JSON.stringify(error.json()));
-                    });
-
-            } else {
-                this.alertService.error('Game is Full!');
-            }
-        }, error => {
-            this.alertService.error('error getting game!');
-            console.log(JSON.stringify(error.json()));
-        });
-
-        this.updateGameList();
+        this._router.navigate(['/game/' + id]);
     }
 }
