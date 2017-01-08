@@ -15,9 +15,13 @@
 <br />
 <h2>Game</h2>
 <br />
+
+
+
+
 <!-- SHOW ALL -->
 <div *ngIf="boards==''">
-  <div *ngIf="!newGameDash" class="col-md-1">
+  <div *ngIf="!newGameDash && !idGame" class="col-md-1">
     <button class="btn btn-primary" (click)="newGameDashForm()">New Game</button>
   </div>
   <div *ngIf="newGameDash" class="row">
@@ -65,6 +69,54 @@
       </div>
     </div>
   </div>
+
+
+    <div *ngIf="idGame" class="row">
+    <div class="col-md-2">
+      <strong>Join game:</strong>
+    </div>
+    <div>
+      <div class="row">
+        <div class="col-md-6">
+          <board [newBoard]="newBoard" [selectedShip]="selectedShip" [selectedShipSelector]="selectedShipSelector" [listShip]="listShip" [selectedOrientation]="selectedOrientation"></board>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-4">
+              Ship:
+            </div>
+            <div class="col-md-4">
+              <select [(ngModel)]="selectedShipSelector" name="selectedShip" (ngModelChange)="onSelectedChange()">
+              <option [ngValue]="j" *ngFor="let i of listShip; let j = index" >
+                {{i.name}}
+                </option>
+            </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              Orientation:
+            </div>
+            <div class="col-md-4">
+              <select [(ngModel)]="selectedOrientation" name="selectedOrientation">
+              <option [value]="k.value" *ngFor="let k of listOrientation">{{k.name}}</option>
+            </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-2">
+          <button class="btn btn-primary" (click)='joinGame()'>Confirm and join</button>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-warning" routerLink="/home">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <br />
   <br />
 </div>
