@@ -1,46 +1,45 @@
-<div class="col-md-6 col-md-offset-3">
-    <h2>Register</h2>
-    <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+<div class = "container">
+    <div class="row">
+        <h1 class="text-center_title">DAD - Battleship</h1>
+    </div>
+    <div class="wrapper">
+        <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate class="form-signin">
+           <h2 class="form-signin-heading">Registo! </h2>
+           <hr class="colorgraph"><br>
+           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <input type="text" placeholder="Nome" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
             <div *ngIf="f.submitted && !name.valid" class="error">Name is required</div>
         </div>
 
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+        <input type="text" class="form-control" placeholder="Username" name="username" [(ngModel)]="model.username" #username="ngModel" required />
             <div *ngIf="f.submitted && !username.valid" class="error">Username is required</div>
         </div>
 
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
-            <label for="email">Email</label>
-            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+            <input type="email" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
             <div *ngIf="f.submitted && !email.valid" class="error">Email is Invalid!</div>
         </div>
 
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !passwordHash.valid }">
-            <label for="passwordHash">Password</label>
-            <input type="password" class="form-control" name="passwordHash" [(ngModel)]="model.passwordHash" #passwordHash="ngModel" required />
+            <input type="password" placeholder="Password" class="form-control" name="passwordHash" [(ngModel)]="model.passwordHash" #passwordHash="ngModel" required />
             <div *ngIf="f.submitted && !passwordHash.valid" class="error">password is required</div>
             <div *ngIf="f.submitted && passwordMin3Chars" class="error">Minimo tamanho para a password 3 caracteres!</div>
         </div>
 
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !passwordHashConfirmation.valid }">
-            <label for="passwordHashConfirmation">Confirmation Password</label>
-            <input type="password" class="form-control" name="passwordHashConfirmation" [(ngModel)]="model.passwordHashConfirmation" #passwordHashConfirmation="ngModel" required />
+            <input type="password" placeholder="Password Confirmation" class="form-control" name="passwordHashConfirmation" [(ngModel)]="model.passwordHashConfirmation" #passwordHashConfirmation="ngModel" required />
             <div *ngIf="f.submitted && !passwordHashConfirmation.valid" class="error">password is required</div>
             <div *ngIf="f.submitted && passwordNotEqual" class="error">As passwords não são iguais!</div>
         </div>
 
-        <div class="form-group">
-            <button [disabled]="loading" class="btn btn-primary">Register</button>
-            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-            <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+
+        <button [disabled]="loading" class="btn btn-lg btn-primary btn-block"  name="Submit" value="Registo" type="Submit">Registo</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <div class="social-buttons">
+            <a href="/auth/facebook" class="btn btn-fb btn-lg btn-block"><i class="fa fa-facebook"></i> Facebook</a>
         </div>
+        <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
     </form>
-    <div class="form-group">
-    <a class="btn btn-primary" href="/auth/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
-    </div>
+</div>
 </div>

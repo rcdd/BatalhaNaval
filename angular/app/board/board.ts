@@ -50,7 +50,8 @@ export class Board {
             this.ships.push(ship);
             return ship;
         } catch (e) {
-            alert(e);
+            return e;
+            // alert(e + 'ola');
         }
     }
 

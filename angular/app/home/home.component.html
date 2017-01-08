@@ -1,35 +1,19 @@
-<div class="container">
-    <div class='row'>
-        <div class='col-md-1'>
-            <strong>Menu:</strong>
-        </div>
-        <div class='col-md-1'>
-            <a [routerLink]="['/home']">Home</a>
-        </div>
-        <div class='col-md-1'>
-            <a [routerLink]="['/game']">Game</a>
-        </div>
-        <div class='col-md-1'>
-            <a [routerLink]="['/login']">Logout</a>
-        </div>
-    </div>
-    <br />
-    <div class="row">Hi there, {{currentUser.name}}!</div>
 
-    <div class='row'>
-        <div class='col-md-10'>
-            <notification-panel></notification-panel>
-        </div>
+<div class="container">
+ <div class='row'>
+    <div class='col-md-10'>
+        <notification-panel></notification-panel>
     </div>
-    <div class="row">
-        <div class='col-md-4'>
-            <chat></chat>
-        </div>
-        <div class='col-md-6'>
-            <listGames></listGames>
-        </div>
-        <div class='col-md-4'>
-            <topTen></topTen>
-        </div>
+</div>
+<div class="row">
+    <div class='col-md-4'>
+        <chat></chat>
     </div>
+    <div class='col-md-6'>
+        <listGames></listGames>
+    </div>
+    <div class='col-md-4'>
+        <topTen></topTen>
+    </div>
+</div>
 </div>

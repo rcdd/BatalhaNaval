@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rcdd/BatalhaNaval#readme",
   "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.16",
     "express": "^4.14.0",
     "mongodb": "^2.2.12",
     "nodemailer": "^2.7.0",

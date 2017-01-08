@@ -61,14 +61,14 @@ export class LoginComponent implements OnInit {
         }
         this.loading = true;
         this.authService.recoverPassword(this.model.username)
-            .subscribe(data => {
-                this.alertService.success('Nova password enviada para o email' + data);
-                this.loading = false;
-            },
-            error => {
-                this.alertService.error('Ocorreu um erro');
-                this.loading = false;
-            });
+        .subscribe(data => {
+            this.alertService.success('Nova password enviada para o email' + data);
+            this.loading = false;
+        },
+        error => {
+            this.alertService.error('Ocorreu um erro');
+            this.loading = false;
+        });
 
     }
 }

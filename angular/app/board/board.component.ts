@@ -51,15 +51,16 @@ export class BoardComponent implements OnInit {
     };
 
     click(line: number, column: number) {
-        // console.log('click, linha: ' + (line / 10) + ', column: ' + (column + 1));
+        this.alertService.subject.next();
         let lineAsString: string = String.fromCharCode(65 + (line / 10));
         console.dir(this.selectedShip);
         if (this.selectedShip !== undefined) {
             if (this.selectedShip.id !== '') {
-                this.alertService.subject.next();
                 let ship: any = '';
                 ship = this.newBoard.adicionaNavio(this.selectedShip.value, +this.selectedOrientation, lineAsString, column + 1);
-                if (ship !== undefined) {
+
+
+                if (!(ship instanceof Error)) {
                     let i = 0;
                     this.listShip.forEach((list: any) => {
                         if (this.selectedShip.id === list.id) {
@@ -69,6 +70,8 @@ export class BoardComponent implements OnInit {
                         i++;
                     });
                     this.selectedShip = this.listShip[this.selectedShipSelector];
+                }else {
+                    this.alertService.error(ship.message);
                 }
             }
         } else {
