@@ -5,7 +5,6 @@ import { Http, Headers } from '@angular/http';
 import { WebSocketService } from '../_services/websocket.service';
 
 const URL_GAME = 'http://localhost:8080/api/v1/games';
-const MAX_PLAYERS = 4;
 
 @Component({
     moduleId: module.id,
@@ -57,50 +56,6 @@ export class ListGamesComponent {
 
 
     joinGame(id: number) {
-        let game: any = [];
-
-        // GETING GAME
-        let endpoint = URL_GAME + '/' + id;
-        this.http.get(endpoint, {
-            headers: this.headers
-        }).map(res => res.json()).subscribe(data => {
-            game = data;
-
-            // CHECK CONFIGURATION
-            game.players.push(this.authService.user);
-
-            if (game.state === 'created') {
-                game.state = 'waiting';
-            }
-            if (game.state === 'waiting' && game.players.length === MAX_PLAYERS) {
-                game.state = 'full';
-            }
-            if (game.state === 'waiting' && game.players.length !== MAX_PLAYERS) {
-                
-            }
-             if (game.players.length < MAX_PLAYERS) {
-                // UPDATE GAME
-                this.http.put(endpoint, game, {
-                    headers: this.headers
-                })
-                    .subscribe(ok => {
-                        // JOIN GAME => TODO
-                        this.alertService.success('You join in game #: ' + game.id);
-                        this.updateGameList();
-
-                    }, error => {
-                        this.alertService.error('error assign to game!');
-                        console.log(JSON.stringify(error.json()));
-                    });
-
-            } else {
-                this.alertService.error('Game is Full!');
-            }
-        }, error => {
-            this.alertService.error('error getting game!');
-            console.log(JSON.stringify(error.json()));
-        });
-
-        this.updateGameList();
+        this._router.navigate(['game/' + id]);
     }
 }

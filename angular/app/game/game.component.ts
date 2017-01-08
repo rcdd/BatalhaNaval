@@ -22,6 +22,7 @@ export class GameComponent implements OnInit {
   listShip: any = [];
   selectedOrientation: any;
   listOrientation: any = [];
+  const MAX_PLAYERS = 4;
 
   newGameDash: boolean = false;
   headers = new Headers();
@@ -99,4 +100,51 @@ export class GameComponent implements OnInit {
       this.alertService.error('You need to insert all ships!');
     }
   }
+
+  joinGame(id: number) {
+        let game: any = [];
+        // GETING GAME
+        let endpoint = URL_GAME + '/' + id;
+        this.http.get(endpoint, {
+            headers: this.headers
+        }).map(res => res.json()).subscribe(data => {
+            game = data;
+
+            // CHECK CONFIGURATION
+            game.players.push(this.authService.user);
+
+            if (game.state === 'created') {
+                game.state = 'waiting';
+            }
+            if (game.state === 'waiting' && game.players.length === MAX_PLAYERS) {
+                game.state = 'full';
+            }
+            if (game.state === 'waiting' && game.players.length !== MAX_PLAYERS) {
+                
+            }
+             if (game.players.length < MAX_PLAYERS) {
+                // UPDATE GAME
+                this.http.put(endpoint, game, {
+                    headers: this.headers
+                })
+                    .subscribe(ok => {
+                        // JOIN GAME => TODO
+                        this.alertService.success('You join in game #: ' + game.id);
+                        this.updateGameList();
+
+                    }, error => {
+                        this.alertService.error('error assign to game!');
+                        console.log(JSON.stringify(error.json()));
+                    });
+
+            } else {
+                this.alertService.error('Game is Full!');
+            }
+        }, error => {
+            this.alertService.error('error getting game!');
+            console.log(JSON.stringify(error.json()));
+        });
+
+        this.updateGameList();
+    }
 }

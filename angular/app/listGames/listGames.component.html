@@ -30,7 +30,7 @@
                 <button class="btn btn-success" (click)="joinGame(list._id)">Join Game</button>
             </div>
             <div *ngIf="list.creator==authService.user._id">
-                <button class="btn btn-success" (click)="joinGame(list._id)">Start Game</button>
+                <button class="btn btn-success" (click)="startGame(list._id)">Start Game</button>
             </div>
         </td>
     </tr>
