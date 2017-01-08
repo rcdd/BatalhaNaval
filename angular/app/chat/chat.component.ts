@@ -3,6 +3,12 @@ import { WebSocketService } from '../_services/websocket.service';
 
 import { AuthService } from '../_services/auth.service';
 
+import { ChatService } from '../_services/chat.service';
+
+import 'rxjs/add/operator/scan';
+
+
+
 @Component({
     moduleId: module.id,
     selector: 'chat',
@@ -11,25 +17,27 @@ import { AuthService } from '../_services/auth.service';
 export class ChatComponent implements OnInit {
     message: string;
     chatChannel: string[] = [];
+    hidechat = false;
+
+    minimize =  false;
 
     constructor(private websocketService: WebSocketService,
-        private authService: AuthService) { }
+        private authService: AuthService, private chatService: ChatService) {
+
+    }
 
     ngOnInit() {
-        // TODO: subscribe each type of event on websocketService
-        // Every time a message is served 
-        this.websocketService.getChatMessages().subscribe(
+        this.chatChannel = this.chatService.getMessage();
+        /*this.websocketService.getChatMessages().subscribe(
             m => {
-                // console.log(m);
-
-                let show = m.date + ': [' + m.user.name + '] ' + m.message;
-
+                let show =  '[' + m.user.name + ']\n ' + m.message;
                 this.chatChannel.push(show);
-            });
+
+            });*/
     }
 
     send(): void {
-        // TODO: sends a chat messsage
+        let show =  '[' + this.authService.user.name + ']\n ' + this.message;
         let json = {
             date: new Date(),
             user: this.authService.user,
@@ -37,7 +45,14 @@ export class ChatComponent implements OnInit {
         };
 
         this.websocketService.sendChatMessage(json);
+        this.chatService.setMessage(show);
         this.message = '';
+
+    }
+
+    closeChat(): void {
+        console.log(this.minimize);
+        this.minimize = (this.minimize ? false : true);
     }
 
 }

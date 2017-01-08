@@ -39,7 +39,7 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-       this.idGame = params['id']; 
+       this.idGame = params['id'];
        console.log(this.idGame);
        this.joinGameDashForm();
 
@@ -150,7 +150,7 @@ export class GameComponent implements OnInit {
                 game.state = 'full';
             }
             if (game.state === 'waiting' && game.players.length !== MAX_PLAYERS) {
-                
+
             }
              if (game.players.length < MAX_PLAYERS) {
                 // UPDATE GAME

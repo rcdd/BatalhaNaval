@@ -1,7 +1,18 @@
 <h2>Chat history</h2>
-<p *ngFor="let m of chatChannel">{{m}}</p>
-<br />
-<form #messageForm="ngForm">
-    <input name="message" placeholder="Type a message" size="30" required [(ngModel)]="message">
-    <button class="btn btn-primary" [disabled]="!messageForm.form.valid" (click)="send()">Send</button>
-</form>
+
+
+<div class="msg_box">
+    <div class="msg_head" (click)="closeChat()">Chat</div>
+    <div [ngClass]="{'minimize': minimize}" class="msg_wrap">
+        <div #list class="msg_body" [scrollTop]="list.scrollHeight" >
+            <div class="msg">This is from B, and its amazingly kool nah... i know it even i liked it :)</div>
+            <div class="msg">Wow, Thats great to hear from you man </div>
+            <div class="msg" *ngFor="let m of chatChannel">{{m}}</div>
+        </div>
+        <div class="msg_footer">
+            <form #messageForm="ngForm">
+                <input class="msg_input" name="message" placeholder="Escreva a mensagem" size="30" required [(ngModel)]="message">
+                <button class="btn btn-primary" [disabled]="!messageForm.form.valid" (click)="send()">Send</button>
+            </form>
+        </div>
+    </div>

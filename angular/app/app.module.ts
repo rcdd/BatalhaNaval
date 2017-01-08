@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { ChatComponent } from './chat/index';
 import { WebSocketService } from './_services/websocket.service';
 import { AlertService, AuthService } from './_services/index';
+import { ChatService } from './_services/chat.service';
 
 import { AlertComponent } from './_alert/index';
 import { GameComponent } from './game/index';
@@ -25,32 +26,36 @@ import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   imports: [
-    NgbModule.forRoot(), 
-    BrowserModule, 
-    NotificationModule, 
-    FormsModule, 
-    BoardComponentModule,
-    HttpModule,
-    routing
+  NgbModule,
+  BrowserModule,
+  NotificationModule,
+  FormsModule,
+  BoardComponentModule,
+  HttpModule,
+  routing
+
   ],
-  declarations: [ 
-    AppComponent, 
-    ChatComponent,
-    GameComponent,
-    LoginComponent,
-    RegisterComponent,
-    AlertComponent,
-    TopTenComponent,
-    ListGamesComponent,
-    HomeComponent
+  declarations: [
+  AppComponent,
+  ChatComponent,
+  GameComponent,
+  LoginComponent,
+  RegisterComponent,
+  AlertComponent,
+  TopTenComponent,
+  ListGamesComponent,
+  HomeComponent
   ],
-  providers:    [ 
-    WebSocketService, 
-    AuthGuard,
-    AuthService,
-    AlertService,
-    {provide: APP_BASE_HREF, useValue: '/' }
+  providers:    [
+  WebSocketService,
+  AuthGuard,
+  AuthService,
+  AlertService,
+  ChatService,
+  {provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap:    [ AppComponent ]
 })
-export class AppModule { }
+
+export class AppModule {
+}

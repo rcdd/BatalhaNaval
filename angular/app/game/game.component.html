@@ -1,21 +1,6 @@
-<div class='row'>
-  <div class='col-md-1'>
-    <strong>Menu:</strong>
-  </div>
-  <div class='col-md-1'>
-    <a [routerLink]="['/home']">Home</a>
-  </div>
-  <div class='col-md-1'>
-    <a [routerLink]="['/game']">Game</a>
-  </div>
-  <div class='col-md-1'>
-    <a [routerLink]="['/login']">Logout</a>
-  </div>
-</div>
-<br />
 <h2>Game</h2>
 <br />
-
+<chat></chat>
 
 
 
@@ -40,10 +25,10 @@
             </div>
             <div class="col-md-4">
               <select [(ngModel)]="selectedShipSelector" name="selectedShip" (ngModelChange)="onSelectedChange()">
-              <option [ngValue]="j" *ngFor="let i of listShip; let j = index" >
-                {{i.name}}
+                <option [ngValue]="j" *ngFor="let i of listShip; let j = index" >
+                  {{i.name}}
                 </option>
-            </select>
+              </select>
             </div>
           </div>
           <div class="row">
@@ -52,8 +37,8 @@
             </div>
             <div class="col-md-4">
               <select [(ngModel)]="selectedOrientation" name="selectedOrientation">
-              <option [value]="k.value" *ngFor="let k of listOrientation">{{k.name}}</option>
-            </select>
+                <option [value]="k.value" *ngFor="let k of listOrientation">{{k.name}}</option>
+              </select>
             </div>
           </div>
         </div>
@@ -71,7 +56,7 @@
   </div>
 
 
-    <div *ngIf="idGame" class="row">
+  <div *ngIf="idGame" class="row">
     <div class="col-md-2">
       <strong>Join game:</strong>
     </div>
@@ -87,10 +72,10 @@
             </div>
             <div class="col-md-4">
               <select [(ngModel)]="selectedShipSelector" name="selectedShip" (ngModelChange)="onSelectedChange()">
-              <option [ngValue]="j" *ngFor="let i of listShip; let j = index" >
-                {{i.name}}
+                <option [ngValue]="j" *ngFor="let i of listShip; let j = index" >
+                  {{i.name}}
                 </option>
-            </select>
+              </select>
             </div>
           </div>
           <div class="row">
@@ -99,8 +84,8 @@
             </div>
             <div class="col-md-4">
               <select [(ngModel)]="selectedOrientation" name="selectedOrientation">
-              <option [value]="k.value" *ngFor="let k of listOrientation">{{k.name}}</option>
-            </select>
+                <option [value]="k.value" *ngFor="let k of listOrientation">{{k.name}}</option>
+              </select>
             </div>
           </div>
         </div>
