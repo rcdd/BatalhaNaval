@@ -21,6 +21,8 @@ export class BoardComponent implements OnInit {
     selectedOrientation: any;
     @Input()
     listShip: any = [];
+    @Input()
+    selectedShipSelector: any;
 
     constructor(private websocketsService: WebSocketService, private alertService: AlertService) {
 
@@ -53,7 +55,8 @@ export class BoardComponent implements OnInit {
                         }
                         i++;
                     });
-                    this.selectedShip = undefined;
+
+                    this.selectedShip = this.listShip[this.selectedShipSelector];
                 }
             } 
         } else {

@@ -116,7 +116,9 @@ export class GameComponent implements OnInit {
     this.listOrientation.push({ name: 'Roda90', value: Orientation.Roda90 });
     this.listOrientation.push({ name: 'Roda180', value: Orientation.Roda180 });
     this.listOrientation.push({ name: 'Roda270', value: Orientation.Roda270 });
-
+    this.selectedOrientation = 0;
+    this.selectedShipSelector = 0;
+    this.selectedShip = this.listShip[this.selectedShipSelector];
   }
 
   onSelectedChange() {
