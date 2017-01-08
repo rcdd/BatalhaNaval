@@ -4,8 +4,8 @@ const games = module.exports = {};
 let settings = {};
 
 function handleError(err, response, next) {
-	response.send(500, err);
-	next();
+    response.send(500, err);
+    next();
 }
 
 function returnGame(id, response, next) {
@@ -25,17 +25,18 @@ function returnGame(id, response, next) {
 }
 
 function getGames(request, response, next) {
-	database.db.collection('games')
+    database.db.collection('games')
         .find()
-		.toArray()
-		.then(games => {
-			response.json(games || []);
-			next();
-		})
+        .toArray()
+        .then(games => {
+            response.json(games || []);
+            next();
+        })
         .catch(err => handleError(err, response, next));
 
 }
 
+/*
 function getGamesWaiting(request, response, next) {
 	database.db.collection('games')
         .find({state: 'waiting'})
@@ -47,10 +48,11 @@ function getGamesWaiting(request, response, next) {
         .catch(err => handleError(err, response, next));
 
 }
+*/
 
 function getGame(request, response, next) {
-	const id = new mongodb.ObjectID(request.params.id);
-	returnGame(id, response, next);
+    const id = new mongodb.ObjectID(request.params.id);
+    returnGame(id, response, next);
 }
 
 function updateGame(request, response, next) {
@@ -73,11 +75,13 @@ function updateGame(request, response, next) {
 }
 
 function createGame(request, response, next) {
-	var game = request.body;
-	if (game === undefined) {
+    console.log(request);
+    var game = request.body;
+    if (game === undefined) {
         response.send(400, 'No game data');
         return next();
     }
+    console.log(game);
     database.db.collection('games')
         .insertOne(game)
         .then(result => returnGame(result.insertedId, response, next))
@@ -85,7 +89,7 @@ function createGame(request, response, next) {
 }
 
 function deleteGame(request, response, next) {
-	const id = new mongodb.ObjectID(request.params.id);
+    const id = new mongodb.ObjectID(request.params.id);
     database.db.collection('games')
         .deleteOne({
             _id: id
@@ -106,7 +110,7 @@ function deleteGame(request, response, next) {
 // Routes for the games
 games.init = (server, options) => {
     settings = options;
-    server.get(settings.prefix + 'games/waiting', settings.security.authorize, getGamesWaiting);
+    // server.get(settings.prefix + 'games/waiting', settings.security.authorize, getGamesWaiting);
     server.get(settings.prefix + 'games', settings.security.authorize, getGames);
     server.get(settings.prefix + 'games/:id', settings.security.authorize, getGame);
     server.put(settings.prefix + 'games/:id', settings.security.authorize, updateGame);

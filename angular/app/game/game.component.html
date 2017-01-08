@@ -67,29 +67,6 @@
   </div>
   <br />
   <br />
-
-
-
-  <div *ngIf="listGames != '' && !newGameDash">
-    <div class="row">
-      <h3>List of games waiting players</h3>
-    </div>
-    <table class="table table-striped table-bordered dataTable" role="grid" style="width: 40%;">
-<thead>
-  <tr role="row">
-    <td><strong>Game #</strong></td>
-    <td><strong>Joined Players</strong></td>
-  </tr>
-</thead>
-<tbody>
-  <tr *ngFor="let list of listGames">
-    <td>{{list.id}}</td>
-    <td>{{list.players.length}}</td>
-    <td> <button class="btn btn-success" (click)="joinGame(list._id)">Join Game</button></td>
-  </tr>
-</tbody>
-</table>
-</div>
 </div>
 
 <!-- GAME -->

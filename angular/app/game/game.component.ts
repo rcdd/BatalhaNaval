@@ -7,9 +7,7 @@ import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router';
 import 'rxjs/Rx';
 
-const URL_GAME_WAITING = 'http://localhost:8080/api/v1/games/waiting';
 const URL_NEW_GAME = 'http://localhost:8080/api/v1/games';
-const URL_GAME = 'http://localhost:8080/api/v1/games/';
 
 @Component({
   moduleId: module.id,
@@ -25,7 +23,6 @@ export class GameComponent implements OnInit {
   selectedOrientation: any;
   listOrientation: any = [];
 
-  listGames: any = '';
   newGameDash: boolean = false;
   headers = new Headers();
 
@@ -34,7 +31,6 @@ export class GameComponent implements OnInit {
 
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Authorization', 'Bearer ' + this.authService.user.token);
-    this.updateGameList();
 
   }
 
@@ -42,58 +38,6 @@ export class GameComponent implements OnInit {
     /*this.websocketsService.getBoard().subscribe(data => {
       this.boards = data;
     });*/
-  }
-
-  updateGameList() {
-    let endpoint = URL_GAME_WAITING;
-    this.http.get(endpoint, {
-      headers: this.headers
-    }).map(res => res.json()).subscribe(a => {
-      this.listGames = a;
-    });
-  }
-
-  joinGame(id: number) {
-    let game: any = [];
-
-    // GETING GAME
-    let endpoint = URL_GAME + id;
-    this.http.get(endpoint, {
-      headers: this.headers
-    }).map(res => res.json()).subscribe(data => {
-      game = data;
-
-      // CHECK CONFIGURATION
-      game.players.push(this.authService.user);
-
-      if (game.players.length === game.maxPlayers) {
-        game.state = 'playing';
-      }
-
-      if (game.players.length <= game.maxPlayers) {
-        // UPDATE GAME
-        this.http.put(endpoint, game, {
-          headers: this.headers
-        })
-          .subscribe(ok => {
-            // JOIN GAME => TODO
-            this.alertService.success('You join in game #: ' + game.id);
-            this.updateGameList();
-
-          }, error => {
-            this.alertService.error('error assign to game!');
-            console.log(JSON.stringify(error.json()));
-          });
-
-      } else {
-        this.alertService.error('Game is Full!');
-      }
-    }, error => {
-      this.alertService.error('error getting game!');
-      console.log(JSON.stringify(error.json()));
-    });
-
-    this.updateGameList();
   }
 
   newGameDashForm() {
@@ -126,16 +70,19 @@ export class GameComponent implements OnInit {
   newGame() {
     if (this.listShip.length === 0) {
       this.alertService.subject.next();
-      let endpoint = URL_NEW_GAME;
+
       let body = {
         id: Math.floor(Math.random() * 99999) + 1,
         players: [this.authService.user],
-        // boards: [this.newBoard],
+        boards: [this.newBoard],
         creator: this.authService.user._id,
-        state: 'waiting'
+        state: 'created'
       };
 
-      this.http.post(endpoint, body, {
+      console.dir(this.newBoard);
+      console.dir(body);
+
+      this.http.post(URL_NEW_GAME, JSON.stringify(body), {
         headers: this.headers
       })
         .subscribe(data => {

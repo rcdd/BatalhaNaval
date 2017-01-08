@@ -20,6 +20,7 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { TopTenComponent } from './topten/index';
 import { HomeComponent } from './home/index';
+import { ListGamesComponent } from './ListGames/index';
 import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { APP_BASE_HREF } from '@angular/common';
     RegisterComponent,
     AlertComponent,
     TopTenComponent,
+    ListGamesComponent,
     HomeComponent
   ],
   providers:    [ 

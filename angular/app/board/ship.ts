@@ -57,7 +57,8 @@ export class Ship {
         if (celula.pertenceA != null) {
             throw new Error('Não é possível adicionar a célula ao navio, porque já está associada a outro navio.');
         }
-        celula.pertenceA = this;
+        // NAO PODE HAVER ESTA ASNEIRA!!!!  ---> PEÇA EXPLICACOES AO RUBEN DOMINGUES!!!!!
+        // celula.pertenceA = this;
         celula.type = CellType.Ship;
         this.cells.push(celula);
     }
