@@ -34,14 +34,17 @@ ws.init = (server) => {
         client.on('startGame', data => {
             console.log('appSocket: createGame ');
             console.dir(data);
+
+            // SERA QUE DEVEMOS GUARDAR OS DADOS NO WEBSOCKET OU NO BASE DE DADOS???
             this.allData = { channel: data.channel, data: data.boards };
             client.on(data.channel, allData => {
                 console.dir(allData);
-                // FAZ COISAS
+                // VAMOS CORRER AS BOARDS EM JOGO COM AS BORDS QUE FORAM CRIADAS PARA VER SE ACERTA NA POSICAO OU NAO
                 allData.listBoardInGame.forEach(function (boardInGame) {
                     if (boardInGame.owner == allData.board.owner) {
                         allData.listBoardsToShoot.forEach(function (boardToShoot) {
                             if (boardInGame.owner == boardToShoot.owner) {
+                                // CASO ACERTE NUMA POSICAO DO TIPO 1 É PORQUE ACERTOU SE FOR OUTRA, FALHOU!
                                 if (boardInGame.cells[allData.position].type === 1) {
                                     console.log('acertaste');
                                     boardToShoot.cells[allData.position].type = 2;
@@ -49,12 +52,12 @@ ws.init = (server) => {
                                     console.log('nabo.. : ');
                                     boardToShoot.cells[allData.position].type = 3;
                                 }
-                                /*  tipo 0: agua
+                                /*  TIPOS PARA AS CELULAS
+                                    tipo 0: agua
                                     tipo 1: ships
                                     tipo 2: acertaste
                                     tipo 3: falhaste
                                     */
-
                             }
                         }, this);
                     }
