@@ -75,8 +75,7 @@ export class GameComponent implements OnInit {
 
       let body = {
         id: Math.floor(Math.random() * 99999) + 1,
-        players: [this.authService.user],
-        boards: [this.newBoard],
+        players: [{player: this.authService.user, board: this.newBoard}],
         creator: this.authService.user._id,
         state: 'created'
       };
