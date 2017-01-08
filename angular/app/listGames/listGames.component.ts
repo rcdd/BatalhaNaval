@@ -33,7 +33,7 @@ export class ListGamesComponent {
         this.listGamesCreated = [];
         this.listGamesWaiting = [];
         this.listGamesFull = [];
-        
+
         this.http.get(URL_GAME, {
             headers: this.headers
         }).map(res => res.json()).subscribe(a => {
@@ -67,18 +67,17 @@ export class ListGamesComponent {
             game = data;
 
             // CHECK CONFIGURATION
-            // game.players.push(this.authService.user);
+            game.players.push(this.authService.user);
 
             if (game.state === 'created') {
                 game.state = 'waiting';
             }
-            if (game.state === 'waiting' && game.players.length === 3) {
+            if (game.state === 'waiting' && game.players.length === MAX_PLAYERS) {
                 game.state = 'full';
             }
-            if (game.state === 'waiting' && game.players.length !== 3) {
+            if (game.state === 'waiting' && game.players.length !== MAX_PLAYERS) {
                 
             }
-
              if (game.players.length < MAX_PLAYERS) {
                 // UPDATE GAME
                 this.http.put(endpoint, game, {

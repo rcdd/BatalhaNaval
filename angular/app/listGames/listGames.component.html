@@ -2,7 +2,7 @@
     <div class="row">
         <h3>List of games waiting players</h3>
     </div>
-    <table class="table table-striped table-bordered dataTable" role="grid" style="width: 40%;">
+    <table class="table table-striped table-bordered dataTable" role="grid">
 <thead>
     <tr role="row">
         <td><strong>Game #</strong></td>
@@ -14,8 +14,11 @@
         <td>{{list.id}}</td>
         <td>{{list.players.length}}</td>
         <td>
-            <div>
+            <div *ngIf="list.creator==authService.user._id">
                 Waiting for players...
+            </div>
+            <div *ngIf="list.creator!=authService.user._id">
+                <button class="btn btn-success" (click)="joinGame(list._id)">Join Game</button>
             </div>
         </td>
     </tr>
