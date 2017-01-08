@@ -1,15 +1,17 @@
 /* jshint node: true */
 'use strict';
 const io = require('socket.io');
-// const Board = require('./angular/app/board/board');
+const mongodb = require('mongodb');
+const database = require('./app.database');
 
 const ws = module.exports = {};
-
+let settings = {};
 let wsServer = null;
 
-var allData = [];
+var allDataServer = [];
 
-ws.init = (server) => {
+ws.init = (server, options) => {
+    settings = options;
     wsServer = io.listen(server);
     wsServer.sockets.on('connection', function (client) {
         client.emit('players', ' Welcome to battleship');
@@ -25,45 +27,89 @@ ws.init = (server) => {
             client.broadcast.emit('lists');
         });
 
-        /*position: position,
-        board: board,
-        owner: owner,
-        listBoardInGame: listBoardInGame
-        listBoardsToShoot: listBoardsToShoot*/
-
         client.on('startGame', data => {
             console.log('appSocket: createGame ');
             console.dir(data);
 
             // SERA QUE DEVEMOS GUARDAR OS DADOS NO WEBSOCKET OU NO BASE DE DADOS???
-            this.allData = { channel: data.channel, data: data.boards };
+            allDataServer.push({ channel: data.channel, data: data.boards });
+
+            console.log('appSocket: AllDataServer ');
+            console.dir(allDataServer);
+
             client.on(data.channel, allData => {
-                console.dir(allData);
-                // VAMOS CORRER AS BOARDS EM JOGO COM AS BORDS QUE FORAM CRIADAS PARA VER SE ACERTA NA POSICAO OU NAO
-                allData.listBoardInGame.forEach(function (boardInGame) {
-                    if (boardInGame.owner == allData.board.owner) {
-                        allData.listBoardsToShoot.forEach(function (boardToShoot) {
-                            if (boardInGame.owner == boardToShoot.owner) {
-                                // CASO ACERTE NUMA POSICAO DO TIPO 1 É PORQUE ACERTOU SE FOR OUTRA, FALHOU!
-                                if (boardInGame.cells[allData.position].type === 1) {
-                                    console.log('acertaste');
-                                    boardToShoot.cells[allData.position].type = 2;
+                console.log('client on channel');
+                // console.dir(allData);
+                allDataServer.forEach(function (gameServer) {
+                    console.log("foreach");
+                    console.dir(gameServer.channel);
+                    console.log("foreach data.channel");
+                    console.dir(data.channel);
+                    if (gameServer.channel === data.channel) {
+                        console.log('é este game');
+                        let boards = [];
+                        gameServer.data.forEach(function (gameBoard) {
+                            if (gameBoard.owner === allData.owner) {
+                                console.log('é este board');
+                                if (gameBoard.cells[allData.position].type === 1) {
+                                    console.log('certeiro na muche');
+                                    gameBoard.cells[allData.position].type = 2;
                                 } else {
-                                    console.log('nabo.. : ');
-                                    boardToShoot.cells[allData.position].type = 3;
+                                    console.log('falhaste');
+                                    gameBoard.cells[allData.position].type = 3;
                                 }
-                                /*  TIPOS PARA AS CELULAS
-                                    tipo 0: agua
-                                    tipo 1: ships
-                                    tipo 2: acertaste
-                                    tipo 3: falhaste
-                                    */
+                                console.log('send gameBoard');
+                                console.dir(gameBoard);
                             }
+                            boards.push(gameBoard);
+                            // save to DB
+
+
+                            const id = new mongodb.ObjectID(data.channel);
+                            database.db.collection('games')
+                                .findOne({
+                                    _id: id
+                                })
+                                .then(game => {
+                                    game.players.forEach(function (player) {
+                                        boards.forEach(function (board) {
+                                            if (board.owner === player.board.owner) {
+                                                player.board = board;
+                                            }
+
+                                        }, this);
+                                    }, this);
+
+                                    //update
+                                    delete game._id;
+                                    database.db.collection('games')
+                                        .updateOne({
+                                            _id: id
+                                        }, {
+                                            $set: game
+                                        })
+                                        .then(
+                                        )
+                                        .catch(err => handleError(err));
+
+                                })
+                                .catch(err => handleError(err));
+
+
+                            wsServer.sockets.emit(data.channel, boards);
+
                         }, this);
                     }
-
                 }, this);
-                wsServer.sockets.emit(data.channel, allData);
+
+
+                /*  TIPOS PARA AS CELULAS
+                    tipo 0: agua
+                    tipo 1: ships
+                    tipo 2: acertaste
+                    tipo 3: falhaste
+                    */
+
             });
 
             wsServer.emit(data.channel, data.boards);
@@ -75,3 +121,8 @@ ws.notifyAll = (channel, message) => {
     console.log('send to' + channel + ' this: ' + message);
     wsServer.sockets.emit(channel, message);
 };
+
+
+function handleError(err, response) {
+    response.send(500, err);
+}

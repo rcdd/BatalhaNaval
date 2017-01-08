@@ -12,7 +12,7 @@
             {{board.cells[i].position.line}}
         </div>
         <div class="col-xs-1 board-cell " *ngFor="let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" (click)="Shoot(i+j)">
-            <div [ngClass]="{'ship-board': board.cells[i+j].type == 1, 'water-board' : board.cells[i+j].type == 0}">
+            <div [ngClass]="{'ship-board': board.cells[i+j].type == 1, 'water-board' : board.cells[i+j].type == 0, 'accept-board' : board.cells[i+j].type == 2, 'fail-board' : board.cells[i+j].type == 3}">
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
             {{newBoard.cells[i].position.line}}
         </div>
         <div class="col-xs-1 board-cell " *ngFor="let j of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" (click)="click(i,j)">
-            <div [ngClass]="{'ship-board': newBoard.cells[i+j].type == 1, 'water-board' : newBoard.cells[i+j].type == 0}">
+            <div [ngClass]="{'ship-board': newBoard.cells[i+j].type == 1, 'water-board' : newBoard.cells[i+j].type == 0, 'accept-board' : newBoard.cells[i+j].type == 2, 'fail-board' : newBoard.cells[i+j].type == 3}">
             </div>
         </div>
     </div>

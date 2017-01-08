@@ -39,6 +39,24 @@
     background-color: #4279ff;
     color: #4279ff; }
 
+.fail-board {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  color: red; }
+  .fail-board:hover {
+    background-color: #4279ff;
+    color: #4279ff; }
+
+.accept-board {
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  color: green; }
+  .accept-board:hover {
+    background-color: #4279ff;
+    color: #4279ff; }
+
 .ship-board {
   width: 100%;
   height: 100%;
