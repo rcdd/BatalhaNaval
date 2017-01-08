@@ -24,8 +24,23 @@ export class AuthService {
         });
     }
 
+    loginFacebook(): Observable<any> {
+        /*let data = {
+            username: 'username',
+            password: 'password'
+        };*/
+        return this.http.get(`/auth/facebook`)
+        .map( (results) => {
+            console.log('ola');
+            console.log(results);
+            this.user = results.json();
+            // console.log(this.user);
+            return results.json();
+        });
+    }
+
     create(data: any): Observable<any> {
-        
+
         return this.http.post(`/api/v1/players`, data)
         .map( (results) => {
             this.user = results.json();

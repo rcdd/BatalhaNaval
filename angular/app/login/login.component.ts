@@ -38,4 +38,17 @@ export class LoginComponent implements OnInit {
                 });
 
     }
+
+    loginFacebook() {
+         this.loading = true;
+         this.authService.loginFacebook()
+        .subscribe(data => {
+                    this.router.navigate(['/board']);
+                },
+                error => {
+                    this.alertService.error('Incorrect Login. Please try again.');
+                    this.loading = false;
+                });
+
+    }
 }

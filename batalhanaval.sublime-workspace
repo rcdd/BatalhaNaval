@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"au",
+				"authentication"
+			],
+			[
+				"new",
+				"newPlayer〔variable〕"
+			],
+			[
+				"pl",
+				"players"
+			],
+			[
+				"find",
+				"findOne"
+			],
+			[
+				"fin",
+				"findOne"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"get",
+				"getPlayerByName"
+			],
+			[
 				"invald",
 				"INVALID"
 			],
@@ -34,10 +62,6 @@
 			[
 				"getC",
 				"getCells\twindow.Board"
-			],
-			[
-				"con",
-				"constructor\twindow.Posicao"
 			],
 			[
 				"font-s",
@@ -105,10 +129,6 @@
 			],
 			[
 				"pa",
-				"player"
-			],
-			[
-				"pl",
 				"player"
 			],
 			[
@@ -284,10 +304,6 @@
 				"addEventListener"
 			],
 			[
-				"get",
-				"getElementById"
-			],
-			[
 				"vali",
 				"validateName"
 			],
@@ -360,38 +376,30 @@
 	"buffers":
 	[
 		{
-			"file": "/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/CREATE_package_pck_load.sql",
+			"file": "app.authentication.js",
 			"settings":
 			{
-				"buffer_size": 13361,
+				"buffer_size": 898,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/DROP_tables.sql",
+			"file": "angular/app/login/login.component.ts",
 			"settings":
 			{
-				"buffer_size": 262,
-				"line_ending": "Windows"
+				"buffer_size": 1397,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/DROP_sequences.sql",
+			"file": "angular/app/_services/auth.service.ts",
 			"settings":
 			{
-				"buffer_size": 258,
+				"buffer_size": 1487,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/CREATE_sequences.sql",
-			"settings":
-			{
-				"buffer_size": 302,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -531,11 +539,38 @@
 	},
 	"expanded_folders":
 	[
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_guard",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_services",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/login",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/register",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/mongo/mongo_ex3"
 	],
 	"file_history":
 	[
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_transform/CREATE_package_pck_transform.sql",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/login/login.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/register/register.component.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.security.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_guard/auth.guard.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/register/register.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_services/auth.service.ts",
+		"/etc/hosts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.players.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.games.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.database.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/index.html",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_services/alert.service.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_alert/alert.component.ts",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.websockets.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/index.js",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.authentication.js",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/CREATE_package_pck_load.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/DROP_tables.sql",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/DROP_sequences.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/CREATE_sequences.sql",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/.gitignore",
+		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_transform/CREATE_package_pck_transform.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_transform/CREATE_data_tables.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/CREATE_data_tables.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/script_t__clean/script.sql",
@@ -566,7 +601,6 @@
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_transform/CREATE_lookup_tables.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_transform/DROP_sequences.sql",
 		"/home/emanuelx/Transferências/Fase 2/ei_sad_proj13/READ-ME ei_sad_proj13.txt",
-		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/CREATE_package_pck_load.sql",
 		"/home/emanuelx/Transferências/Fase 2/ei_sad_proj13/scripts_transform/CREATE_package_pck_transform.sql",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/Ficha 2 - Processo de ETL-20160930/Materiais/etl^2_para_aulas_2.7/scripts_transform/CREATE_package_pck_transform.sql",
 		"/home/emanuelx/Transferências/Fase 2/ei_sad_proj13/scripts_load/CREATE_data_tables.sql",
@@ -597,23 +631,15 @@
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_transform/CREATE_sequences.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto/Fontes de Dados-20161021/cnaes_2015_2fase.csv",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/time.dsv",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.players.js",
 		"/home/emanuelx/Transferências/DIMTIME.csv",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_extract/CREATE_external_tables.sql",
 		"/home/emanuelx/Transferências/CREATE_external_tables.sql",
 		"/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/DIMTIME.csv",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/register/register.component.html",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_guard/auth.guard.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_services/auth.service.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/register/register.component.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/scss/styles.scss",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/login/login.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/login/login.component.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.authentication.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/gulpfile.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/home/home.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/home/home.component.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_alert/alert.component.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/BD_AULA.sql",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/ficha2.txt",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/ficha_transformacao_erros.sql",
@@ -643,25 +669,14 @@
 		"/home/emanuelx/AndroidStudioProjects/phonespeakProject/app/src/main/AndroidManifest.xml",
 		"/home/emanuelx/javaEE_urls.txt",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/game/game.component.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.games.js",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/app.websockets.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/_services/websocket.service.ts",
 		"/home/emanuelx/Transferências/resolucao.v5 (extra_exercise)/angular/npm-debug.log",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.websockets.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/game/game.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.component.ts",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/index.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/websocket-app/app.security.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/DAE/projeto_final_finalissimo/EnterpriseApplicationHealthManager/EnterpriseApplicationHealthManager-war/web/WEB-INF/web.xml",
-		"/home/emanuelx/UsernameValidator.java",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/DAE/projeto_final_finalissimo/EnterpriseApplicationHealthManager/EnterpriseApplicationHealthManager-ejb/src/java/entities/UserGroup.java",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/DAE/Projeto final/EnterpriseApplicationHealthManager/EnterpriseApplicationHealthManager-ejb/setup/glassfish-resources.xml",
-		"/run/media/emanuelx/B9BA-77FE/workaround.vbs",
-		"/home/emanuelx/Dropbox/TAES_SHARED/URLS.txt",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/DAE/Projeto final/EnterpriseApplicationHealthManager/nbproject/project.properties",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/Projeto/LOGIN.TXT",
-		"/home/emanuelx/teste.java",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/Board.ts"
+		"/home/emanuelx/UsernameValidator.java"
 	],
 	"find":
 	{
@@ -686,6 +701,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"router",
+			"player",
 			"1000",
 			"CREATE",
 			",",
@@ -829,59 +846,36 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/CREATE_package_pck_load.sql",
+					"file": "app.authentication.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13361,
+						"buffer_size": 898,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10108,
-								10108
+								840,
+								840
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SQL/SQL.sublime-syntax",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3143.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/DROP_tables.sql",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 262,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SQL/SQL.sublime-syntax"
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							}
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -891,53 +885,71 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/DROP_sequences.sql",
+					"buffer": 1,
+					"file": "angular/app/login/login.component.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 258,
+						"buffer_size": 1397,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1113,
+								1113
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SQL/SQL.sublime-syntax"
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 270.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/home/emanuelx/Dropbox/SAD_SHARED/Projeto_final_2parte/SCRIPTS_SQL_FINAL_v2/scripts_load/CREATE_sequences.sql",
+					"buffer": 2,
+					"file": "angular/app/_services/auth.service.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 302,
+						"buffer_size": 1487,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								177,
-								177
+								257,
+								257
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SQL/SQL.sublime-syntax"
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": true,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1046,7 +1058,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 163.0,
+	"side_bar_width": 278.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

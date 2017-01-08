@@ -16,7 +16,7 @@
 
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
             <label for="email">Email</label>
-            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
             <div *ngIf="f.submitted && !email.valid" class="error">Email is Invalid!</div>
         </div>
 
@@ -40,4 +40,7 @@
             <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
         </div>
     </form>
+    <div class="form-group">
+    <a class="btn btn-primary" href="/auth/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
+    </div>
 </div>

@@ -1,5 +1,8 @@
+/* jshint node: true */
+'use strict';
 const mongodb = require('mongodb');
 const database = require('./app.database');
+const util = require('util');
 const games = module.exports = {};
 let settings = {};
 
@@ -70,7 +73,7 @@ function updateGame(request, response, next) {
         }, {
             $set: game
         })
-        .then(result => returnGame(id, response, next))
+        .then(returnGame(id, response, next))
         .catch(err => handleError(err, response, next));
 }
 

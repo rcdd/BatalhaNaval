@@ -1,3 +1,5 @@
+/* jshint node: true */
+'use strict';
 const MongoClient = require('mongodb').MongoClient;
 const db = module.exports = {};
 

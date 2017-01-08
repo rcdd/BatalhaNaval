@@ -1,3 +1,5 @@
+/* jshint node: true */
+'use strict';
 const io = require('socket.io');
 // const Board = require('./angular/app/board/board');
 
