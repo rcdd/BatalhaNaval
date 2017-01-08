@@ -30,26 +30,26 @@ export class LoginComponent implements OnInit {
     login() {
         this.loading = true;
         this.authService.login(this.model.username, this.model.password)
-        .subscribe(data => {
-            this.router.navigate(['/board']);
-        },
-        error => {
-            this.alertService.error('Incorrect Login. Please try again.');
-            this.loading = false;
-        });
+            .subscribe(data => {
+                this.router.navigate(['/board']);
+            },
+            error => {
+                this.alertService.error('Incorrect Login. Please try again.');
+                this.loading = false;
+            });
 
     }
 
     loginFacebook() {
         this.loading = true;
         this.authService.loginFacebook()
-        .subscribe(data => {
-            this.router.navigate(['/board']);
-        },
-        error => {
-            this.alertService.error('Incorrect Login. Please try again.');
-            this.loading = false;
-        });
+            .subscribe(data => {
+                this.router.navigate(['/board']);
+            },
+            error => {
+                this.alertService.error('Incorrect Login. Please try again.');
+                this.loading = false;
+            });
 
     }
 
@@ -61,14 +61,14 @@ export class LoginComponent implements OnInit {
         }
         this.loading = true;
         this.authService.recoverPassword(this.model.username)
-        .subscribe(data => {
-            this.alertService.success('Nova password enviada para o email'+data);
-            this.loading = false;
-        },
-        error => {
-            this.alertService.error('Ocorreu um erro');
-            this.loading = false;
-        });
+            .subscribe(data => {
+                this.alertService.success('Nova password enviada para o email' + data);
+                this.loading = false;
+            },
+            error => {
+                this.alertService.error('Ocorreu um erro');
+                this.loading = false;
+            });
 
     }
 }
