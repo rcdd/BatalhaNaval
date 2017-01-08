@@ -44,11 +44,11 @@ export class ListGamesComponent implements OnInit {
     }
 
     updateGameList() {
-        this.listGamesCreated = [''];
-        this.listGamesWaiting = [''];
-        this.listGamesFull = [''];
-        this.listGamesPlaying = [''];
-        this.listGamesWaitingInGame = [''];
+        this.listGamesCreated.length = 0;
+        this.listGamesWaiting.length = 0;
+        this.listGamesFull.length = 0;
+        this.listGamesPlaying.length = 0;
+        this.listGamesWaitingInGame.length = 0;
 
         this.http.get(URL_GAME, {
             headers: this.headers
