@@ -16,7 +16,8 @@
     <div>
       <div class="row">
         <div class="col-md-6">
-          <board [newBoard]="newBoard" [selectedShip]="selectedShip" [selectedShipSelector]="selectedShipSelector" [listShip]="listShip" [selectedOrientation]="selectedOrientation"></board>
+          <board [newBoard]="newBoard" [selectedShip]="selectedShip" [selectedShipSelector]="selectedShipSelector" [listShip]="listShip"
+            [selectedOrientation]="selectedOrientation"></board>
         </div>
         <div class="col-md-6">
           <div class="row">
@@ -56,14 +57,15 @@
   </div>
 
 
-    <div *ngIf="typeSubmit=='join'" class="row">
+  <div *ngIf="typeSubmit=='join'" class="row">
     <div class="col-md-2">
       <strong>Join game:</strong>
     </div>
     <div>
       <div class="row">
         <div class="col-md-6">
-          <board [newBoard]="newBoard" [selectedShip]="selectedShip" [selectedShipSelector]="selectedShipSelector" [listShip]="listShip" [selectedOrientation]="selectedOrientation"></board>
+          <board [newBoard]="newBoard" [selectedShip]="selectedShip" [selectedShipSelector]="selectedShipSelector" [listShip]="listShip"
+            [selectedOrientation]="selectedOrientation"></board>
         </div>
         <div class="col-md-6">
           <div class="row">
@@ -108,5 +110,5 @@
 
 <!-- GAME -->
 <div *ngIf="boards">
-  <board *ngFor="let board of boards; let i = index" [index]="board.owner" [board]="board" [idGame]="idGame" [listBoardsInGame]="listBoardsInGame" [listBoardsToShoot]="boards" ></board>
+  <board *ngFor="let board of boards" [index]="authService.user._id" [board]="board" [idGame]="idGame"></board>
 </div>

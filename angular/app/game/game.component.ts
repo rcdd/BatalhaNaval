@@ -61,7 +61,11 @@ export class GameComponent implements OnInit {
       this.boards = [];
       let boards: any = [];
       data.forEach((board: any) => {
-        boards.push(board);
+        if (board.owner === this.authService.user._id) {
+          boards.unshift(board);
+        } else {
+          boards.push(board);
+        }
       });
       this.boards = boards;
 
@@ -195,6 +199,8 @@ export class GameComponent implements OnInit {
                 console.dir(m);
                 this.allDataFromServer = m;
               });
+
+            this.websocketsService.joinGame(game._id);
             this._router.navigate(['/home']);
           }, error => {
             this.alertService.error('error assign to game!');
@@ -213,19 +219,23 @@ export class GameComponent implements OnInit {
 
 
   play() {
+    let game: any = [];
     let boards: any = [];
-    this.allDataFromServer.listBoardInGame.forEach((boardInGame: any) => {
-      if (this.allDataFromServer.listBoardInGame.owner === this.authService.user._id) {
-        boards.push(boardInGame);
-      }
+    // let listBoardsInGame: any = [];
+    let endpoint = URL_GAME + '/' + this.idGame;
+    this.http.get(endpoint, {
+      headers: this.headers
+    }).map(res => res.json()).subscribe(data => {
+      console.dir(data);
+      game = data;
+      game.players.forEach((players: any) => {
+        if (players.board.owner === this.authService.user._id) {
+          boards.unshift(players.board);
+        } else {
+          boards.push(players.board);
+        }
+      });
     });
-
-    this.allDataFromServer.listBoardsToShoot.forEach((boardToShoot: any) => {
-      if (this.allDataFromServer.listBoardsToShoot.owner !== this.authService.user._id) {
-        boards.push(boardToShoot);
-      }
-    });
-
     this.boards = boards;
   }
 

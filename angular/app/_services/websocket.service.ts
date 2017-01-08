@@ -23,7 +23,7 @@ export class WebSocketService {
         let json = {
             position: position,
             board: board,
-            owner: owner,
+            shooter: owner,
         };
         console.log('SEND TO SERVER SHOOT:');
         console.dir(json);
@@ -88,6 +88,10 @@ export class WebSocketService {
 
     createGame(channel: any, boards: any) {
         this.socket.emit('startGame', { channel: channel, boards: boards });
+    }
+
+    joinGame(channel: any) {
+        this.socket.emit('joinGame', { channel: channel });
     }
 
     getBoardsGame(channel: any): Observable<any> {

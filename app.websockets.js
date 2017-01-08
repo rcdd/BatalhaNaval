@@ -49,7 +49,7 @@ ws.init = (server, options) => {
                         console.log('é este game');
                         let boards = [];
                         gameServer.data.forEach(function (gameBoard) {
-                            if (gameBoard.owner === allData.owner) {
+                            if (gameBoard.owner === allData.board.owner) {
                                 console.log('é este board');
                                 if (gameBoard.cells[allData.position].type === 1) {
                                     console.log('certeiro na muche');
@@ -114,7 +114,22 @@ ws.init = (server, options) => {
 
             wsServer.emit(data.channel, data.boards);
         });
+
+
+
+        client.on('joinGame', data => {
+            console.log('appSocket: joinGame ');
+            console.dir(data);
+
+            client.on(data.channel);
+
+            // wsServer.emit(data.channel, data.boards);
+        });
     });
+
+
+
+
 };
 
 ws.notifyAll = (channel, message) => {

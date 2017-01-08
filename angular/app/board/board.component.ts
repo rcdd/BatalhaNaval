@@ -36,19 +36,13 @@ export class BoardComponent implements OnInit {
 
     ngOnInit() {
     }
-/* OLD
-    Shoot(position: number) {
-        console.log(this.index);
-        console.log('BOARD Component SHOOT');
-        console.dir(this.listBoardsInGame);
-        this.websocketsService.sendShoot(position, this.board, this.index, this.idGame, this.listBoardsInGame, this.listBoardsToShoot);
-}; */
 
     Shoot(position: number) {
         console.log(this.index);
         console.log('BOARD Component SHOOT');
         this.websocketsService.sendShoot(position, this.board, this.index, this.idGame);
     };
+
 
     click(line: number, column: number) {
         this.alertService.subject.next();
