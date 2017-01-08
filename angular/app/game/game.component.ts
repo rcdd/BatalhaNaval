@@ -26,6 +26,9 @@ export class GameComponent implements OnInit {
   idGame: any;
   typeSubmit: any;
   private sub: any;
+  listBoardsInGame: any = [];
+
+  allDataFromServer: any = [];
 
   newGameDash: boolean = false;
   headers = new Headers();
@@ -47,13 +50,15 @@ export class GameComponent implements OnInit {
         this.joinGameDashForm();
       } else if (this.typeSubmit === 'start') {
         this.start();
+      } else if (this.typeSubmit === 'play') {
+        this.play();
       }
       this.websocketsService.getShoot(this.idGame).subscribe((data) => {
         console.dir(data);
-       /* if (data.owner === this.authService.user._id) {
-          let celltype: any = this.boards[0].cells[data.position].type;
-          console.log(celltype);
-        }*/
+        /* if (data.owner === this.authService.user._id) {
+           let celltype: any = this.boards[0].cells[data.position].type;
+           console.log(celltype);
+         }*/
       });
 
     });
@@ -180,6 +185,7 @@ export class GameComponent implements OnInit {
               m => {
                 console.log('a receber boards');
                 console.dir(m);
+                this.allDataFromServer = m;
               });
             this._router.navigate(['/home']);
           }, error => {
@@ -197,16 +203,34 @@ export class GameComponent implements OnInit {
     this.websocketsService.sendLists();
   }
 
+
+  play() {
+    let boards: any = [];
+    this.allDataFromServer.listBoardInGame.forEach((boardInGame: any) => {
+      if (this.allDataFromServer.listBoardInGame.owner === this.authService.user._id) {
+        boards.push(boardInGame);
+      }
+    });
+
+    this.allDataFromServer.listBoardsToShoot.forEach((boardToShoot: any) => {
+      if (this.allDataFromServer.listBoardsToShoot.owner !== this.authService.user._id) {
+        boards.push(boardToShoot);
+      }
+    });
+
+    this.boards = boards;
+  }
+
   start() {
     let game: any = [];
-    let listBoardsInGame: any = [];
+    // let listBoardsInGame: any = [];
     let endpoint = URL_GAME + '/' + this.idGame;
     this.http.get(endpoint, {
       headers: this.headers
     }).map(res => res.json()).subscribe(data => {
       game = data;
       game.players.forEach((players: any) => {
-        listBoardsInGame.push(players.board);
+        this.listBoardsInGame.push(players.board);
       });
 
       game.state = 'playing';
@@ -216,14 +240,14 @@ export class GameComponent implements OnInit {
         .subscribe(ok => {
           // JOIN GAME => TODO
           this.websocketsService.sendLists();
-          this.websocketsService.createGame(game._id, listBoardsInGame);
+          this.websocketsService.createGame(game._id, this.listBoardsInGame);
           let boards: any = [];
-          boards.push(listBoardsInGame[0]);
+          boards.push(this.listBoardsInGame[0]);
 
-          for (let i: any = 1; i < listBoardsInGame.length; i++) {
+          for (let i: any = 1; i < this.listBoardsInGame.length; i++) {
             let bd: any = [];
             bd = new Board();
-            bd.owner = listBoardsInGame[i].owner;
+            bd.owner = this.listBoardsInGame[i].owner;
             boards.push(bd);
             console.dir(bd);
           }

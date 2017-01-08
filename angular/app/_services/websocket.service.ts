@@ -13,11 +13,6 @@ export class WebSocketService {
     constructor() {
         if (!this.socket) {
             this.socket = io(`http://${window.location.hostname}:${window.location.port}`);
-            this.socket.on('newGame', function (data: any) {
-                console.log('webSocket: constructor. Data:');
-                console.dir(data);
-                this.boards = data;
-            });
         }
     }
 
@@ -49,27 +44,6 @@ export class WebSocketService {
             return () => this.socket.disconnect();
         });
     }
-
-    sendBoard(id: any, boards: any) {
-        console.log('websocket: send board:');
-        console.dir(boards);
-        this.boards = boards;
-        this.socket.emit(id, this.boards);
-    }
-
-    // ESCUTA O CANAL 'BOARD' ATÉ OBTER DADOS
-    getBoard(): Observable<any> {
-        return new Observable((observer: any) => {
-            this.socket.on('board', (data: any) => {
-                console.log('websocket: get board:');
-                console.dir(data);
-                this.boards = data;
-                observer.next(data);
-            });
-            return () => this.socket.disconnect();
-        });
-    }
-
 
     sendChatMessage(message: any) {
         this.socket.emit('chat', message);

@@ -40,7 +40,7 @@ export class BoardComponent implements OnInit {
     Shoot(position: number) {
         console.log(this.index);
         console.log('BOARD Component SHOOT');
-        console.dir(this.listBoardsToShoot);
+        console.dir(this.listBoardsInGame);
         this.websocketsService.sendShoot(position, this.board, this.index, this.idGame, this.listBoardsInGame, this.listBoardsToShoot);
     };
 
