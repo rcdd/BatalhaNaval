@@ -1,6 +1,11 @@
 /* jshint node: true */
 'use strict';
 const authentication = module.exports = {};
+const database = require('./app.database');
+const security = require('./app.security');
+const sha1 = require('sha1');
+const mail = require('./app.mail');
+
 
 function login(request, response, next) {
     let player = request.user;
@@ -11,6 +16,41 @@ function login(request, response, next) {
 function logout(request, response, next) {
     request.logOut();
     response.json({msg: 'Logout'});
+    return next();
+}
+
+function recover(request, response, next){
+ let username = request.body.username;
+ var password = Math.random().toString(36).slice(-8);
+
+    console.log(mail);
+    database.db.collection('players').findOne({
+        username: username
+    }).then(player => {
+        if (player === null) {
+            return  response.json({msg: 'error'});
+        }
+        database.db.collection('players')
+        .updateOne({ _id: player._id }, { $set: { passwordHash: sha1(password +security.salt) } })
+        .then(r =>
+            {
+                if(r.modifiedCount !== 1){
+                    response.json({msg: 'error'});
+                }else{
+                    console.log("a bombar");
+                    mail.mailInfo.to = player.email;
+                    mail.mailInfo.text = 'A tua nova password é:'+password;
+                    console.log(mail.mailInfo);
+                    mail.transport.sendMail(mail.mailInfo, function(error, info){
+                        if(error){
+                            console.log(error);
+                        }
+                    });
+                }
+            })
+        .catch(response.json({msg: 'error'}));
+    }).catch(response.json({msg: 'error'}));
+    response.json({msg: 'done'});
     return next();
 }
 
@@ -26,7 +66,7 @@ authentication.init = function(server, options) {
         res.redirect('/login', next);
     });
 
-
+    server.post(options.prefix + 'recover', recover);
 
     console.log("Authentication routes registered");
 };

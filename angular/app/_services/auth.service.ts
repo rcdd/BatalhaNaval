@@ -25,10 +25,6 @@ export class AuthService {
     }
 
     loginFacebook(): Observable<any> {
-        /*let data = {
-            username: 'username',
-            password: 'password'
-        };*/
         return this.http.get(`/auth/facebook`)
         .map( (results) => {
             console.log('ola');
@@ -51,6 +47,17 @@ export class AuthService {
     logout() {
         this.user = '';
         return this.http.post(`/api/v1/logout`, '')
+        .map( (results) => {
+            this.user = results.json();
+            return results.json();
+        });
+    }
+
+    recoverPassword(username: string): Observable<any> {
+        let data = {
+            username: username
+        };
+        return this.http.post(`/api/v1/recover`, data)
         .map( (results) => {
             this.user = results.json();
             return results.json();
