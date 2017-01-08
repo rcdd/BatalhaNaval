@@ -22,13 +22,13 @@ ws.init = (server) => {
         // console.dir(boards);
         // client.emit('newGame', boards);
 
-
+/*
         client.on('board', data => {
             console.log('appSocket: Board received ' + data.length);
             //console.dir(data);
             boards = data;
             wsServer.sockets.emit('board', boards);
-        });
+        });*/
 
         client.on('shoot', data => {
             console.log('appSocket: shoot ' + data);

@@ -45,11 +45,11 @@ export class WebSocketService {
         return this.boards;
     }
 
-    sendBoard(boards: any) {
+    sendBoard(id: any, boards: any) {
         console.log('websocket: send board:');
         console.dir(boards);
         this.boards = boards;
-        this.socket.emit('board', this.boards);
+        this.socket.emit(id, this.boards);
     }
 
     // ESCUTA O CANAL 'BOARD' ATÉ OBTER DADOS
@@ -88,7 +88,7 @@ export class WebSocketService {
             return () => this.socket.disconnect();
         });
     }
-    
+
 
 
 }

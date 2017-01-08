@@ -24,36 +24,26 @@
     <div class="col-md-2">
       <strong>New game:</strong>
     </div>
-    <form novalidate class="simple-form" (ngSubmit)="newGame()">
-      <div class="row">
-
-        <div class="col-md-2">
-          # of Players (2-4):
-        </div>
-
-        <div class="col-md-2">
-          <input type="number" class="form-control" size="1" min="2" max="4" required [(ngModel)]="form.numMax" name="numMax">
-        </div>
-      </div>
+    <div>
       <div class="row">
         <div class="col-md-6">
           <board [newBoard]="newBoard" [selectedShip]="selectedShip" [listShip]="listShip" [selectedOrientation]="selectedOrientation"></board>
         </div>
         <div class="col-md-6">
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-4">
               Ship:
             </div>
             <div class="col-md-4">
               <select [(ngModel)]="selectedShipSelector" name="selectedShip" (ngModelChange)="onSelectedChange()">
-              <option [ngValue]="j" *ngFor="let i of listShip; let j = index">
+              <option [ngValue]="j" *ngFor="let i of listShip; let j = index" >
                 {{i.name}}
                 </option>
             </select>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-4">
               Orientation:
             </div>
             <div class="col-md-4">
@@ -67,21 +57,20 @@
       <br />
       <div class="row">
         <div class="col-md-2">
-          <button class="btn btn-primary" type="submit">Create</button>
+          <button class="btn btn-primary" (click)='newGame()'>Create</button>
         </div>
         <div class="col-md-2">
           <button class="btn btn-warning" (click)="newGameDash = false">Cancel</button>
         </div>
       </div>
-    </form>
+    </div>
   </div>
   <br />
   <br />
 
 
 
-
-  <div *ngIf="listGames != ''">
+  <div *ngIf="listGames != '' && !newGameDash">
     <div class="row">
       <h3>List of games waiting players</h3>
     </div>
@@ -89,15 +78,13 @@
 <thead>
   <tr role="row">
     <td><strong>Game #</strong></td>
-    <td><strong>Total of Players</strong></td>
-    <td><strong># Left</strong></td>
+    <td><strong>Joined Players</strong></td>
   </tr>
 </thead>
 <tbody>
   <tr *ngFor="let list of listGames">
     <td>{{list.id}}</td>
-    <td>{{list.maxPlayers}}</td>
-    <td>{{list.maxPlayers - list.players.length}}</td>
+    <td>{{list.players.length}}</td>
     <td> <button class="btn btn-success" (click)="joinGame(list._id)">Join Game</button></td>
   </tr>
 </tbody>

@@ -4,6 +4,7 @@ import { AuthService, AlertService } from '../_services/index';
 import { Board } from '../board/index';
 import { ShipType, Orientation } from '../board/ship';
 import { Http, Headers } from '@angular/http';
+import { Router } from '@angular/router';
 import 'rxjs/Rx';
 
 const URL_GAME_WAITING = 'http://localhost:8080/api/v1/games/waiting';
@@ -24,13 +25,12 @@ export class GameComponent implements OnInit {
   selectedOrientation: any;
   listOrientation: any = [];
 
-  form: any = {};
   listGames: any = '';
   newGameDash: boolean = false;
   headers = new Headers();
 
   constructor(private websocketsService: WebSocketService, private authService: AuthService,
-    private alertService: AlertService, private http: Http) {
+    private alertService: AlertService, private http: Http, private _router: Router) {
 
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Authorization', 'Bearer ' + this.authService.user.token);
@@ -39,9 +39,9 @@ export class GameComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.websocketsService.getBoard().subscribe(data => {
+    /*this.websocketsService.getBoard().subscribe(data => {
       this.boards = data;
-    });
+    });*/
   }
 
   updateGameList() {
@@ -124,17 +124,14 @@ export class GameComponent implements OnInit {
   }
 
   newGame() {
-    console.log('Form Object');
-    console.dir(this.form);
-    if (this.form.numMax < 2 || this.form.numMax > 4) {
-      this.alertService.error('Error in number of players. Please insert between 2 to 4.');
-    } else {
+    if (this.listShip.length === 0) {
       this.alertService.subject.next();
       let endpoint = URL_NEW_GAME;
       let body = {
         id: Math.floor(Math.random() * 99999) + 1,
         players: [this.authService.user],
-        maxPlayers: this.form.numMax,
+        // boards: [this.newBoard],
+        creator: this.authService.user._id,
         state: 'waiting'
       };
 
@@ -143,15 +140,14 @@ export class GameComponent implements OnInit {
       })
         .subscribe(data => {
           this.alertService.success('Your game # is: ' + body.id);
-          for (let i = 0; i < this.form.numMax; i++) {
-            this.boards.push(new Board());
-          }
-          console.dir(this.boards);
-          this.websocketsService.sendBoard(this.boards);
+          this.newGameDash = false;
+          this._router.navigate(['home']);
         }, error => {
           this.alertService.error('unauthorized!');
           console.log(JSON.stringify(error.json()));
         });
+    } else {
+      this.alertService.error('You need to insert all ships!');
     }
   }
 }

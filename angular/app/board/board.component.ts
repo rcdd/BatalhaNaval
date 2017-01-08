@@ -38,17 +38,26 @@ export class BoardComponent implements OnInit {
     click(line: number, column: number) {
         // console.log('click, linha: ' + (line / 10) + ', column: ' + (column + 1));
         let lineAsString: string = String.fromCharCode(65 + (line / 10));
-
-        let ship: any = '';
-        ship = this.newBoard.adicionaNavio(this.selectedShip.value, +this.selectedOrientation, lineAsString, column + 1);
-        if (ship !== undefined) {
-            let i = 0;
-            this.listShip.forEach(list => {
-                if (this.selectedShip.id === list.id) {
-                    this.listShip.splice(i, 1);
+        console.dir(this.selectedShip);
+        if (this.selectedShip !== undefined) {
+            if (this.selectedShip.id !== '') {
+                this.alertService.subject.next();
+                let ship: any = '';
+                ship = this.newBoard.adicionaNavio(this.selectedShip.value, +this.selectedOrientation, lineAsString, column + 1);
+                if (ship !== undefined) {
+                    let i = 0;
+                    this.listShip.forEach((list: any) => {
+                        if (this.selectedShip.id === list.id) {
+                            this.selectedShip.id = '';
+                            this.listShip.splice(i, 1);
+                        }
+                        i++;
+                    });
+                    this.selectedShip = undefined;
                 }
-                i++;
-            });
+            } 
+        } else {
+            this.alertService.error('Please, select a ship!');
         }
     };
 }
