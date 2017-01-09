@@ -109,7 +109,6 @@
 <!-- GAME -->
 <div *ngIf="boards">
   <board *ngFor="let board of boards; let i = index" [boardNr]="i" [shooter]="authService.user._id" [board]="board" [idGame]="idGame"
-    [username]="board.owner">
-
+    [username]="board.owner" [currentPlayer]="currentPlayer" [totalShoots]="totalShoots">
   </board>
 </div>

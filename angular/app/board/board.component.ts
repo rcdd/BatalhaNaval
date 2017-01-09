@@ -33,6 +33,10 @@ export class BoardComponent implements OnInit {
     listBoardsToShoot: any;
     @Input()
     username: any;
+    @Input()
+    currentPlayer: any;
+    @Input()
+    totalShoots: any;
 
     constructor(private websocketsService: WebSocketService, private alertService: AlertService) {
     }
@@ -44,7 +48,7 @@ export class BoardComponent implements OnInit {
         console.log(this.boardNr);
         if (this.boardNr !== 0) {
             if (this.board.cells[position].type < 2) {
-                this.websocketsService.sendShoot(position, this.board, this.shooter, this.idGame);
+                this.websocketsService.sendShoot(position, this.board, this.shooter, this.idGame, this.currentPlayer, this.totalShoots);
             }
         }
     };

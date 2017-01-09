@@ -27,6 +27,9 @@ export class GameComponent implements OnInit {
   typeSubmit: any;
   private sub: any;
   listBoardsInGame: any = [];
+  currentPlayer: any;
+  totalShoots: any;
+
 
   allDataFromServer: any = [];
 
@@ -132,7 +135,9 @@ export class GameComponent implements OnInit {
         id: Math.floor(Math.random() * 99999) + 1,
         players: [{ player: this.authService.user, board: this.newBoard }],
         creator: this.authService.user._id,
-        state: 'created'
+        state: 'created',
+        currentPlayer: this.authService.user._id,
+        totalShoots: 0
       };
 
       this.http.post(URL_GAME, JSON.stringify(body), {

@@ -16,13 +16,15 @@ export class WebSocketService {
         }
     }
 
-    sendShoot(position: any, board: any, shooter: number, idGame: any) {
+    sendShoot(position: any, board: any, shooter: number, idGame: any, currentPlayer: any, totalShoots: any) {
         console.log(idGame);
 
         let json = {
             position: position,
             board: board,
             shooter: shooter,
+            currentPlayer: currentPlayer,
+            totalShoots: totalShoots
         };
         this.socket.emit(idGame, json);
     }
@@ -32,7 +34,7 @@ export class WebSocketService {
             this.socket.on(idGame, (data: any) => {
                 console.log('websocket: get shoot:');
                 console.dir(data);
-                this.boards = data;
+                this.boards = data.boards;
                 observer.next(data);
             });
             return () => this.socket.disconnect();
@@ -100,5 +102,4 @@ export class WebSocketService {
             return () => this.socket.disconnect();
         });
     }
-
 }

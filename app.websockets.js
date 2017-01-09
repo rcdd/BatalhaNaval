@@ -45,6 +45,7 @@ ws.init = (server) => {
                     if (gameServer.channel === data.channel) {
                         console.log('é este game');
                         let boards = [];
+                        let game = [];
                         gameServer.data.forEach(function (gameBoard) {
                             if (gameBoard.owner === allData.board.owner) {
                                 console.log('é este board');
@@ -55,6 +56,7 @@ ws.init = (server) => {
                                     console.log('falhaste');
                                     gameBoard.cells[allData.position].type = 3;
                                 }
+                                allData.totalShoots += 1;
                                 console.log('send gameBoard');
                                 console.dir(gameBoard);
                             }
@@ -124,6 +126,7 @@ ws.init = (server) => {
                     if (gameServer.channel === data.channel) {
                         console.log('é este game');
                         let boards = [];
+                        let game = [];
                         gameServer.data.forEach(function (gameBoard) {
                             if (gameBoard.owner === allData.board.owner) {
                                 console.log('é este board');
