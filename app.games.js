@@ -3,6 +3,7 @@
 const mongodb = require('mongodb');
 const database = require('./app.database');
 const util = require('util');
+
 const games = module.exports = {};
 let settings = {};
 
@@ -55,6 +56,13 @@ function getGamesWaiting(request, response, next) {
 
 function getGame(request, response, next) {
     const id = new mongodb.ObjectID(request.params.id);
+    returnGame(id, response, next);
+}
+
+function getGameByid(id) {
+    console.log("getgamebyid");
+    let request = {};
+    let next = {};
     returnGame(id, response, next);
 }
 
@@ -121,3 +129,5 @@ games.init = (server, options) => {
     server.del(settings.prefix + 'games/:id', settings.security.authorizeBearer, deleteGame);
     console.log("Games routes registered");
 };
+
+games.getGames = returnGame;

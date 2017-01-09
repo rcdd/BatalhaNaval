@@ -1,5 +1,7 @@
 $water: #6282ff;
 $waterHover: #4279ff;
+$fail: red;
+$accept: green;
 $ship: blue;
 
 #board{
@@ -44,6 +46,28 @@ $ship: blue;
     height: 100%;
     background-color:$water;
     color: $water;
+    &:hover{
+        background-color:$waterHover;
+        color:$waterHover;
+    }
+}
+
+.fail-board{
+    width: 100%;
+    height: 100%;
+    background-color:$fail;
+    color: $fail;
+    &:hover{
+        background-color:$waterHover;
+        color:$waterHover;
+    }
+}
+
+.accept-board{
+    width: 100%;
+    height: 100%;
+    background-color:$accept;
+    color: $accept;
     &:hover{
         background-color:$waterHover;
         color:$waterHover;

@@ -16,7 +16,7 @@ export class WebSocketService {
         }
     }
 
-    sendShoot(position: any, board: any, owner: number, idGame: any, listBoardInGame: any, listBoardsToShoot: any) {
+    sendShoot(position: any, board: any, owner: number, idGame: any) {
         // this.boards[index] = board;
         console.log(idGame);
 
@@ -24,8 +24,6 @@ export class WebSocketService {
             position: position,
             board: board,
             owner: owner,
-            listBoardInGame: listBoardInGame,
-            listBoardsToShoot: listBoardsToShoot
         };
         console.log('SEND TO SERVER SHOOT:');
         console.dir(json);

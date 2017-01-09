@@ -49,14 +49,22 @@ export class GameComponent implements OnInit {
       } else if (this.typeSubmit === 'play') {
         this.play();
       }
-      this.websocketsService.getShoot(this.idGame).subscribe((data) => {
-        console.dir(data);
-        /* if (data.owner === this.authService.user._id) {
-           let celltype: any = this.boards[0].cells[data.position].type;
-           console.log(celltype);
-         }*/
-      });
 
+    });
+    this.websocketsService.getShoot(this.idGame).subscribe((data) => {
+      console.log('getshoot do game');
+      console.dir(data);
+      this.boards = [];
+      let boards: any = [];
+      data.forEach((board: any) => {
+        boards.push(board);
+      });
+      this.boards = boards;
+
+      /* if (data.owner === this.authService.user._id) {
+         let celltype: any = this.boards[0].cells[data.position].type;
+         console.log(celltype);
+       }*/
     });
   }
 
