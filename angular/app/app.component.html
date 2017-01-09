@@ -11,6 +11,14 @@
       <a class="nav-link" [routerLink]="['/login']" href="#">Logout</a>
     </li>
   </ul>
+  <ul *ngIf="isLogged()"  class="navbar-right">
+    <li>
+      <a  *ngIf="isLogged()" href="#" [routerLink]="['/account']">
+        <img *ngIf="isLogged()" class="photo" src="{{getPhoto()}}"/>
+        {{getName()}}
+      </a>
+    </li>
+  </ul>
 </nav>
 
 <div class="container-fluid">

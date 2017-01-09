@@ -47,9 +47,34 @@ function getPlayer(request, response, next) {
     returnPlayer(id, response, next);
 }
 
+
 function updatePlayer(request, response, next) {
+    console.log("update player");
+    const patt = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$");
     const id = new mongodb.ObjectID(request.params.id);
     const player = request.body;
+    if(player.photo===''){
+        player.photo = 'http://img.faceyourmanga.com/mangatars/0/2/2797/large_3810.png';
+    }
+
+    if(player.passwordHash<3){
+        response.send(400, "Error: Password não tem caracteres suficientes minimo 3");
+        return next();
+    }
+
+    player.passwordHash = sha1(player.passwordHash+security.salt);
+    player.passwordHashConfirmation = sha1(player.passwordHashConfirmation+security.salt);
+
+    if(player.passwordHash !== player.passwordHashConfirmation){
+        response.send(400, "Error: As password não são iguais");
+        return next();
+    }
+    delete player.passwordHashConfirmation;
+
+    if(!patt.test(player.email)){
+        response.send(400, "Error: email Inválido");
+        return next();
+    }
 
     if (player === undefined) {
         response.send(400, 'No player data');

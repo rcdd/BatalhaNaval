@@ -35,10 +35,6 @@ export class GameComponent implements OnInit {
 
   constructor(private websocketsService: WebSocketService, private authService: AuthService,
     private alertService: AlertService, private http: Http, private _router: Router, private route: ActivatedRoute) {
-
-    this.headers.append('Content-Type', 'application/json');
-    this.headers.append('Authorization', 'Bearer ' + this.authService.user.token);
-
   }
 
   ngOnInit() {
