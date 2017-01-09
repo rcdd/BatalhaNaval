@@ -64,7 +64,6 @@ export class WebSocketService {
 
 
     sendLists() {
-        console.log('websocket: send Lists');
         this.socket.emit('lists');
     }
 
@@ -87,6 +86,7 @@ export class WebSocketService {
     }
 
     joinGame(channel: any) {
+        console.log('asdfda');
         this.socket.emit('joinGame', { channel: channel });
     }
 

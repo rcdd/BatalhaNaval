@@ -7,7 +7,6 @@ import { HomeComponent } from './home/index';
 import { AuthGuard } from './_guard/index';
 import { GameComponent } from './game/index';
 
-// import { BoardComponent } from './board/index';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },

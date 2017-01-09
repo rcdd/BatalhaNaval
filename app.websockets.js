@@ -5,13 +5,11 @@ const mongodb = require('mongodb');
 const database = require('./app.database');
 
 const ws = module.exports = {};
-let settings = {};
 let wsServer = null;
 
 var allDataServer = [];
 
-ws.init = (server, options) => {
-    settings = options;
+ws.init = (server) => {
     wsServer = io.listen(server);
     wsServer.sockets.on('connection', function (client) {
         client.emit('players', ' Welcome to battleship');
@@ -28,7 +26,7 @@ ws.init = (server, options) => {
 
         client.on('startGame', data => {
             console.log('appSocket: createGame ');
-            console.dir(data);
+            //console.dir(data);
 
             // SERA QUE DEVEMOS GUARDAR OS DADOS NO WEBSOCKET OU NO BASE DE DADOS???
             allDataServer.push({ channel: data.channel, data: data.boards });
@@ -41,9 +39,9 @@ ws.init = (server, options) => {
                 // console.dir(allData);
                 allDataServer.forEach(function (gameServer) {
                     console.log("foreach");
-                    console.dir(gameServer.channel);
+                    // console.dir(gameServer.channel);
                     console.log("foreach data.channel");
-                    console.dir(data.channel);
+                    // console.dir(data.channel);
                     if (gameServer.channel === data.channel) {
                         console.log('é este game');
                         let boards = [];
@@ -184,9 +182,45 @@ ws.init = (server, options) => {
 
     });
 
+                            const id = new mongodb.ObjectID(data.channel);
+                            database.db.collection('games')
+                                .findOne({
+                                    _id: id
+                                })
+                                .then(game => {
+                                    game.players.forEach(function (player) {
+                                        boards.forEach(function (board) {
+                                            if (board.owner === player.board.owner) {
+                                                player.board = board;
+                                            }
+
+                                        }, this);
+                                    }, this);
+
+                                    //update
+                                    delete game._id;
+                                    database.db.collection('games')
+                                        .updateOne({
+                                            _id: id
+                                        }, {
+                                            $set: game
+                                        })
+                                        .then(
+                                        )
+                                        .catch(err => handleError(err));
+
+                                })
+                                .catch(err => handleError(err));
 
 
+                            wsServer.sockets.emit(data.channel, boards);
 
+                        }, this);
+                    }
+                }, this);
+            });
+        });
+    });
 };
 
 ws.notifyAll = (channel, message) => {

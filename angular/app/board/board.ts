@@ -1,9 +1,7 @@
 import { Ship } from './ship';
-// import { ShipType } from './ship';
 import { Orientation } from './ship';
 import { Cell } from './cell';
 import { Position } from './position';
-// import { AlertService } from '../_services/index';
 
 export class Board {
     ships: Ship[];

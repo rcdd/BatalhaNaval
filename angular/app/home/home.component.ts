@@ -13,10 +13,8 @@ export class HomeComponent implements OnInit {
 
     constructor(private authService: AuthService, private websocketsService: WebSocketService) {
         this.currentUser = this.authService.user;
-
     }
-    
-    ngOnInit() {
 
+    ngOnInit() {
     }
 }

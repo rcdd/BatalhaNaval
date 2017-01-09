@@ -33,10 +33,8 @@ export class ListGamesComponent implements OnInit {
 
 
     ngOnInit() {
-        console.log('subscribe to updateList');
         this.websocketsService.getListAlert().subscribe(
             m => {
-                console.log('new update by socket');
                 this.updateGameList();
             });
     }

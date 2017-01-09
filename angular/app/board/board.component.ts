@@ -12,7 +12,7 @@ export class BoardComponent implements OnInit {
     @Input()
     board: any;
     @Input()
-    index: any;
+    boardNr: number;
     @Input()
     shooter: any;
     @Input()
@@ -31,16 +31,22 @@ export class BoardComponent implements OnInit {
     listBoardsInGame: any;
     @Input()
     listBoardsToShoot: any;
+    @Input()
+    username: any;
 
     constructor(private websocketsService: WebSocketService, private alertService: AlertService) {
-
     }
 
     ngOnInit() {
     }
 
     Shoot(position: number) {
-        this.websocketsService.sendShoot(position, this.board, this.shooter, this.idGame);
+        console.log(this.boardNr);
+        if (this.boardNr !== 0) {
+            if (this.board.cells[position].type < 2) {
+                this.websocketsService.sendShoot(position, this.board, this.shooter, this.idGame);
+            }
+        }
     };
 
 
@@ -64,7 +70,7 @@ export class BoardComponent implements OnInit {
                         i++;
                     });
                     this.selectedShip = this.listShip[this.selectedShipSelector];
-                }else {
+                } else {
                     this.alertService.error(ship.message);
                 }
             }

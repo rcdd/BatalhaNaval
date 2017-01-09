@@ -64,11 +64,6 @@ export class GameComponent implements OnInit {
         }
       });
       this.boards = boards;
-
-      /* if (data.owner === this.authService.user._id) {
-         let celltype: any = this.boards[0].cells[data.position].type;
-         console.log(celltype);
-       }*/
     });
   }
 
@@ -138,9 +133,6 @@ export class GameComponent implements OnInit {
         state: 'created'
       };
 
-      console.dir(this.newBoard);
-      console.dir(body);
-
       this.http.post(URL_GAME, JSON.stringify(body), {
         headers: this.headers
       })
@@ -191,8 +183,8 @@ export class GameComponent implements OnInit {
             this.websocketsService.sendLists();
             this.websocketsService.getBoardsGame(game._id).subscribe(
               m => {
-                console.log('a receber boards');
-                console.dir(m);
+                /*console.log('a receber boards');
+                console.dir(m);*/
                 this.allDataFromServer = m;
               });
 
@@ -200,7 +192,7 @@ export class GameComponent implements OnInit {
             this._router.navigate(['/home']);
           }, error => {
             this.alertService.error('error assign to game!');
-            console.log(JSON.stringify(error.json()));
+            // console.log(JSON.stringify(error.json()));
           });
 
       } else {
@@ -208,7 +200,7 @@ export class GameComponent implements OnInit {
       }
     }, error => {
       this.alertService.error('error getting game!');
-      console.log(JSON.stringify(error.json()));
+      // console.log(JSON.stringify(error.json()));
     });
     this.websocketsService.sendLists();
   }
@@ -217,7 +209,7 @@ export class GameComponent implements OnInit {
   play() {
     let game: any = [];
     let boards: any = [];
-    // let listBoardsInGame: any = [];
+
     let endpoint = URL_GAME + '/' + this.idGame;
     this.http.get(endpoint, {
       headers: this.headers
@@ -237,7 +229,7 @@ export class GameComponent implements OnInit {
 
   start() {
     let game: any = [];
-    // let listBoardsInGame: any = [];
+
     let endpoint = URL_GAME + '/' + this.idGame;
     this.http.get(endpoint, {
       headers: this.headers
@@ -252,7 +244,7 @@ export class GameComponent implements OnInit {
         headers: this.headers
       })
         .subscribe(ok => {
-          // JOIN GAME => TODO
+          // JOIN GAME
           this.websocketsService.sendLists();
           this.websocketsService.createGame(game._id, this.listBoardsInGame);
           let boards: any = [];
@@ -271,9 +263,5 @@ export class GameComponent implements OnInit {
           console.log(JSON.stringify(error.json()));
         });
     });
-  }
-
-  getShoot(id: any) {
-    console.dir(' GAME COMPONENT: ' + id);
   }
 }

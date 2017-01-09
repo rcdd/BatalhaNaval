@@ -4,7 +4,7 @@ $fail: red;
 $accept: green;
 $ship: blue;
 
-#board{
+.board{
     height: 300px;
     width: 300px;
     text-align: center;
@@ -89,6 +89,14 @@ $ship: blue;
     color:red;
 }
 
+div .disabled
+{
+  pointer-events: none;
+  /* for "disabled" effect */
+  opacity: 0.5;
+  background: #CCC;
+}
+
 
 
 .msg_head{
@@ -106,7 +114,9 @@ $ship: blue;
     width:250px;
     right: 40px;
     background:white;
+    border: solid #3498db 1px;
     border-radius:5px 5px 0px 0px;
+    z-index: 10;
 }
 
 .msg_head{

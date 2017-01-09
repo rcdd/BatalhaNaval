@@ -1,13 +1,9 @@
-<h2>Chat history</h2>
-
-
 <div class="msg_box">
     <div class="msg_head" (click)="closeChat()">Chat</div>
     <div [ngClass]="{'minimize': minimize}" class="msg_wrap">
         <div #list class="msg_body" [scrollTop]="list.scrollHeight" >
-            <div class="msg">This is from B, and its amazingly kool nah... i know it even i liked it :)</div>
-            <div class="msg">Wow, Thats great to hear from you man </div>
-            <div class="msg" *ngFor="let m of chatChannel">{{m}}</div>
+            <div class="msg">Say Hello to everyone :P </div>
+            <div class="msg" *ngFor="let m of chatChannel" width="10px">{{m}}</div>
         </div>
         <div class="msg_footer">
             <form #messageForm="ngForm">

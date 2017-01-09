@@ -2,8 +2,6 @@
 <br />
 <chat></chat>
 
-
-
 <!-- SHOW ALL -->
 <div *ngIf="boards==''">
   <div *ngIf="!newGameDash && !idGame" class="col-md-1">
@@ -110,5 +108,8 @@
 
 <!-- GAME -->
 <div *ngIf="boards">
-  <board *ngFor="let board of boards" [index]="authService.user._id" [board]="board" [idGame]="idGame"></board>
+  <board *ngFor="let board of boards; let i = index" [boardNr]="i" [shooter]="authService.user._id" [board]="board" [idGame]="idGame"
+    [username]="board.owner">
+
+  </board>
 </div>

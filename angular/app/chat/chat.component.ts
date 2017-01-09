@@ -27,12 +27,11 @@ export class ChatComponent implements OnInit {
 
     ngOnInit() {
         this.chatChannel = this.chatService.getMessage();
-        console.log(this.minimize);
-        console.dir(this.chatChannel);
         this.websocketService.getChatMessages().subscribe(
             m => {
                 let show =  '[' + m.user.name + '] ' + m.message;
                 this.chatChannel.push(show);
+
             });
     }
 
