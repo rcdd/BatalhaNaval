@@ -6,7 +6,7 @@
         <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate class="form-signin">
            <h2 class="form-signin-heading">Registo! </h2>
            <hr class="colorgraph"><br>
-           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
             <input type="text" placeholder="Nome" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
             <div *ngIf="f.submitted && !name.valid" class="error">Name is required</div>
         </div>
