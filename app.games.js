@@ -122,10 +122,10 @@ function deleteGame(request, response, next) {
 games.init = (server, options) => {
     settings = options;
     // server.get(settings.prefix + 'games/waiting', settings.security.authorize, getGamesWaiting);
-    server.get(settings.prefix + 'games', settings.security.authorize, getGames);
-    server.get(settings.prefix + 'games/:id', settings.security.authorize, getGame);
-    server.put(settings.prefix + 'games/:id', settings.security.authorize, updateGame);
-    server.post(settings.prefix + 'games', settings.security.authorize, createGame);
-    server.del(settings.prefix + 'games/:id', settings.security.authorize, deleteGame);
+    server.get(settings.prefix + 'games', settings.security.authorizeBearer, getGames);
+    server.get(settings.prefix + 'games/:id', settings.security.authorizeBearer, getGame);
+    server.put(settings.prefix + 'games/:id', settings.security.authorizeBearer, updateGame);
+    server.post(settings.prefix + 'games', settings.security.authorizeBearer, createGame);
+    server.del(settings.prefix + 'games/:id', settings.security.authorizeBearer, deleteGame);
     console.log("Games routes registered");
 };

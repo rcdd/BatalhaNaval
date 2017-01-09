@@ -178,57 +178,18 @@ ws.init = (server) => {
                     }
                 }, this);
             });
+
         });
 
+
+        ws.notifyAll = (channel, message) => {
+            console.log('send to' + channel + ' this: ' + message);
+            wsServer.sockets.emit(channel, message);
+        };
+
+
+        function handleError(err, response) {
+            response.send(500, err);
+        }
     });
-
-                            const id = new mongodb.ObjectID(data.channel);
-                            database.db.collection('games')
-                                .findOne({
-                                    _id: id
-                                })
-                                .then(game => {
-                                    game.players.forEach(function (player) {
-                                        boards.forEach(function (board) {
-                                            if (board.owner === player.board.owner) {
-                                                player.board = board;
-                                            }
-
-                                        }, this);
-                                    }, this);
-
-                                    //update
-                                    delete game._id;
-                                    database.db.collection('games')
-                                        .updateOne({
-                                            _id: id
-                                        }, {
-                                            $set: game
-                                        })
-                                        .then(
-                                        )
-                                        .catch(err => handleError(err));
-
-                                })
-                                .catch(err => handleError(err));
-
-
-                            wsServer.sockets.emit(data.channel, boards);
-
-                        }, this);
-                    }
-                }, this);
-            });
-        });
-    });
-};
-
-ws.notifyAll = (channel, message) => {
-    console.log('send to' + channel + ' this: ' + message);
-    wsServer.sockets.emit(channel, message);
-};
-
-
-function handleError(err, response) {
-    response.send(500, err);
 }
