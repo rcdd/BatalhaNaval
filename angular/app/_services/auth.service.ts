@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { Http } from '@angular/http';
 import { Observable} from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
@@ -8,7 +8,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
     user: any;
-    headers = new Headers();
 
     constructor(private http: Http) { }
 
@@ -59,20 +58,6 @@ export class AuthService {
             username: username
         };
         return this.http.post(`/api/v1/recover`, data)
-        .map( (results) => {
-            this.user = results.json();
-            return results.json();
-        });
-    }
-
-    update(data: any): Observable<any> {
-
-        this.headers.append('Content-Type', 'application/json');
-        this.headers.append('Authorization', 'Bearer ' + data.token);
-        console.log(data);
-        return this.http.put('/api/v1/players/' + data._id, data, {
-          headers: this.headers
-        })
         .map( (results) => {
             this.user = results.json();
             return results.json();
