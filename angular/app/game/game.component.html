@@ -1,115 +1,43 @@
-<h2>Game</h2>
-<br />
-<chat></chat>
-
-<!-- SHOW ALL -->
-<div *ngIf="boards==''">
-  <div *ngIf="!newGameDash && !idGame" class="col-md-1">
-    <button class="btn btn-primary" (click)="newGameDashForm()">New Game</button>
-  </div>
-  <div *ngIf="newGameDash" class="row">
-    <div class="col-md-2">
-      <strong>New game:</strong>
-    </div>
-    <div>
-      <div class="row">
-        <div class="col-md-6">
+<div class="container-fluid game" *ngIf="boards==''">
+  <h1 class="title-game">New Game</h1>
+  <!-- New Game -->
+  <div class="row board-main">
+    <div class="board" >
+      <div *ngIf="newGameDash" class="game-dash">
+        <div class="col-md-3">
           <board [newBoard]="newBoard" [selectedShip]="selectedShip" [selectedShipSelector]="selectedShipSelector" [listShip]="listShip"
-            [selectedOrientation]="selectedOrientation"></board>
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-4">
-              Ship:
-            </div>
-            <div class="col-md-4">
-              <select [(ngModel)]="selectedShipSelector" name="selectedShip" (ngModelChange)="onSelectedChange()">
-                <option [ngValue]="j" *ngFor="let i of listShip; let j = index" >
-                  {{i.name}}
-                </option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              Orientation:
-            </div>
-            <div class="col-md-4">
-              <select [(ngModel)]="selectedOrientation" name="selectedOrientation">
-                <option [value]="k.value" *ngFor="let k of listOrientation">{{k.name}}</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-md-2">
-          <button class="btn btn-primary" (click)='newGame()'>Create</button>
-        </div>
-        <div class="col-md-2">
-          <button class="btn btn-warning" (click)="newGameDash = false">Cancel</button>
+          [selectedOrientation]="selectedOrientation"></board>
         </div>
       </div>
     </div>
+    <ul class="list-group row">
+      <li class="list-group-item col-xs-5">
+        <strong>Ship: </strong>
+        <select [(ngModel)]="selectedShipSelector" name="selectedShip" (ngModelChange)="onSelectedChange()">
+          <option [ngValue]="j" *ngFor="let i of listShip; let j = index">{{i.name}}</option>
+        </select>
+      </li>
+      <li class="list-group-item col-xs-5">
+        <strong>Orientação: </strong>
+        <select [(ngModel)]="selectedOrientation" name="selectedOrientation">
+          <option [value]="k.value" *ngFor="let k of listOrientation">{{k.name}}</option>
+        </select>
+      </li>
+      <li class="list-group-item col-xs-5">
+        <button class="btn btn-primary" (click)='newGame()'>Create</button>
+      </li>
+      <li class="list-group-item col-xs-5">
+        <button class="btn btn-warning" (click)="newGameDashForm()">Reboot</button>
+      </li>
+    </ul>
   </div>
-
-
-  <div *ngIf="typeSubmit=='join'" class="row">
-    <div class="col-md-2">
-      <strong>Join game:</strong>
-    </div>
-    <div>
-      <div class="row">
-        <div class="col-md-6">
-          <board [newBoard]="newBoard" [selectedShip]="selectedShip" [selectedShipSelector]="selectedShipSelector" [listShip]="listShip"
-            [selectedOrientation]="selectedOrientation"></board>
-        </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-4">
-              Ship:
-            </div>
-            <div class="col-md-4">
-              <select [(ngModel)]="selectedShipSelector" name="selectedShip" (ngModelChange)="onSelectedChange()">
-                <option [ngValue]="j" *ngFor="let i of listShip; let j = index" >
-                  {{i.name}}
-                </option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              Orientation:
-            </div>
-            <div class="col-md-4">
-              <select [(ngModel)]="selectedOrientation" name="selectedOrientation">
-                <option [value]="k.value" *ngFor="let k of listOrientation">{{k.name}}</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-md-2">
-          <button class="btn btn-primary" (click)='joinGame()'>Confirm and join</button>
-        </div>
-        <div class="col-md-2">
-          <button class="btn btn-warning" routerLink="/home">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <br />
-  <br />
 </div>
+
 
 <!-- GAME -->
-<div *ngIf="boards">
-  <board *ngFor="let board of boards; let i = index" [boardNr]="i" [shooter]="authService.user._id" [board]="board" [idGame]="idGame"
-    [username]="board.owner">
-
-  </board>
+<div  class="container-fluid game"*ngIf="boards">
+  <board  *ngFor="let board of boards; let i = index" [boardNr]="i" [shooter]="authService.user._id" [board]="board" [idGame]="idGame"
+  [username]="board.owner">
+</board>
 </div>
+<chat></chat>

@@ -1,0 +1,43 @@
+<div class = "container">
+    <div class="row">
+        <h1 class="text-center_title">DAD - Battleship</h1>
+    </div>
+    <div class="wrapper">
+        <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate class="form-signin">
+            <h2 class="form-signin-heading">Conta do utilizador </h2>
+            <hr class="colorgraph"><br>
+            <div class="form-group">
+            <strong>Username:</strong>
+                <span>{{model.username}}</span>
+            </div>
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !name.valid }">
+                <input type="text" placeholder="Name" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+                <div *ngIf="f.submitted && !name.valid" class="error">Name is Invalid!</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+                <input type="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" required />
+                <div *ngIf="f.submitted && !email.valid" class="error">Email is Invalid!</div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="Photo url" class="form-control" name="photo" [(ngModel)]="model.photo" #name="ngModel" />
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !passwordHash.valid }">
+                <input type="password" placeholder="Password" class="form-control" name="passwordHash" [(ngModel)]="model.passwordHash" #passwordHash="ngModel" required />
+                <div *ngIf="f.submitted && !passwordHash.valid" class="error">password is required</div>
+                <div *ngIf="f.submitted && passwordMin3Chars" class="error">Minimo tamanho para a password 3 caracteres!</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !passwordHashConfirmation.valid }">
+                <input type="password" placeholder="Password Confirmation" class="form-control" name="passwordHashConfirmation" [(ngModel)]="model.passwordHashConfirmation" #passwordHashConfirmation="ngModel" required />
+                <div *ngIf="f.submitted && !passwordHashConfirmation.valid" class="error">password is required</div>
+                <div *ngIf="f.submitted && passwordNotEqual" class="error">As passwords não são iguais!</div>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="save" type="Submit">Save</button>
+            <a [routerLink]="['/home']" class="btn btn-link">Cancel</a>
+        </form>
+    </div>
+</div>

@@ -5,20 +5,21 @@ $accept: green;
 $ship: blue;
 
 .board{
-    height: 300px;
-    width: 300px;
-    text-align: center;
-    margin: 20px;
-    display: inline-block;
+ min-height: 430px;
+ min-width: 430px;
+}
+
+.board-main{
+
 }
 
 .board-cell{
-    text-align: center;
-    padding: 0px;
-    width: 30px;
-    height: 30px;
-    line-height: 1.5em;
-    border: 1px solid black;
+  text-align: center;
+  padding: 0px;
+  width: 30px;
+  height: 30px;
+  line-height: 1.5em;
+  border: 1px solid black;
 }
 .board-row .board-cell:first-child{
   border-left: 1px solid black;
@@ -38,55 +39,55 @@ $ship: blue;
 }
 
 .info-board{
-    background-color: rgba(187, 187, 187, 0.44);
+  background-color: rgba(187, 187, 187, 0.44);
 }
 
 .water-board{
-    width: 100%;
-    height: 100%;
-    background-color:$water;
-    color: $water;
-    &:hover{
-        background-color:$waterHover;
-        color:$waterHover;
-    }
+  width: 100%;
+  height: 100%;
+  background-color:$water;
+  color: $water;
+  &:hover{
+    background-color:$waterHover;
+    color:$waterHover;
+  }
 }
 
 .fail-board{
-    width: 100%;
-    height: 100%;
-    background-color:$fail;
-    color: $fail;
-    &:hover{
-        background-color:$waterHover;
-        color:$waterHover;
-    }
+  width: 100%;
+  height: 100%;
+  background-color:$fail;
+  color: $fail;
+  &:hover{
+    background-color:$waterHover;
+    color:$waterHover;
+  }
 }
 
 .accept-board{
-    width: 100%;
-    height: 100%;
-    background-color:$accept;
-    color: $accept;
-    &:hover{
-        background-color:$waterHover;
-        color:$waterHover;
-    }
+  width: 100%;
+  height: 100%;
+  background-color:$accept;
+  color: $accept;
+  &:hover{
+    background-color:$waterHover;
+    color:$waterHover;
+  }
 }
 
 .ship-board{
-    width: 100%;
-    height: 100%;
-    background-color:$ship;
-    color: $ship;
-    &:hover{
-        background-color:$waterHover;
-        color:$waterHover;
-    }
+  width: 100%;
+  height: 100%;
+  background-color:$ship;
+  color: $ship;
+  &:hover{
+    background-color:$waterHover;
+    color:$waterHover;
+  }
 }
 
 .error{
-    color:red;
+  color:red;
 }
 
 div .disabled
@@ -100,55 +101,55 @@ div .disabled
 
 
 .msg_head{
-    background:#f39c12;
-    color:white;
-    padding:5px;
-    font-weight:bold;
-    cursor:pointer;
-    border-radius:5px 5px 0px 0px;
+  background:#f39c12;
+  color:white;
+  padding:5px;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:5px 5px 0px 0px;
 }
 
 .msg_box{
-    position:fixed;
-    bottom:-5px;
-    width:250px;
-    right: 40px;
-    background:white;
-    border: solid #3498db 1px;
-    border-radius:5px 5px 0px 0px;
-    z-index: 10;
+  position:fixed;
+  bottom:-5px;
+  width:250px;
+  right: 40px;
+  background:white;
+  border: solid #3498db 1px;
+  border-radius:5px 5px 0px 0px;
+  z-index: 10;
 }
 
 .msg_head{
-    background:#3498db;
+  background:#3498db;
 }
 
 .msg_body{
-    background:white;
-    height:200px;
-    font-size:12px;
-    padding:15px;
-    overflow:auto;
-    overflow-x: hidden;
+  background:white;
+  height:200px;
+  font-size:12px;
+  padding:15px;
+  overflow:auto;
+  overflow-x: hidden;
 }
 .msg_input{
-    width:100%;
-    border: 1px solid white;
-    border-top:1px solid #DDDDDD;
+  width:100%;
+  border: 1px solid white;
+  border-top:1px solid #DDDDDD;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;
-}
+  }
 
-.close{
+  .close{
     float:right;
     cursor:pointer;
-}
-.minimize{
+  }
+  .minimize{
     height: 0px;
-}
+  }
 
-.user{
+  .user{
     position:relative;
     padding:10px 30px;
     &:before{
@@ -160,29 +161,29 @@ div .disabled
      left:10px;
      top:15px;
      border-radius:6px;
- }
+   }
 
- &:hover{
+   &:hover{
     background:#f8f8f8;
     cursor:pointer;
-}
+  }
 
 }
 
 .msg{
-    position:relative;
-    background:#82c2e0;
-    padding:10px;
-    min-height:10px;
-    margin-bottom:5px;
-    margin-right:10px;
-    border-radius:5px;
+  position:relative;
+  background:#82c2e0;
+  padding:10px;
+  min-height:10px;
+  margin-bottom:5px;
+  margin-right:10px;
+  border-radius:5px;
 }
 
 /* login form */
 .wrapper {
-    margin-top: 40px;
-    margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .form-signin {
@@ -229,48 +230,88 @@ input[type="password"] {
 }
 
 .btn-fb{
+  color: #fff;
+  background-color:#3b5998;
+  &:hover{
     color: #fff;
-    background-color:#3b5998;
-    &:hover{
-        color: #fff;
-        background-color:#496ebc;
-    }
+    background-color:#496ebc;
+  }
 }
 
 .text-center_title{
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .social-buttons{
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .navbar{
-    height: 65px;
-    .nav{
-        float:left;
-    }
+  height: 65px;
+  .nav{
+    float:left;
+  }
 }
 .navbar-right{
-    float: right;
-    display: inline-flex;
-    list-style: none;
-    li {
-        a{
-            text-decoration: none;
-        }
+  float: right;
+  display: inline-flex;
+  list-style: none;
+  li {
+    a{
+      text-decoration: none;
     }
+  }
 }
 
 .photo{
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
 }
 
 .hide-account{
   display: none;
+}
+
+.home{
+  margin-top: 20px;
+}
+
+.listgames{
+  .row{
+    .title{
+      margin-left: 35px;
+    }
+  }
+}
+
+.topten{
+  .title{
+    margin-left:10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .name-login{
+    display: none;
+  }
+  .photo{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.list-group-item {
+  border: 0;
+}
+
+.game{
+  margin-top: 10px;
+}
+
+.main-bottom{
+  padding-bottom: 25px;
 }

@@ -14,18 +14,14 @@ export class AppComponent implements OnInit {
     constructor(private authService: AuthService) { }
 
     ngOnInit() {
-        console.log('teste');
         console.dir(this.authService.user);
         this.model = { name: 'no name', photo: 'http://img.faceyourmanga.com/mangatars/0/2/2797/large_3810.png' };
-        console.log('teste2');
-        console.dir(this.model);
     }
 
     isLogged(): boolean {
         if (this.authService.user !== '') {
             return true;
         }
-        console.log('nao desenha');
         return false;
     }
 

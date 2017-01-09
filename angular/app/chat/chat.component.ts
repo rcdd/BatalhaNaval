@@ -22,21 +22,19 @@ export class ChatComponent implements OnInit {
 
     constructor(private websocketService: WebSocketService,
         private authService: AuthService, private chatService: ChatService) {
-
+        this.chatChannel = this.chatService.getMessage();
     }
 
     ngOnInit() {
-        this.chatChannel = this.chatService.getMessage();
         this.websocketService.getChatMessages().subscribe(
             m => {
                 let show =  '[' + m.user.name + '] ' + m.message;
                 this.chatChannel.push(show);
-
             });
     }
 
     send(): void {
-        // let show =  '[' + this.authService.user.name + ']\n ' + this.message;
+        let show =  '[' + this.authService.user.name + ']\n ' + this.message;
         let json = {
             date: new Date(),
             user: this.authService.user,
@@ -44,7 +42,7 @@ export class ChatComponent implements OnInit {
         };
 
         this.websocketService.sendChatMessage(json);
-        // this.chatService.setMessage(show);
+        this.chatService.setMessage(show);
         this.message = '';
 
     }

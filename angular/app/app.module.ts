@@ -21,7 +21,7 @@ import { RegisterComponent } from './register/index';
 import { TopTenComponent } from './topten/index';
 import { HomeComponent } from './home/index';
 import { ListGamesComponent } from './listGames/index';
-// import { AccountComponent } from './account/account.component';
+import { AccountComponent } from './account/account.component';
 import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
@@ -44,7 +44,7 @@ import { APP_BASE_HREF } from '@angular/common';
     TopTenComponent,
     ListGamesComponent,
     HomeComponent,
-    // AccountComponent
+    AccountComponent
   ],
   providers: [
     WebSocketService,
