@@ -16,21 +16,17 @@ export class WebSocketService {
         }
     }
 
-    sendShoot(position: any, board: any, owner: number, idGame: any) {
-        // this.boards[index] = board;
+    sendShoot(position: any, board: any, shooter: number, idGame: any) {
         console.log(idGame);
 
         let json = {
             position: position,
             board: board,
-            shooter: owner,
+            shooter: shooter,
         };
-        console.log('SEND TO SERVER SHOOT:');
-        console.dir(json);
         this.socket.emit(idGame, json);
     }
 
-    // ESCUTA O CANAL 'IDGAME' ATÉ OBTER SHOOT'S
     getShoot(idGame: any): Observable<any> {
         return new Observable((observer: any) => {
             this.socket.on(idGame, (data: any) => {

@@ -33,8 +33,6 @@ export class ListGamesComponent implements OnInit {
 
 
     ngOnInit() {
-        // TODO: subscribe each type of event on websocketService
-        // Every time a message is served 
         console.log('subscribe to updateList');
         this.websocketsService.getListAlert().subscribe(
             m => {
@@ -64,7 +62,6 @@ export class ListGamesComponent implements OnInit {
                         } else {
                             this.listGamesWaiting.push(game);
                         }
-
                     } else if (game.state === 'playing') {
                         if (game.players.indexOf(this.authService.user)) {
                             this.listGamesPlaying.push(game);

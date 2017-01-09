@@ -193,3 +193,25 @@ input[type="password"] {
 
 .social-buttons {
   margin-top: 10px; }
+
+.navbar {
+  height: 65px; }
+  .navbar .nav {
+    float: left; }
+
+.navbar-right {
+  float: right;
+  display: inline-flex;
+  list-style: none; }
+  .navbar-right li a {
+    text-decoration: none; }
+
+.photo {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%; }
+
+.hide-account {
+  display: none; }

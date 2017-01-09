@@ -14,6 +14,8 @@ export class BoardComponent implements OnInit {
     @Input()
     index: any;
     @Input()
+    shooter: any;
+    @Input()
     newBoard: Board;
     @Input()
     selectedShip: any;
@@ -38,9 +40,7 @@ export class BoardComponent implements OnInit {
     }
 
     Shoot(position: number) {
-        console.log(this.index);
-        console.log('BOARD Component SHOOT');
-        this.websocketsService.sendShoot(position, this.board, this.index, this.idGame);
+        this.websocketsService.sendShoot(position, this.board, this.shooter, this.idGame);
     };
 
 
