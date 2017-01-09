@@ -70,6 +70,7 @@ export class GameComponent implements OnInit {
       });
       this.boards = boards;
     });
+    this.newGameDashForm();
   }
 
   newGameDashForm() {

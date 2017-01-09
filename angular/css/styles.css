@@ -1,9 +1,6 @@
 .board {
-  height: 300px;
-  width: 300px;
-  text-align: center;
-  margin: 20px;
-  display: inline-block; }
+  min-height: 430px;
+  min-width: 430px; }
 
 .board-cell {
   text-align: center;
@@ -223,3 +220,28 @@ input[type="password"] {
 
 .hide-account {
   display: none; }
+
+.home {
+  margin-top: 20px; }
+
+.listgames .row .title {
+  margin-left: 35px; }
+
+.topten .title {
+  margin-left: 10px; }
+
+@media only screen and (max-width: 600px) {
+  .name-login {
+    display: none; }
+  .photo {
+    width: 40px;
+    height: 40px; } }
+
+.list-group-item {
+  border: 0; }
+
+.game {
+  margin-top: 10px; }
+
+.main-bottom {
+  padding-bottom: 25px; }

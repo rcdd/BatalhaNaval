@@ -1,15 +1,17 @@
-<h2>Top Ten</h2>
-<table class="table table-striped table-bordered dataTable" role="grid" style="width: 40%;">
-<thead>
-    <tr role="row">
-        <td><strong>Name</strong></td>
-        <td><strong>Total Victories</strong></td>
-    </tr>
-</thead>
-<tbody>
-    <tr *ngFor="let tp of topten">
-        <td>{{tp.name}}</td>
-        <td>{{tp.totalVictories}} </td>
-    </tr>
-</tbody>
-</table>
+<div class="topten">
+    <h2 class="title">Top Ten</h2>
+    <table class="table table-striped table-bordered dataTable" role="grid" style="width: 40%;">
+        <thead>
+            <tr role="row">
+                <td><strong>Name</strong></td>
+                <td><strong>Total Victories</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tp of topten">
+                <td>{{tp.name}}</td>
+                <td>{{tp.totalVictories}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
