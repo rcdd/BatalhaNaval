@@ -53,6 +53,9 @@ export class GameComponent implements OnInit {
         this.start();
       } else if (this.typeSubmit === 'play') {
         this.play();
+      } else {
+        this.typeSubmit = '';
+        this.newGameDashForm();
       }
 
     });
@@ -70,7 +73,6 @@ export class GameComponent implements OnInit {
       });
       this.boards = boards;
     });
-    this.newGameDashForm();
   }
 
   newGameDashForm() {
