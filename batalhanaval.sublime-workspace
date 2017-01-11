@@ -439,21 +439,12 @@
 			}
 		},
 		{
-			"file": "angular/app/board/board.component.html",
+			"file": "/home/emanuelx/Transferências/info.txt",
 			"settings":
 			{
-				"buffer_size": 1980,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "angular/app/scss/styles.scss",
-			"settings":
-			{
-				"buffer_size": 5437,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"buffer_size": 545,
+				"encoding": "Western (Windows 1252)",
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -622,7 +613,6 @@
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/game",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/scss",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/topten",
@@ -630,12 +620,13 @@
 	],
 	"file_history":
 	[
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/scss/styles.scss",
+		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/board/board.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/app.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/game/game.component.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/listGames/listGames.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/topten/topten.component.html",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/home/home.component.html",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/scss/styles.scss",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/chat/chat.component.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/account/account.component.ts",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/angular/app/account/account.component.html",
@@ -756,8 +747,7 @@
 		"/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval/gulpfile.js",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/BD_AULA.sql",
 		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/ficha2.txt",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/ficha_transformacao_erros.sql",
-		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/Projeto/readDataFiles.sql"
+		"/home/emanuelx/MEOCloud/Escola/3_ano/SAD/ficha_transformacao_erros.sql"
 	],
 	"find":
 	{
@@ -935,7 +925,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -966,7 +956,7 @@
 						"translation.y": 648.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1013,13 +1003,103 @@
 						"selection":
 						[
 							[
-								1483,
-								1483
+								1666,
+								1666
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/emanuelx/Transferências/info.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 545,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "angular/app/game/game.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2139,
+								2139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 198.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1759,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1759,
+								1759
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"default_dir": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval",
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1032,130 +1112,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "angular/app/board/board.component.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1980,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1059,
-								1059
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "angular/app/scss/styles.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5437,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								127,
-								127
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "angular/app/game/game.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9657,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2147,
-								2147
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 972.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
 					"buffer": 6,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1759,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								159,
-								159
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"default_dir": "/home/emanuelx/MEOCloud/Escola/3_ano/Desenvolvimento de aplicações distribuidas/BatalhaNaval",
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 486.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
 					"file": "angular/app/_services/chat.service.ts",
 					"semi_transient": false,
 					"settings":

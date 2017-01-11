@@ -195,4 +195,4 @@ ws.init = (server) => {
             response.send(500, err);
         }
     });
-}
+};
