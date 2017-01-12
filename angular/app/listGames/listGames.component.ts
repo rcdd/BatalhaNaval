@@ -55,21 +55,44 @@ export class ListGamesComponent implements OnInit {
                     if (game.state === 'created') {
                         this.listGamesCreated.push(game);
                     } else if (game.state === 'waiting') {
-                        if ((game.creator !== this.authService.user._id) && game.players.indexOf(this.authService.user)) {
-                            this.listGamesWaitingInGame.push(game);
-                        } else {
+                        let keepGoing = true;
+                        game.players.forEach((player: any) => {
+                            if (keepGoing === true) {
+                                if (player.player._id === this.authService.user._id) {
+                                    if (game.creator !== this.authService.user._id) {
+                                        this.listGamesWaitingInGame.push(game);
+                                    } else {
+                                        this.listGamesWaiting.push(game);
+                                    }
+                                    keepGoing = false;
+                                }
+                            }
+                        });
+                        if (keepGoing === true) {
                             this.listGamesWaiting.push(game);
                         }
                     } else if (game.state === 'playing') {
-                        if (game.players.indexOf(this.authService.user)) {
-                            this.listGamesPlaying.push(game);
-                        }
+                        console.log('list cenas');
+                        console.dir(game.players);
+                        console.dir(this.authService.user);
+                        game.players.forEach((player: any) => {
+                            if (player.player._id === this.authService.user._id) {
+                                this.listGamesPlaying.push(game);
+                            }
+                        });
+
                     } else if (game.state === 'full') {
-                        if (game.players.indexOf(this.authService.user)) {
-                            this.listGamesFull.push(game);
-                        }
+                        game.players.forEach((player: any) => {
+                            if (player.player._id === this.authService.user._id) {
+                                this.listGamesFull.push(game);
+                            }
+                        });
                     }
                 });
+                if (this.listGamesPlaying.length === 0 && this.listGamesCreated.length === 0 && this.listGamesFull.length === 0
+                    && this.listGamesWaiting.length === 0 && this.listGamesWaitingInGame.length === 0) {
+                    this.listGames = '';
+                }
             }
         });
     }

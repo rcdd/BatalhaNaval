@@ -161,14 +161,11 @@ export class GameComponent implements OnInit {
   }
 
   joinGame() {
-    let game: any = [];
     // GETING GAME
     let endpoint = URL_GAME + '/' + this.idGame;
     this.http.get(endpoint, {
       headers: this.headers
-    }).map(res => res.json()).subscribe(data => {
-      game = data;
-
+    }).map(res => res.json()).subscribe(game => {
       // CHECK CONFIGURATION
       this.newBoard.owner = this.authService.user._id;
       game.players.push({ 'player': this.authService.user, 'board': this.newBoard });
@@ -188,17 +185,11 @@ export class GameComponent implements OnInit {
           headers: this.headers
         })
           .subscribe(ok => {
-            // JOIN GAME => TODO
+            // JOIN GAME
             this.alertService.success('You join in game #: ' + game.id, true);
             this.websocketsService.sendLists();
-            this.websocketsService.getBoardsGame(game._id).subscribe(
-              m => {
-                /*console.log('a receber boards');
-                console.dir(m);*/
-                this.allDataFromServer = m;
-              });
 
-            this.websocketsService.joinGame(game._id);
+            // this.websocketsService.joinGame(game._id);
             this._router.navigate(['/home']);
           }, error => {
             this.alertService.error('error assign to game!');
@@ -217,15 +208,13 @@ export class GameComponent implements OnInit {
 
 
   play() {
-    let game: any = [];
     let boards: any = [];
 
     let endpoint = URL_GAME + '/' + this.idGame;
     this.http.get(endpoint, {
       headers: this.headers
-    }).map(res => res.json()).subscribe(data => {
-      console.dir(data);
-      game = data;
+    }).map(res => res.json()).subscribe(game => {
+      this.websocketsService.joinGame(game._id);
       game.players.forEach((players: any) => {
         if (players.board.owner === this.authService.user._id) {
           boards.unshift(players.board);
@@ -238,13 +227,10 @@ export class GameComponent implements OnInit {
   }
 
   start() {
-    let game: any = [];
-
     let endpoint = URL_GAME + '/' + this.idGame;
     this.http.get(endpoint, {
       headers: this.headers
-    }).map(res => res.json()).subscribe(data => {
-      game = data;
+    }).map(res => res.json()).subscribe(game => {
       game.players.forEach((players: any) => {
         this.listBoardsInGame.push(players.board);
       });

@@ -9,6 +9,7 @@ import * as io from 'socket.io-client';
 export class WebSocketService {
     socket: SocketIOClient.Socket;
     boards: any = [];
+    chatMessages: any = [];
 
     constructor() {
         if (!this.socket) {
@@ -41,10 +42,6 @@ export class WebSocketService {
         });
     }
 
-    sendChatMessage(message: any) {
-        this.socket.emit('chat', message);
-    }
-
     getPlayersMessages(): Observable<any> {
         return new Observable((observer: any) => {
             this.socket.on('players', (data: any) => {
@@ -54,10 +51,31 @@ export class WebSocketService {
         });
     }
 
+    initChat() {
+        this.socket.emit('initChat');
+    }
+
+    getInitChatMessages(): Observable<any> {
+        // TODO: study the getPlayersMessages to implement this method
+        return new Observable((observer: any) => {
+            this.socket.on('initChat', (data: any) => {
+                observer.next(this.chatMessages);
+            });
+            return () => this.socket.disconnect();
+        });
+    }
+
+    sendChatMessage(message: any) {
+        // this.chatMessages.push(message);
+        this.socket.emit('chat', message);
+    }
+
     getChatMessages(): Observable<any> {
         // TODO: study the getPlayersMessages to implement this method
         return new Observable((observer: any) => {
             this.socket.on('chat', (data: any) => {
+                console.dir(data);
+                this.chatMessages.push(data);
                 observer.next(data);
             });
             return () => this.socket.disconnect();
@@ -88,12 +106,10 @@ export class WebSocketService {
     }
 
     joinGame(channel: any) {
-        console.log('asdfda');
         this.socket.emit('joinGame', { channel: channel });
     }
 
     getBoardsGame(channel: any): Observable<any> {
-        // TODO: study the getPlayersMessages to implement this method
         console.log('set channel listen:' + channel);
         return new Observable((observer: any) => {
             this.socket.on(channel, (data: any) => {

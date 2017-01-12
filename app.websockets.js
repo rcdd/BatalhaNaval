@@ -16,7 +16,11 @@ ws.init = (server) => {
         client.broadcast.emit('players', 'A new player has arrived');
 
         client.on('chat', data => {
-            client.broadcast.emit('chat', data);
+            wsServer.sockets.emit('chat', data);
+        });
+
+        client.on('initChat', data => {
+            client.emit('initChat', data);
         });
 
         client.on('lists', data => {

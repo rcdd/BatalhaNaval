@@ -18,31 +18,47 @@ export class ChatComponent implements OnInit {
     message: string;
     chatChannel: string[] = [];
 
-    minimize =  true;
+    minimize = true;
 
     constructor(private websocketService: WebSocketService,
         private authService: AuthService, private chatService: ChatService) {
-        this.chatChannel = this.chatService.getMessage();
+        console.log('init chat');
+        this.websocketService.getInitChatMessages().subscribe(
+            m => {
+                this.chatChannel = [];
+                console.log('chat message - Array');
+                console.dir(m);
+                console.log('read forEach chat');
+                if (m.length !== 0) {
+                    m.forEach((mess: any) => {
+                        let show = '[' + mess.user.name + '] ' + mess.message;
+                        this.chatChannel.push(show);
+                    });
+                }
+            }
+        );
+
+        this.websocketService.initChat();
+
     }
 
     ngOnInit() {
         this.websocketService.getChatMessages().subscribe(
             m => {
-                let show =  '[' + m.user.name + '] ' + m.message;
+                let show = '[' + m.user.name + '] ' + m.message;
                 this.chatChannel.push(show);
-            });
+            }
+        );
     }
 
     send(): void {
-        let show =  '[' + this.authService.user.name + ']\n ' + this.message;
+        // let show = '[' + this.authService.user.name + ']\n ' + this.message;
         let json = {
             date: new Date(),
             user: this.authService.user,
             message: this.message
         };
-
         this.websocketService.sendChatMessage(json);
-        this.chatService.setMessage(show);
         this.message = '';
 
     }
